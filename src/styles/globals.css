@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "alliance1Regular";
+  src: local("alliance1Regular"),
+    url(../../public/assets/Alliance\ No.1\ Regular.otf) format("opentype");
+  font-display: swap;
+}
+
 :root {
   --background-color: hsla(228, 91%, 22%, 0.1);
   --foreground-color: #000;
@@ -32,6 +39,19 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+input {
+  text-decoration: none;
+  border: none;
+}
+
+form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 ::-webkit-scrollbar {
