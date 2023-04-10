@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "ITC";
+  src: local("ITC"),
+    url(../../public/assets/ITC\ Caslon\ 224\ Std\ Bold.ttf) format("truetype");
+  font-display: swap;
+}
+
+.indePageLandingSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.indexPageHeading {
+  font-family: "ITC";
+  font-size: 10vw;
+}
+
+.indexPageSubHeading {
+  font-family: "ITC";
+  font-size: 2vw;
+}
