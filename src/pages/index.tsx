@@ -1,7 +1,12 @@
 import Head from "next/head";
 import styles from "@/styles/index.module.css";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const handleImagineClick = () => {
+    router.push("/new");
+  }
   return (
     <>
       <Head>
@@ -70,6 +75,17 @@ export default function Home() {
         <div className={styles.indePageLandingSection}>
           <div className={styles.indexPageHeading}>SILIC</div>
           <div className={styles.indexPageSubHeading}></div>
+          <button
+          type="submit"
+          className={styles.signUpButton}
+          id="signUpButton"
+          onClick={handleImagineClick}
+          style={{
+            height: "50px"
+          }}
+        >
+          Imagine
+        </button>
         </div>
       </main>
     </>
