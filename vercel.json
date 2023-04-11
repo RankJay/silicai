@@ -1,8 +1,11 @@
 {
   "functions": {
-    "api/*.ts": {
+    "src/pages/api/**/*.ts": {
       "memory": 3008,
       "maxDuration": 60
     }
-  }
+  },
+  "currentTeam": "team_2qSymnTOGtqCNgr2VQv5o18B",
+  
+"collectMetrics": true
 }
