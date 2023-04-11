@@ -46,6 +46,10 @@ input {
   border: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 form {
   height: 100%;
   width: 100%;

@@ -16,6 +16,8 @@ export default async function handler(
   const { prompt } = req.body;
   const { data, error } = await leap.generate.generateImage({
     prompt,
+    width: 1024,
+    height: 1024,
   });
   if (error) {
     console.log(error);
@@ -26,21 +28,17 @@ export default async function handler(
   }
   if (data) {
     const imageUrl = data.images[0].uri;
-    axios
-      .get(imageUrl, { responseType: "arraybuffer" })
-      .then(
-        (response: {
-          data:
-            | WithImplicitCoercion<string>
-            | { [Symbol.toPrimitive](hint: "string"): string };
-        }) => {
-          const imageData = Buffer.from(response.data, "binary");
+    const response: {
+      data:
+        | WithImplicitCoercion<string>
+        | { [Symbol.toPrimitive](hint: "string"): string };
+    } = await axios.get(imageUrl, { responseType: "arraybuffer" });
 
-          const base64 = imageData.toString("base64");
-          res.status(200).json({ image: `data:image/png;base64,${base64}` });
-          return;
-        }
-      )
+    const imageData = Buffer.from(response.data, "binary");
+
+    const base64 = imageData.toString("base64");
+    res.status(200).json({ image: `data:image/png;base64,${base64}` });
     return;
   }
+  return;
 }

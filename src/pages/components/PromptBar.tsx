@@ -1,17 +1,45 @@
 import { useSnapshot } from "valtio/react";
 import styles from "../../styles/index.module.css";
 import store from "@/store";
+import { useEffect, useState } from "react";
 
 export default function PromptBar() {
   const snap = useSnapshot(store);
+  const isGenerating = snap.isGenerating;
+
+  useEffect(() =>{
+    const buttomElement = document.getElementById('signUpButton') as HTMLButtonElement;
+    if (isGenerating === true) {
+      buttomElement.disabled = true;
+      buttomElement.style.color = "#888";
+      buttomElement.style.background = "#ccc";
+      // setTimeout(() => {
+      //   console.log("1");
+      //   let d2: any;
+      //   d2 = setInterval(() => {
+      //     console.log("2", d2);
+          buttomElement.innerText = `Generating...`;
+      //     if(snap.isGenerating === false) {
+      //       clearTimeout(d2);
+      //     }
+      //   }, 5000);
+      // }, 100);
+    } else if (isGenerating === false) {
+      buttomElement.disabled = false;
+      buttomElement.style.color = "#fdfdfd";
+      buttomElement.style.background = "linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat";
+      buttomElement.innerText = "Generate";
+    }
+  }, [isGenerating]);
 
   const handleChatSubmit = async (event: any) => {
     event.preventDefault();
     const questionInput = document.getElementById("prompt") as HTMLInputElement;
     const promptValue = questionInput.value;
-    console.log(promptValue);
+
+    store.isGenerating = true;
   
-    fetch(`https://silic.vercel.app/api/generate`, {
+    fetch(`/api/generate`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
@@ -26,8 +54,8 @@ export default function PromptBar() {
       .then((resp) => {
         if (resp) {
           console.log(resp);
-          store.imageId = resp.id
-          store.imageURI = resp.image // 'https://silic.vercel.app//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `https://silic.vercel.app//assets/${resp.id}.png`
+          store.imageURI = resp.image // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
+          store.isGenerating = false;
         }
       });
     questionInput.value = "";
@@ -55,7 +83,7 @@ export default function PromptBar() {
             fontFamily: "alliance1Regular",
           }}
         >
-          Send
+          Generate
         </button>
       </form>
     </div>

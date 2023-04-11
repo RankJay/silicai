@@ -1,8 +1,9 @@
 import { proxy } from "valtio";
 
 const store = proxy({
-  imageId: "try",
-  imageURI: "https://silic.vercel.app/assets/try.png",
+  imageURI: "/assets/try.png",
+  isGenerating: false,
+  loadingSpeed: 10,
 });
 
 export default store;
