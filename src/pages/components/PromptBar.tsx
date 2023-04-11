@@ -1,7 +1,7 @@
 import { useSnapshot } from "valtio/react";
 import styles from "../../styles/index.module.css";
 import store from "@/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function PromptBar() {
   const snap = useSnapshot(store);
@@ -18,7 +18,7 @@ export default function PromptBar() {
       //   let d2: any;
       //   d2 = setInterval(() => {
       //     console.log("2", d2);
-          buttomElement.innerText = `Generating...`;
+      buttomElement.innerText = `Generating...`;
       //     if(snap.isGenerating === false) {
       //       clearTimeout(d2);
       //     }

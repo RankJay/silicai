@@ -84,7 +84,7 @@ export default function Home() {
             height: "50px"
           }}
         >
-          Imagine
+          Get Started
         </button>
         </div>
       </main>

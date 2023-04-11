@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.16.1",
     "@leap-ai/sdk": "^0.0.119",
     "@react-three/drei": "^9.64.0",
     "@react-three/fiber": "^8.12.0",
