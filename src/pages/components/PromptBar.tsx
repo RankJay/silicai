@@ -11,7 +11,7 @@ export default function PromptBar() {
     const promptValue = questionInput.value;
     console.log(promptValue);
   
-    fetch(`http://localhost:3000/api/generate`, {
+    fetch(`https://silic.vercel.app/api/generate`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
@@ -27,7 +27,7 @@ export default function PromptBar() {
         if (resp) {
           console.log(resp);
           store.imageId = resp.id
-          store.imageURI = resp.image // 'http://localhost:3000/assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000/assets/${resp.id}.png`
+          store.imageURI = resp.image // 'https://silic.vercel.app//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `https://silic.vercel.app//assets/${resp.id}.png`
         }
       });
     questionInput.value = "";
