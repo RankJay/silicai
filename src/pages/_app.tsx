@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
+import Header from "./components/Header";
 
 const publicPages = ["/sign-in/[[...index]]", "/sign-up/[[...index]]", "/", "/gallery"];
 
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ClerkProvider {...pageProps}>
+      <Header />
       {isPublicPage ? (
         <Component {...pageProps} />
       ) : (

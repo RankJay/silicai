@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function Home() {
   const router = useRouter();
   const handleImagineClick = () => {
-    router.push("/new");
+    router.push("/gallery");
   }
   return (
     <>
@@ -74,17 +74,18 @@ export default function Home() {
       <main>
         <div className={styles.indePageLandingSection}>
           <div className={styles.indexPageHeading}>SILIC</div>
-          <div className={styles.indexPageSubHeading}></div>
+          <div className={styles.indexPageSubHeading}>Unleash Your Creativity with AI-Designed Tees!</div>
           <button
           type="submit"
           className={styles.signUpButton}
           id="signUpButton"
           onClick={handleImagineClick}
           style={{
-            height: "50px"
+            height: "50px",
+            marginTop: "2rem"
           }}
         >
-          Get Started
+          See Gallery
         </button>
         </div>
       </main>

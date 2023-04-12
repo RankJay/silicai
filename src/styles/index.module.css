@@ -13,8 +13,10 @@
 }
 
 .indexPageSubHeading {
-  font-family: HelveticcaBold;
-  font-size: 2vw;
+  font-family: HelveticcaRegular;
+  font-size: 1.75vw;
+  max-width: 400px;
+  color: rgb(112, 112, 112);
 }
 
 .signUp {
@@ -58,8 +60,25 @@
   max-width: 200px;
   text-decoration: none;
   border: none;
-  background: linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat;
+  background-color: black;
+  /* background: linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat; */
   color: #fdfdfd;
   border-radius: 0.45rem;
   outline: none;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .indexPageHeading {
+    font-size: 5rem;
+  }
+
+  .indexPageSubHeading {
+    font-size: 1rem;
+    max-width: 200px;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
 }
