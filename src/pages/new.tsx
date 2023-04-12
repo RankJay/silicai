@@ -1,4 +1,3 @@
-import { UserButton } from "@clerk/nextjs";
 import PromptBar from "./components/PromptBar";
 import ShirtModel from "./components/ShirtModel";
 import styles from "@/styles/new.module.css";

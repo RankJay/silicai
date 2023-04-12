@@ -2,10 +2,12 @@ import { useSnapshot } from "valtio/react";
 import styles from "../../styles/index.module.css";
 import store from "@/store";
 import { useEffect } from "react";
+import { useUser } from "@clerk/nextjs";
 
 export default function PromptBar() {
   const snap = useSnapshot(store);
   const isGenerating = snap.isGenerating;
+  const { isLoaded, user } = useUser();
 
   useEffect(() =>{
     const buttomElement = document.getElementById('signUpButton') as HTMLButtonElement;
@@ -13,17 +15,7 @@ export default function PromptBar() {
       buttomElement.disabled = true;
       buttomElement.style.color = "#888";
       buttomElement.style.background = "#ccc";
-      // setTimeout(() => {
-      //   console.log("1");
-      //   let d2: any;
-      //   d2 = setInterval(() => {
-      //     console.log("2", d2);
       buttomElement.innerText = `Generating...`;
-      //     if(snap.isGenerating === false) {
-      //       clearTimeout(d2);
-      //     }
-      //   }, 5000);
-      // }, 100);
     } else if (isGenerating === false) {
       buttomElement.disabled = false;
       buttomElement.style.color = "#fdfdfd";
@@ -48,7 +40,7 @@ export default function PromptBar() {
         "Access-Control-Allow-Origin": "*",
       },
       mode: "cors",
-      body: JSON.stringify({prompt: promptValue})
+      body: JSON.stringify({prompt: promptValue, user})
     })
       .then((res) => res.json())
       .then((resp) => {

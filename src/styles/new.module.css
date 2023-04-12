@@ -1,15 +1,8 @@
-@font-face {
-    font-family: "ITC";
-    src: local("ITC"),
-      url(../../public/assets/ITC\ Caslon\ 224\ Std\ Bold.ttf) format("truetype");
-    font-display: swap;
-  }
-  
-  .newPageLandingSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100vh;
-  }
+.newPageLandingSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+}

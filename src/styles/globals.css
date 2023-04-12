@@ -1,9 +1,17 @@
 @font-face {
-  font-family: "alliance1Regular";
-  src: local("alliance1Regular"),
-    url(../../public/assets/Alliance\ No.1\ Regular.otf) format("opentype");
+  font-family: "HelveticcaBold";
+  src: local("HelveticcaBold"),
+    url(../../public/assets/Helvetica-Bold.ttf) format("truetype");
   font-display: swap;
 }
+
+@font-face {
+  font-family: "HelveticcaRegular";
+  src: local("HelveticcaRegular"),
+    url(../../public/assets/Helvetica.ttf) format("truetype");
+  font-display: swap;
+}
+
 
 :root {
   --background-color: hsla(228, 91%, 22%, 0.1);
@@ -26,7 +34,7 @@ html {
   width: 100%;
   scroll-behavior: 100px;
   /* background-color: hsla(228,91%,22%,0.1); */
-  font-family: Alliance-Regular;
+  font-family: HelveticcaRegular;
   overflow-x: scroll;
   scroll-behavior: smooth;
 }

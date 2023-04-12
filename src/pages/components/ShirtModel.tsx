@@ -41,6 +41,7 @@ const ShirtModel = () => {
       <ambientLight color={"#aaa"} intensity={0.4} />
       <pointLight intensity={0.15} position={[0, -5, 5]} />
       <directionalLight intensity={1}  />
+      <hemisphereLight intensity={0} />
       <OrbitControls autoRotate={true} autoRotateSpeed={snap.loadingSpeed} />
       <Scene />
     </Canvas>

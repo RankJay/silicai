@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 import { Leap } from "@leap-ai/sdk";
+import { supabaseStore } from "@/store";
 
 const leap = new Leap(process.env.LEAP_API_KEY as string);
 leap.useModel(process.env.LEAP_AI_MODEL_ID as string);
@@ -13,7 +14,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  const { prompt } = req.body;
+  const { prompt, user } = req.body;
   const { data, error } = await leap.generate.generateImage({
     prompt,
     width: 1024,
@@ -35,9 +36,22 @@ export default async function handler(
     } = await axios.get(imageUrl, { responseType: "arraybuffer" });
 
     const imageData = Buffer.from(response.data, "binary");
+    const image = `data:image/png;base64,${imageData.toString("base64")}`;
 
-    const base64 = imageData.toString("base64");
-    res.status(200).json({ image: `data:image/png;base64,${base64}` });
+    const userFromSupabase = await supabaseStore.from('user').select('email').eq('email', user.emailAddresses[0].emailAddress)
+
+    console.log(userFromSupabase);
+
+    const resp = await supabaseStore.from('inventory').insert({
+      email: user.emailAddresses[0].emailAddress,
+      image
+    });
+
+    if (resp.status === 201) {
+      console.log("added.")
+    }
+
+    res.status(200).json({ image });
     return;
   }
   return;
