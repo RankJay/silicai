@@ -6,6 +6,7 @@
 
 .galleryPageHeading {
   margin-top: 10rem;
+  text-align: center;
   font-family: HelveticcaBold;
   font-size: 75px;
   letter-spacing: -2px;
@@ -36,7 +37,7 @@
   height: min-content;
   text-align: center;
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  /* transition: box-shadow 0.1s ease, transform 0.1s ease; */
 }
 
 .card img {
