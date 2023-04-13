@@ -60,7 +60,7 @@ export default function PromptBar() {
           type="text"
           className={styles.signUpInput}
           style={{
-            fontFamily: "alliance1Regular",
+            fontFamily: "HelveticcaRegular",
             width: "100%",
           }}
           name="prompt"
@@ -72,7 +72,7 @@ export default function PromptBar() {
           className={styles.signUpButton}
           id="signUpButton"
           style={{
-            fontFamily: "alliance1Regular",
+            fontFamily: "HelveticcaRegular",
           }}
         >
           Generate

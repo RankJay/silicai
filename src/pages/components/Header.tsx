@@ -1,22 +1,34 @@
-import { UserButton, useUser } from "@clerk/nextjs";
-import styles from "../../styles/header.module.css";
+import { UserButton, useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
+import styles from "../../styles/header.module.css";
 
 const Header: NextPage = () => {
+  const { isSignedIn } = useAuth();
   const router = useRouter();
+  
   const handleImagineClick = () => {
-    router.push("/new");
+    if (router) {
+      router.push("/new");
+    }
   }
+
+  const loggedInContent = isSignedIn ? <UserButton /> : null;
+
   return (
     <div className={styles.headerContainer}>
       <div className={styles.header}>
-        <div style={{ marginLeft: "1%" }}>SILIC AI</div>
-        <div style={{ fontFamily: "HelveticcaRegular" }}>
+        <div className={styles.logo}>SILIC AI</div>
+        <div className={styles.link}>
           {/* <Link href="/gallery">Gallery</Link> */}
         </div>
-        <button className={styles.logInButton} onClick={handleImagineClick}>Get Started</button>
+        {!isSignedIn && (
+          <button className={styles.logInButton} onClick={handleImagineClick}>
+            Get Started
+          </button>
+        )}
+        {loggedInContent}
       </div>
     </div>
   );

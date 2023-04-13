@@ -8,6 +8,7 @@ const store = proxy({
   imageURI: "/assets/try.png",
   isGenerating: false,
   loadingSpeed: 10,
+  isUserLoggedIn: false
 });
 
 export const supabaseStore = createClient(supabaseUrl, supabaseAnonKey);
