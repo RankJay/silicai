@@ -11,6 +11,7 @@ const Scene = () => {
   const snap = useSnapshot(store);
   const gltf = useLoader(GLTFLoader, "/assets/shirt.glb");
   const imageTexture = useTexture(snap.imageURI);
+  imageTexture.flipY = false;
   const isLoading = snap.isGenerating;
   const group = useRef<THREE.Group>() as React.MutableRefObject<THREE.Group>;
 
