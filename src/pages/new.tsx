@@ -1,5 +1,5 @@
+import BetterShirtModel from "./components/BetterShirtModel";
 import PromptBar from "./components/PromptBar";
-import ShirtModel from "./components/ShirtModel";
 import styles from "@/styles/new.module.css";
 
 export default function New() {
@@ -7,7 +7,7 @@ export default function New() {
     <>
       <div className={styles.newPageLandingSection}>
         {/* <UserButton /> */}
-        <ShirtModel />
+        <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
         <PromptBar />
       </div>
     </>
