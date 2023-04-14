@@ -15,7 +15,6 @@ import { easing } from "maath";
 import { useSnapshot } from "valtio";
 import store from "../../store";
 import * as THREE from "three";
-import styles from "../../styles/header.module.css";
 
 
 interface AppProps {
@@ -59,7 +58,7 @@ const BetterShirtModel = ({
 };
 
 function Backdrop(): JSX.Element {
-  const shadows = useRef<AccumulativeShadows>(null);
+  const shadows = useRef<any>(null);
   useFrame((store, delta) =>
     easing.dampC(shadows.current?.getMesh().material.color, 2, 0.25, delta)
   );
@@ -125,7 +124,7 @@ function Shirt(props: ShirtProps): JSX.Element {
   const texture = useTexture(snap.imageURI);
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
   useFrame((store, delta) =>
-    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta)
+    easing.dampC(materials.lambert1.color, 'black', 0.25, delta)
   );
 
   useEffect(() => {
