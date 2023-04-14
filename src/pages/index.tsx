@@ -1,12 +1,24 @@
 import Head from "next/head";
 import styles from "@/styles/index.module.css";
 import { useRouter } from "next/router";
+import { useRef, useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const video = videoRef.current;
+      if (!video) {
+        return;
+      }
+      video.play();
+    }, 5000);
+  }, []);
   const handleImagineClick = () => {
-    router.push("/gallery");
-  }
+    router.push("/new");
+  };
   return (
     <>
       <Head>
@@ -72,21 +84,32 @@ export default function Home() {
         <link rel="apple-touch-icon" href="" />
       </Head>
       <main>
+        <video ref={videoRef} src="valo.mp4" width="250" loop muted style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: "-10",
+        }}></video>
         <div className={styles.indePageLandingSection}>
           <div className={styles.indexPageHeading}>SILIC</div>
-          <div className={styles.indexPageSubHeading}>Unleash Your Creativity with AI-Designed Tees!</div>
+          <div className={styles.indexPageSubHeading}>
+            Unleash Your Creativity with AI-Designed Tees!
+          </div>
           <button
-          type="submit"
-          className={styles.signUpButton}
-          id="signUpButton"
-          onClick={handleImagineClick}
-          style={{
-            height: "50px",
-            marginTop: "2rem"
-          }}
-        >
-          See Gallery
-        </button>
+            type="submit"
+            className={styles.signUpButton}
+            id="signUpButton"
+            onClick={handleImagineClick}
+            style={{
+              height: "50px",
+              marginTop: "2rem",
+            }}
+          >
+            Get Started
+          </button>
         </div>
       </main>
     </>

@@ -14,18 +14,19 @@ const Header: NextPage = () => {
     }
   }
 
-  const loggedInContent = isSignedIn ? <UserButton /> : null;
+  const loggedInContent = isSignedIn ? <div className={styles.headerChild}><UserButton /></div> : null;
 
   return (
     <div className={styles.headerContainer}>
       <div className={styles.header}>
-        <div className={styles.logo}>SILIC AI</div>
-        <div className={styles.link}>
+        <div className={styles.headerChild}></div>
+        <div className={styles.headerChild} style={{fontSize: "30px"}}>SILIC</div>
+        {/* <div className={styles.link}> */}
           {/* <Link href="/gallery">Gallery</Link> */}
-        </div>
+        {/* </div> */}
         {!isSignedIn && (
-          <button className={styles.logInButton} onClick={handleImagineClick}>
-            Get Started
+          <button className={`${styles.headerChild} ${styles.logInButton}`} onClick={handleImagineClick}>
+            Sign In
           </button>
         )}
         {loggedInContent}

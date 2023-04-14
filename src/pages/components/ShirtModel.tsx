@@ -28,7 +28,7 @@ const Scene = () => {
       store.isGenerating = false;
       store.loadingSpeed = 10;
     } else if (isLoading === true) {
-      store.loadingSpeed = 100;
+      store.loadingSpeed = 20;
     }
   }, [group, gltf, imageTexture, isLoading]);
 
