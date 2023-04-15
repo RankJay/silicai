@@ -1,4 +1,5 @@
 import BetterShirtModel from "./components/BetterShirtModel";
+import FileUpload from "./components/FileUpload";
 import PromptBar from "./components/PromptBar";
 import styles from "@/styles/new.module.css";
 
@@ -7,6 +8,7 @@ export default function New() {
     <>
       <div className={styles.newPageLandingSection}>
         {/* <UserButton /> */}
+        <FileUpload />
         <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
         <PromptBar />
       </div>

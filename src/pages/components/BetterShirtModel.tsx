@@ -37,12 +37,13 @@ const BetterShirtModel = ({
       gl={{ preserveDrawingBuffer: true }}
       eventSource={document.getElementById("dd") as HTMLElement}
       eventPrefix="layer"
-      // style={{
+      style={{
+        zIndex: "1"
         // justifyContent: "center",
         // // backgroundColor: "#010",
         // // width: "calc(50vw)",
         // height: "100vh",
-      // }}
+      }}
     >
       <ambientLight intensity={0.5} />
       <Environment preset="city" />
@@ -123,9 +124,9 @@ function Shirt(props: ShirtProps): JSX.Element {
   const isLoading = snap.isGenerating;
   const texture = useTexture(snap.imageURI);
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
-  useFrame((store, delta) =>
-    easing.dampC(materials.lambert1.color, 'black', 0.25, delta)
-  );
+  useFrame((store, delta) =>{
+    easing.dampC((materials.lambert1 as THREE.MeshStandardMaterial).color, 'black', 0.25, delta)
+});
 
   useEffect(() => {
     if (isLoading === false) {
@@ -138,7 +139,7 @@ function Shirt(props: ShirtProps): JSX.Element {
   return (
     <mesh
       castShadow
-      geometry={nodes.T_Shirt_male.geometry}
+      geometry={(nodes.T_Shirt_male as THREE.Mesh).geometry}
       material={materials.lambert1}
       material-roughness={1}
       {...props}
