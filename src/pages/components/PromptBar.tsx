@@ -35,7 +35,7 @@ export default function PromptBar() {
 
     store.isGenerating = true;
   
-    fetch(`/api/generate`, {
+    const render = await fetch(`https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/user/generate`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
@@ -44,16 +44,11 @@ export default function PromptBar() {
         "Access-Control-Allow-Origin": "*",
       },
       mode: "cors",
-      body: JSON.stringify({prompt: promptValue, user})
+      body: JSON.stringify({prompt: promptValue, user_id: 'ebffecff-506e-419d-95f4-5a3ae1a5bdbc'})
     })
-      .then((res) => res.json())
-      .then((resp) => {
-        if (resp) {
-          console.log(resp);
-          store.imageURI = resp.image // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
-          store.isGenerating = false;
-        }
-      });
+
+    store.imageURI = await render.text()  // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
+    store.isGenerating = false;
     questionInput.value = "";
   };
   return (
