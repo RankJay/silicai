@@ -21,7 +21,6 @@ const MyComponent = () => {
     const reader = new FileReader();
     reader.onload = (event) => {
         setImageSrc(event.target?.result as string);
-      store.imageURI = event.target?.result as string;
     };
     reader.readAsDataURL(file);
   };
@@ -33,6 +32,7 @@ const MyComponent = () => {
 
   const handleSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    store.imageURI = imageSrc as string;
     setFormSubmitted(true);
     handleCloseModal();
     // Send the image to the server or perform any other action here
