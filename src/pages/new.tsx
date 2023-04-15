@@ -3,9 +3,8 @@ import FileUpload from "./components/FileUpload";
 import PromptBar from "./components/PromptBar";
 import styles from "@/styles/new.module.css";
 import Suggestions from "./components/suggestions";
-import { NextPage } from "next";
 
-const New: NextPage = () => {
+export default function New() {
   return (
     <>
       <div className={styles.newPageLandingSection}>
@@ -18,5 +17,3 @@ const New: NextPage = () => {
     </>
   );
 }
-
-export default New;

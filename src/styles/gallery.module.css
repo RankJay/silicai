@@ -32,6 +32,7 @@
 .card {
   max-width: 300px;
   /* border: 1px solid #eaeaea; */
+  border-radius: 10px;
   padding: 0.5rem;
   height: min-content;
   text-align: center;
