@@ -7,7 +7,14 @@
   /* border-radius: 50px; */
   /* background-color: rgba(0, 0, 0, 0.685); */
   /* backdrop-filter: blur(10px); */
-  height: 100vh;
+  /* height: 100vh; */
+}
+
+.suggestionsModalHeading {
+  font-family: "HelveticcaBold";
+  font-size: 1.5rem;
+  color: white;
+  padding: 1.5rem;
 }
 
 .suggestionsContainer {
@@ -117,5 +124,13 @@
     -webkit-transform-origin: 0% 100%;
             transform-origin: 0% 100%;
     opacity: 1;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 700px) {
+  .suggestionBox {
+    font-size: 0.7rem;
   }
 }

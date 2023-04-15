@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import styles from "@/styles/fileupload.module.css";
 import store from "@/store";
 
-const MyComponent = () => {
+const FileUpload = () => {
   const [showModal, setShowModal] = useState(false);
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const modalRef = useRef<HTMLDivElement>(null);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -71,4 +70,4 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default FileUpload;

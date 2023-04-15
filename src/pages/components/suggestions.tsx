@@ -15,34 +15,17 @@ const Suggestions = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchSuggestions = async () => {
-      const res = await fetch("/api/suggestions");
-      const data: Suggestion[] = [
-        { id: 1, text: "Texture" },
-        { id: 2, text: "Color palette" },
-        { id: 3, text: "Repeating patterns" },
-        { id: 4, text: "Pattern scaling" },
-        { id: 5, text: "Layering" },
-        { id: 6, text: "Transparency" },
-        { id: 7, text: "Gradient" },
-        { id: 8, text: "Abstract shapes" },
-        { id: 9, text: "Geometric shapes" },
-        { id: 10, text: "Organic shapes" },
-        { id: 11, text: "Line work" },
-        { id: 12, text: "Optical illusions" },
-        { id: 13, text: "Motion blur" },
-        { id: 14, text: "Depth of field" },
-        { id: 15, text: "Noise" },
-        { id: 16, text: "Fractals" },
-        { id: 17, text: "Symmetry" },
-        { id: 18, text: "Asymmetry" },
-        { id: 19, text: "Randomization" }
-      ]; // await res.json()
-      setSuggestions(data);
-      setLoading(false);
-    };
-    fetchSuggestions();
-  }, []);
+    if (isModalOpen) {
+      const fetchSuggestions = async () => {
+        const res = await fetch("/api/suggestions");
+        const data: { data: Suggestion[] } = await res.json();
+        console.log(data);
+        setSuggestions(data.data);
+        setLoading(false);
+      };
+      fetchSuggestions();
+    }
+  }, [isModalOpen]);
 
   const handleSuggestionClick = (text: string) => {
     const textbox = document.getElementById("prompt") as HTMLInputElement;
@@ -59,6 +42,7 @@ const Suggestions = () => {
       </div>
       {!snap.isGenerating && isModalOpen && (
         <div className={styles.suggestionsModal}>
+          {/* <div className={styles.suggestionsModalHeading}>Suggestions</div> */}
           {loading && (
             <div
               style={{

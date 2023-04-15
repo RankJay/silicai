@@ -14,7 +14,7 @@ const Header: NextPage = () => {
     }
   }
 
-  const loggedInContent = isSignedIn ? <div className={styles.headerChild}><UserButton /></div> : null;
+  const loggedInContent = isSignedIn ? <div className={styles.headerChild} style={{alignItems: "flex-end"}}><UserButton /></div> : null;
 
   return (
     <div className={styles.headerContainer}>
