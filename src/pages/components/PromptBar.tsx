@@ -9,6 +9,10 @@ export default function PromptBar() {
   const isGenerating = snap.isGenerating;
   const { isLoaded, user } = useUser();
 
+  const openSuggestions = () => {
+    // const prompt
+  }
+
   useEffect(() =>{
     const buttomElement = document.getElementById('signUpButton') as HTMLButtonElement;
     if (isGenerating === true) {

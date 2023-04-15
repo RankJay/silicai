@@ -2,8 +2,10 @@ import BetterShirtModel from "./components/BetterShirtModel";
 import FileUpload from "./components/FileUpload";
 import PromptBar from "./components/PromptBar";
 import styles from "@/styles/new.module.css";
+import Suggestions from "./components/suggestions";
+import { NextPage } from "next";
 
-export default function New() {
+const New: NextPage = () => {
   return (
     <>
       <div className={styles.newPageLandingSection}>
@@ -12,6 +14,9 @@ export default function New() {
         <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
         <PromptBar />
       </div>
+      <Suggestions />
     </>
   );
 }
+
+export default New;

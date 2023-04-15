@@ -37,13 +37,14 @@ const BetterShirtModel = ({
       gl={{ preserveDrawingBuffer: true }}
       eventSource={document.getElementById("dd") as HTMLElement}
       eventPrefix="layer"
-      style={{
-        zIndex: "1"
+      // style={{
+      //   zIndex: "1"
         // justifyContent: "center",
-        // // backgroundColor: "#010",
-        // // width: "calc(50vw)",
-        // height: "100vh",
-      }}
+        // backgroundColor: "#010",
+        // display: "flex",
+        // width: "550px",
+        // height: "75vh",
+      // }}
     >
       <ambientLight intensity={0.5} />
       <Environment preset="city" />
