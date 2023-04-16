@@ -44,7 +44,7 @@ export default function PromptBar() {
         "Access-Control-Allow-Origin": "*",
       },
       mode: "cors",
-      body: JSON.stringify({prompt: promptValue, user_id: 'ebffecff-506e-419d-95f4-5a3ae1a5bdbc'})
+      body: JSON.stringify({prompt: promptValue, email: user?.emailAddresses[0].emailAddress})
     })
 
     store.imageURI = await render.text()  // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`

@@ -1,55 +1,61 @@
-import store, { supabaseStore } from "@/store";
+import store from "@/store";
 import ShirtModel from "../components/ShirtModel";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import styles from "@/styles/design.module.css";
+import { GetStaticPaths } from "next";
 
-export default function Generated() {
-  const router = useRouter();
-  const { id } = router.query;
-  const [data, setData] = useState<{
-    isLoading: boolean;
-    items:
-      | {
-          [x: string]: any;
-        }[];
-  }>({
-    isLoading: true,
-    items: [],
-  });
+interface InventoryObjects {
+  image_id: string;
+  created_at: string;
+  user_id: string;
+}
 
-  useEffect(() => {
-    async function fetchData() {
-      const { data, error } = await supabaseStore
-        .from("inventory")
-        .select("*")
-        .eq("id", id);
+interface Designs {
+  [key: string]: Blob,
+}
 
-      if (error || !data) {
-        console.error("Error fetching data:", error);
-      }
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await fetch(
+    "https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/inventory/"
+  );
+  const data: InventoryObjects[] = await res.json();
 
-      if (data !== null) {
-        setData({
-          isLoading: false,
-          items: data,
-        });
-      }
-    }
+  // Get the paths we want to pre-render based on posts
+  const paths = data.map((imageData) => ({
+    params: { id: imageData.image_id },
+  }))
 
-    if (id !== undefined && typeof id === "string") {
-      fetchData();
-    }
-  }, [id]);
+  // We'll pre-render only these paths at build time.
+  // { fallback: 'blocking' } will server-render pages
+  // on-demand if the path doesn't exist.
+  return { paths, fallback: 'blocking' }
+}
 
+export const getStaticProps = async ({params}: {params: any}) => {
+  const render = await fetch(`https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/user/inventory/get`, {
+      method: "POST",
+      headers: {
+        "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
+        "Access-Control-Allow-Headers": "Content-Type,Authorization",
+        "Content-type": "application/json; charset=UTF-8",
+        "Access-Control-Allow-Origin": "*",
+      },
+      mode: "cors",
+      body: JSON.stringify({image_id: params.id })
+    })
+  
+  const image = await render.json();
+
+  return { props: {image: '/assets/try.png'} }
+}
+
+export default function Generated({ image }: {image: string}) {
+  console.log(image);
   return (
     <>
-      {!data.isLoading && !(data.items instanceof Promise) && (
         <div className={styles.designPageLandingSection}>
-          {(store.imageURI = data.items[0].image)}
+          {store.imageURI = image}
           <ShirtModel />
         </div>
-      )}
     </>
   );
 }

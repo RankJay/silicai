@@ -1,6 +1,5 @@
 import { GetServerSideProps } from "next";
 import Image from "next/image";
-import { createClient } from "@supabase/supabase-js";
 import styles from "@/styles/gallery.module.css";
 import { supabaseStore } from "@/store";
 import { useState, useEffect } from "react";
@@ -15,7 +14,9 @@ interface InventoryObjects {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch("https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/inventory/");
+  const res = await fetch(
+    "https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/inventory/"
+  );
   const data: InventoryObjects[] = await res.json();
 
   return {
@@ -32,15 +33,15 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
   useEffect(() => {
     const fetchImageData = async (imageId: string) => {
       const response = await supabaseStore.storage
-      .from('silicai-bucket')
-      .download(`development/${imageId}.png`);
+        .from("silicai-bucket")
+        .download(`${process.env.NODE_ENV}/${imageId}.png`);
       console.log(imageId, response);
       const blob = response.data as Blob;
       const dataUrl = await new Promise<string>((resolve) => {
-        const reader = new FileReader()
-        reader.onloadend = () => resolve(reader.result as string)
-        reader.readAsDataURL(blob)
-      })
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result as string);
+        reader.readAsDataURL(blob);
+      });
 
       setImageData((prevState) => ({ ...prevState, [imageId]: dataUrl }));
     };
@@ -133,12 +134,16 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
               {data?.map((image) => (
                 <div key={image.image_id} className={styles.card}>
                   <Link href={`/design/${image.image_id}`}>
-                    <Image
-                      src={imageData[image.image_id]}
-                      width={50}
-                      height={50}
-                      alt={image.image_id}
-                    />
+                    {imageData[image.image_id] ? (
+                      <Image
+                        src={imageData[image.image_id]}
+                        width={50}
+                        height={50}
+                        alt={image.image_id}
+                      />
+                    ) : (
+                      <div className={styles.card} style={{backgroundColor: "#aaa", width: "285px", padding: "0.5rem", height:"300px"}}></div>
+                    )}
                   </Link>
                   {/* <h3>{image.title}</h3> */}
                 </div>
