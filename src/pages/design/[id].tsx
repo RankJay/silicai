@@ -44,8 +44,9 @@ export const getStaticProps = async ({params}: {params: any}) => {
     })
   
   const image = await render.json();
+  console.log(image);
 
-  return { props: {image: '/assets/try.png'} }
+  return { props: {image: `data:image/png;base64,${image.image}`} }
 }
 
 export default function Generated({ image }: {image: string}) {
