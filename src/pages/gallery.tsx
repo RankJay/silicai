@@ -1,6 +1,5 @@
 import { GetServerSideProps } from "next";
 import Image from "next/image";
-import { createClient } from "@supabase/supabase-js";
 import styles from "@/styles/gallery.module.css";
 import { supabaseStore } from "@/store";
 import { useState, useEffect } from "react";
@@ -8,34 +7,55 @@ import Head from "next/head";
 import Link from "next/link";
 import Loader from "./components/Loader";
 
-export default function Home() {
-  const [data, setData] = useState<{
-    isLoading: boolean;
-    items:
-      | {
-          [x: string]: any;
-        }[]
-      | null;
-  }>({
-    isLoading: true,
-    items: [],
-  });
+interface InventoryObjects {
+  image_id: string;
+  created_at: string;
+  user_id: string;
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch(
+    `https://silicai-server-52dq.zeet-silicai.zeet.app/api/inventory/`
+  );
+  const data: InventoryObjects[] = await res.json();
+
+  return {
+    props: {
+      data: data,
+    },
+  };
+};
+
+export default function Gallery({ data }: { data: InventoryObjects[] }) {
+  const [isLoading, setIsLoading] = useState(true);
+  const [imageData, setImageData] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    const fetchImageData = async (imageId: string) => {
+      const response = await supabaseStore.storage
+        .from("silicai-bucket")
+        .download(`${process.env.NODE_ENV}/${imageId}.png`);
+      console.log(imageId, response);
+      const blob = response.data as Blob;
+      const dataUrl = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result as string);
+        reader.readAsDataURL(blob);
+      });
 
-  const fetchData = async () => {
-    const { data, error } = await supabaseStore.from("inventory").select("*");
+      setImageData((prevState) => ({ ...prevState, [imageId]: dataUrl }));
+    };
 
-    if (error || !data) {
-      console.error("Error fetching data:", error);
-    }
-    setData({
-      isLoading: false,
-      items: data,
-    });
-  };
+    const fetchAllImageData = async () => {
+      for (const image of data) {
+        fetchImageData(image.image_id);
+      }
+      setIsLoading(false);
+    };
+
+    fetchAllImageData();
+  }, [data]);
+
   return (
     <>
       <Head>
@@ -107,17 +127,23 @@ export default function Home() {
           Creativity and Unique Patterns for Stunning Prints
         </div>
         <div className={styles.grid}>
-          {data.isLoading ? <Loader /> : (
+          {isLoading ? (
+            <Loader />
+          ) : (
             <>
-              {data.items?.map((image) => (
-                <div key={image.id} className={styles.card}>
-                  <Link href={`/design/${image.id}`}>
-                    <Image
-                      src={image.image}
-                      width={50}
-                      height={50}
-                      alt={image.id}
-                    />
+              {data?.map((image) => (
+                <div key={image.image_id} className={styles.card}>
+                  <Link href={`/design/${image.image_id}`}>
+                    {imageData[image.image_id] ? (
+                      <Image
+                        src={imageData[image.image_id]}
+                        width={50}
+                        height={50}
+                        alt={image.image_id}
+                      />
+                    ) : (
+                      <div className={styles.card} style={{backgroundColor: "#aaa", width: "285px", padding: "0.5rem", height:"300px"}}></div>
+                    )}
                   </Link>
                   {/* <h3>{image.title}</h3> */}
                 </div>
