@@ -56,8 +56,7 @@ const PromptTab = () => {
               // backgroundColor: "#555",
               borderRadius: "0 0 0 0.75rem",
               paddingBottom: "1rem",
-              borderColor: "#999",
-              borderStyle: "solid",
+              borderRight: "0.5px solid #999",
               justifyContent: "flex-end",
 
             }}
@@ -77,8 +76,7 @@ const PromptTab = () => {
               // backgroundColor: "#555",
               borderRadius: "0 0 0.75rem 0",
               paddingBottom: "1rem",
-              borderColor: "#999",
-              borderStyle: "solid",
+              borderLeft: "0.5px solid #999",
               justifyContent: "flex-end"
             }}
               onClick={() => {

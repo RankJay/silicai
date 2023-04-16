@@ -87,6 +87,10 @@
   .signUpButton {
     width: 250px;
   }
+
+  .signUp {
+    bottom: 8%;
+  }
 }
 
 /* Tablet and Smaller Desktop */
