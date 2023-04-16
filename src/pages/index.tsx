@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "@/styles/index.module.css";
 import { useRouter } from "next/router";
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -96,7 +97,7 @@ export default function Home() {
         <div className={styles.indePageLandingSection}>
           <div className={styles.indexPageHeading}>SILIC</div>
           <div className={styles.indexPageSubHeading}>
-            Unleash Your Creativity with AI-Designed Tees!
+            Self-Generating Fashion Agent
           </div>
           <button
             type="submit"
@@ -110,6 +111,11 @@ export default function Home() {
           >
             Get Started
           </button>
+          {/* <Link href="/gallery" style={{
+            padding: "1rem",
+            fontSize: "1rem",
+            fontFamily: "HelveticcaRegular"
+          }}>Visit Gallery</Link> */}
         </div>
       </main>
     </>

@@ -10,7 +10,6 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<{ data: Suggestion[] }>
 ) {
-  setTimeout(() => {
     const resp: Suggestion[] = [
       { id: 1, text: "Texture" },
       { id: 2, text: "Color palette" },
@@ -33,5 +32,4 @@ export default function handler(
       { id: 19, text: "Randomization" },
     ];
     res.status(200).json({ data: resp });
-  }, 5000);
 }

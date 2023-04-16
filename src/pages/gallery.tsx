@@ -15,7 +15,7 @@ interface InventoryObjects {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
-    `${process.env.BE_URL}/api/inventory/`
+    `https://silicai-server-52dq.zeet-silicai.zeet.app/api/inventory/`
   );
   const data: InventoryObjects[] = await res.json();
 

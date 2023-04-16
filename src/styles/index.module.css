@@ -11,14 +11,14 @@
 }
 
 .indexPageHeading {
-  font-family: HelveticcaBold;
+  font-family: HelveticcaRegular;
   font-size: 10vw;
 }
 
 .indexPageSubHeading {
   font-family: HelveticcaRegular;
   font-size: 1.75vw;
-  max-width: 400px;
+  max-width: 500px;
   color: rgb(112, 112, 112);
 }
 
@@ -72,6 +72,9 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  #modelcanvas {
+    top: -5%
+  }
   .indexPageHeading {
     font-size: 5rem;
   }

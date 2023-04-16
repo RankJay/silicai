@@ -5,10 +5,13 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string;
 
 const store = proxy({
-  imageURI: "/assets/try.png",
+  imageURI: "/assets/default.jpg",
   isGenerating: false,
   loadingSpeed: 10,
-  isUserLoggedIn: false
+  isUserLoggedIn: false,
+  isModalOpen: false,
+  isSuggestionsModalOpen: false,
+  isAutoGPTModalOpen: false,
 });
 
 export const supabaseStore = createClient(supabaseUrl, supabaseAnonKey);
