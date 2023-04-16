@@ -15,7 +15,7 @@ interface Designs {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch(
-    "https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/inventory/"
+    `${process.env.BE_URL}/api/inventory/`
   );
   const data: InventoryObjects[] = await res.json();
 
@@ -31,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}: {params: any}) => {
-  const render = await fetch(`https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/user/inventory/get`, {
+  const render = await fetch(`${process.env.BE_URL}/api/user/inventory/get`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
@@ -50,10 +50,10 @@ export const getStaticProps = async ({params}: {params: any}) => {
 
 export default function Generated({ image }: {image: string}) {
   console.log(image);
+  store.imageURI = image;
   return (
     <>
         <div className={styles.designPageLandingSection}>
-          {store.imageURI = image}
           <ShirtModel />
         </div>
     </>

@@ -35,7 +35,7 @@ export default function PromptBar() {
 
     store.isGenerating = true;
   
-    const render = await fetch(`https://silicaiserver-wcw6.zeet-silicai.zeet.app/api/user/generate`, {
+    const render = await fetch(`${process.env.BE_URL}/api/user/generate`, {
       method: "POST",
       headers: {
         "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
