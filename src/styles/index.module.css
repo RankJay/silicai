@@ -63,6 +63,21 @@
   max-width: 200px;
   text-decoration: none;
   border: none;
+  background-color: black;
+  /* background: linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat; */
+  color: #fdfdfd;
+  border-radius: 0.45rem;
+  outline: none;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  animation: gradient 5s ease infinite
+}
+
+.signUpButton1 {
+  font-size: 1rem;
+  width: 35%;
+  max-width: 200px;
+  text-decoration: none;
+  border: none;
   /* background-color: black; */
   /* background: linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat; */
   color: #fdfdfd;

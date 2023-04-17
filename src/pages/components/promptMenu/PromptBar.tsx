@@ -12,20 +12,23 @@ export default function PromptBar() {
 
   const openSuggestions = () => {
     // const prompt
-  }
+  };
 
-  useEffect(() =>{
-    const buttomElement = document.getElementById('signUpButton') as HTMLButtonElement;
+  useEffect(() => {
+    const buttomElement = document.getElementById(
+      "signUpButton"
+    ) as HTMLButtonElement;
     if (isGenerating === true) {
       buttomElement.disabled = true;
       buttomElement.style.color = "#fff";
-      buttomElement.style.background = "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
+      buttomElement.style.background =
+        "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
       buttomElement.style.backgroundSize = "400% 400%";
       buttomElement.innerText = `Generating...`;
     } else if (isGenerating === false) {
       buttomElement.disabled = false;
       buttomElement.style.color = "#fdfdfd";
-      buttomElement.style.background = "#000"
+      buttomElement.style.background = "#000";
       buttomElement.innerText = "Generate";
     }
   }, [isGenerating]);
@@ -36,28 +39,23 @@ export default function PromptBar() {
     const promptValue = questionInput.value;
 
     store.isGenerating = true;
-  
-    const render = await fetch(`https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/generate`, {
-      method: "POST",
-      headers: {
-        "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
-        "Access-Control-Allow-Headers": "Content-Type,Authorization",
-        "Content-type": "application/json; charset=UTF-8",
-        "Access-Control-Allow-Origin": "*",
-      },
-      mode: "cors",
-      body: JSON.stringify({prompt: promptValue, email: user?.emailAddresses[0].emailAddress})
-    })
 
-    const resp = await render.json();
+    const render = await axios.post(
+      `https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/generate`,
+      { prompt: promptValue, email: user?.emailAddresses[0].emailAddress }
+    );
+
+    const resp = await render.data;
+    const imageURl = await resp.image;
+    console.log(imageURl);
     const response: {
       data:
         | WithImplicitCoercion<string>
-        | { [Symbol.toPrimitive](hint: 'string'): string };
-    } = await axios.get(resp.image, { responseType: 'arraybuffer' });
+        | { [Symbol.toPrimitive](hint: "string"): string };
+    } = await axios.get(imageURl, { responseType: "arraybuffer" });
 
-    const imageData = Buffer.from(response.data, 'binary');
-    store.imageURI = imageData.toString('base64');  // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
+    const imageData = Buffer.from(response.data, "binary");
+    store.imageURI = `data:image/png;base64,${imageData.toString('base64')}`; // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
     store.isGenerating = false;
     questionInput.value = "";
   };
