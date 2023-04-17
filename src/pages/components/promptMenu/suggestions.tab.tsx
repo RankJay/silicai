@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import styles from "../../styles/suggestions.module.css";
+import styles from "@/styles/suggestions.module.css";
 import { useSnapshot } from "valtio";
 import store from "@/store";
 

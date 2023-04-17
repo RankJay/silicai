@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import styles from "../../styles/prompttab.module.css";
+import styles from "@/styles/prompttab.module.css";
 import { useSnapshot } from "valtio";
 import store from "@/store";
+import Image from "next/image";
 
 interface Suggestion {
   id: number;
@@ -33,18 +34,51 @@ const PromptTab = () => {
     textbox.focus();
   };
 
+  const [showModal, setShowModal] = useState(false);
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      alert("Please select an image file.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+        setImageSrc(event.target?.result as string);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setImageSrc(null);
+  };
+
+  const handleSubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    store.imageURI = imageSrc as string;
+    setFormSubmitted(true);
+    store.isModalOpen = false;
+    handleCloseModal();
+  };
+
   return (
     <div className={styles.suggestionsModalSection}>
       <div
         className={styles.suggestionsFooter}
         onClick={() =>
           snap.isModalOpen
-            ? (store.isModalOpen = false, store.isSuggestionsModalOpen = false, store.isAutoGPTModalOpen = false)
+            ? (store.isModalOpen = false, store.isSuggestionsModalOpen = false, store.isFileUploadModalOpen = false, store.isAutoGPTModalOpen = false)
             : (store.isModalOpen = true)
         }
       >
         {snap.isModalOpen ? (
-          "Close"
+          <div style={{paddingBottom: "1rem"}}>Close</div>
         ) : (
           <div className={styles.promptTabs}>
             <div
@@ -66,6 +100,25 @@ const PromptTab = () => {
               }}
             >
               Suggestions
+            </div>
+            <div
+            style={{
+              width: "50%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              // backgroundColor: "#555",
+              borderRadius: "0 0 0.75rem 0",
+              paddingBottom: "1rem",
+              borderLeft: "0.5px solid #999",
+              justifyContent: "flex-end"
+            }}
+              onClick={() => {
+                // store.isModalOpen = true;
+                store.isFileUploadModalOpen = true;
+              }}
+            >
+              File Upload
             </div>
             <div
             style={{
@@ -175,6 +228,26 @@ const PromptTab = () => {
               </div> */}
               </form>
             </div>
+          )}
+          {snap.isFileUploadModalOpen && (
+            <div className={styles.modal}>
+            <div className={styles.modalContent}>
+              {imageSrc ? (
+                <Image src={imageSrc} width={200} height={200} alt="Uploaded Image" />
+              ) : (
+                <>
+                  <input type="file" onChange={handleFileUpload} />
+                  {/* <button onClick={handleCloseModal}>Close</button> */}
+                </>
+              )}
+              {imageSrc && (
+                <form onSubmit={handleSubmitForm} style={{justifyContent: "center", paddingTop: "10px"}}>
+                  <button type="submit" style={{marginRight: "10px", color: "white"}}>Submit</button>
+                  <button onClick={handleCloseModal} style={{marginLeft: "10px",  color: "white"}}>Cancel</button>
+                </form>
+              )}
+            </div>
+          </div>
           )}
         </div>
       )}

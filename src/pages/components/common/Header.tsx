@@ -2,7 +2,7 @@ import { UserButton, useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import styles from "../../styles/header.module.css";
+import styles from "@/styles/header.module.css";
 
 const Header: NextPage = () => {
   const { isSignedIn } = useAuth();

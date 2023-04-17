@@ -1,10 +1,8 @@
-import BetterShirtModel from "./components/BetterShirtModel";
-import FileUpload from "./components/FileUpload";
-import PromptBar from "./components/PromptBar";
+import BetterShirtModel from "./components/model/BetterShirtModel";
+import FileUpload from "./components/promptMenu/FileUpload";
+import PromptBar from "./components/promptMenu/PromptBar";
 import styles from "@/styles/new.module.css";
-import Suggestions from "./components/suggestions.tab";
-import AutoGPT from "./components/autogpt.tab";
-import PromptTab from "./components/PromptTab";
+import PromptTab from "./components/promptMenu/PromptTab";
 
 export default function New() {
   return (

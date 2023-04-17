@@ -13,8 +13,8 @@ import {
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { easing } from "maath";
 import { useSnapshot } from "valtio";
-import store from "../../store";
-import styles from "../../styles/index.module.css";
+import store from "@/store";
+import styles from "@/styles/index.module.css";
 import * as THREE from "three";
 
 

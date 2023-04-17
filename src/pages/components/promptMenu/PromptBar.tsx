@@ -1,5 +1,5 @@
 import { useSnapshot } from "valtio/react";
-import styles from "../../styles/index.module.css";
+import styles from "@/styles/index.module.css";
 import store from "@/store";
 import { useEffect } from "react";
 import { useUser } from "@clerk/nextjs";

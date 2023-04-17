@@ -5,7 +5,7 @@ import { supabaseStore } from "@/store";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Loader from "./components/Loader";
+import Loader from "@/pages/components/common/Loader";
 
 interface InventoryObjects {
   image_id: string;

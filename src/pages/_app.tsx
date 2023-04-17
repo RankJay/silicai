@@ -10,7 +10,7 @@ import { useRouter } from "next/router";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
-import Header from "./components/Header";
+import Header from "./components/common/Header";
 
 const publicPages = ["/sign-in/[[...index]]", "/sign-up/[[...index]]", "/", "/gallery"];
 
