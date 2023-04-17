@@ -3,6 +3,7 @@ import styles from "@/styles/index.module.css";
 import store from "@/store";
 import { useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
+import axios from "axios";
 
 export default function PromptBar() {
   const snap = useSnapshot(store);
@@ -17,13 +18,14 @@ export default function PromptBar() {
     const buttomElement = document.getElementById('signUpButton') as HTMLButtonElement;
     if (isGenerating === true) {
       buttomElement.disabled = true;
-      buttomElement.style.color = "#888";
-      buttomElement.style.background = "#ccc";
+      buttomElement.style.color = "#fff";
+      buttomElement.style.background = "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
+      buttomElement.style.backgroundSize = "400% 400%";
       buttomElement.innerText = `Generating...`;
     } else if (isGenerating === false) {
       buttomElement.disabled = false;
       buttomElement.style.color = "#fdfdfd";
-      buttomElement.style.background = "linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat";
+      buttomElement.style.background = "#000"
       buttomElement.innerText = "Generate";
     }
   }, [isGenerating]);
@@ -47,7 +49,15 @@ export default function PromptBar() {
       body: JSON.stringify({prompt: promptValue, email: user?.emailAddresses[0].emailAddress})
     })
 
-    store.imageURI = await render.text()  // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
+    const resp = await render.json();
+    const response: {
+      data:
+        | WithImplicitCoercion<string>
+        | { [Symbol.toPrimitive](hint: 'string'): string };
+    } = await axios.get(resp.image, { responseType: 'arraybuffer' });
+
+    const imageData = Buffer.from(response.data, 'binary');
+    store.imageURI = imageData.toString('base64');  // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
     store.isGenerating = false;
     questionInput.value = "";
   };

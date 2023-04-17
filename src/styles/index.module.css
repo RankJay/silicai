@@ -63,11 +63,13 @@
   max-width: 200px;
   text-decoration: none;
   border: none;
-  background-color: black;
+  /* background-color: black; */
   /* background: linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat; */
   color: #fdfdfd;
   border-radius: 0.45rem;
   outline: none;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  animation: gradient 5s ease infinite
 }
 
 /* Mobile */
@@ -95,4 +97,16 @@
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
