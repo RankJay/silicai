@@ -108,17 +108,19 @@ const PromptTab = () => {
               display: "flex",
               flexDirection: "column",
               // backgroundColor: "#555",
-              borderRadius: "0 0 0.75rem 0",
+              borderRadius: "0 0 0 0",
               paddingBottom: "1rem",
               borderLeft: "0.5px solid #999",
-              justifyContent: "flex-end"
+              borderRight: "0.5px solid #999",
+              justifyContent: "flex-end",
+              alignItems: "center",
             }}
               onClick={() => {
                 // store.isModalOpen = true;
                 store.isFileUploadModalOpen = true;
               }}
             >
-              File Upload
+              <Image width={24} height={24} src={"/assets/upload-image.png"} alt={""} style={{marginBottom: "-0.15rem"}} />
             </div>
             <div
             style={{
