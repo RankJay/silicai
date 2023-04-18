@@ -49,7 +49,7 @@ const PromptTab = () => {
 
     const reader = new FileReader();
     reader.onload = (event) => {
-        setImageSrc(event.target?.result as string);
+      setImageSrc(event.target?.result as string);
     };
     reader.readAsDataURL(file);
   };
@@ -73,27 +73,29 @@ const PromptTab = () => {
         className={styles.suggestionsFooter}
         onClick={() =>
           snap.isModalOpen
-            ? (store.isModalOpen = false, store.isSuggestionsModalOpen = false, store.isFileUploadModalOpen = false, store.isAutoGPTModalOpen = false)
+            ? ((store.isModalOpen = false),
+              (store.isSuggestionsModalOpen = false),
+              (store.isFileUploadModalOpen = false),
+              (store.isAutoGPTModalOpen = false))
             : (store.isModalOpen = true)
         }
       >
         {snap.isModalOpen ? (
-          <div style={{paddingBottom: "1rem"}}>Close</div>
+          <div style={{ paddingBottom: "1rem" }}>Close</div>
         ) : (
           <div className={styles.promptTabs}>
             <div
-            style={{
-              width: "50%",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              // backgroundColor: "#555",
-              borderRadius: "0 0 0 0.75rem",
-              paddingBottom: "1rem",
-              borderRight: "0.5px solid #999",
-              justifyContent: "flex-end",
-
-            }}
+              style={{
+                width: "50%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                // backgroundColor: "#555",
+                borderRadius: "0 0 0 0.75rem",
+                paddingBottom: "1rem",
+                borderRight: "0.5px solid #999",
+                justifyContent: "flex-end",
+              }}
               onClick={() => {
                 store.isModalOpen = true;
                 store.isSuggestionsModalOpen = true;
@@ -102,44 +104,50 @@ const PromptTab = () => {
               Suggestions
             </div>
             <div
-            style={{
-              width: "50%",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              // backgroundColor: "#555",
-              borderRadius: "0 0 0 0",
-              paddingBottom: "1rem",
-              borderLeft: "0.5px solid #999",
-              borderRight: "0.5px solid #999",
-              justifyContent: "flex-end",
-              alignItems: "center",
-            }}
+              style={{
+                width: "20%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                // backgroundColor: "#555",
+                borderRadius: "0 0 0 0",
+                paddingBottom: "1rem",
+                borderLeft: "0.5px solid #999",
+                borderRight: "0.5px solid #999",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
               onClick={() => {
                 // store.isModalOpen = true;
                 store.isFileUploadModalOpen = true;
               }}
             >
-              <Image width={24} height={24} src={"/assets/upload-image.png"} alt={""} style={{marginBottom: "-0.15rem"}} />
+              <Image
+                width={24}
+                height={24}
+                src={"/assets/upload-image.png"}
+                alt={""}
+                style={{ marginBottom: "-0.15rem" }}
+              />
             </div>
             <div
-            style={{
-              width: "50%",
-              height: "100%",
-              display: "flex",
-              flexDirection: "column",
-              // backgroundColor: "#555",
-              borderRadius: "0 0 0.75rem 0",
-              paddingBottom: "1rem",
-              borderLeft: "0.5px solid #999",
-              justifyContent: "flex-end"
-            }}
+              style={{
+                width: "50%",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                // backgroundColor: "#555",
+                borderRadius: "0 0 0.75rem 0",
+                paddingBottom: "1rem",
+                borderLeft: "0.5px solid #999",
+                justifyContent: "flex-end",
+              }}
               onClick={() => {
                 store.isModalOpen = true;
                 store.isAutoGPTModalOpen = true;
               }}
             >
-              Auto Design Agent
+              Design Agent
             </div>
           </div>
         )}
@@ -233,23 +241,55 @@ const PromptTab = () => {
           )}
           {snap.isFileUploadModalOpen && (
             <div className={styles.modal}>
-            <div className={styles.modalContent}>
-              {imageSrc ? (
-                <Image src={imageSrc} width={200} height={200} alt="Uploaded Image" />
-              ) : (
-                <>
-                  <input type="file" onChange={handleFileUpload} />
-                  {/* <button onClick={handleCloseModal}>Close</button> */}
-                </>
-              )}
-              {imageSrc && (
-                <form onSubmit={handleSubmitForm} style={{justifyContent: "center", paddingTop: "10px"}}>
-                  <button type="submit" style={{marginRight: "10px", color: "white"}}>Submit</button>
-                  <button onClick={handleCloseModal} style={{marginLeft: "10px",  color: "white"}}>Cancel</button>
-                </form>
-              )}
+              <div className={styles.modalContent}>
+                {imageSrc ? (
+                  <Image
+                    src={imageSrc}
+                    width={180}
+                    height={180}
+                    alt="Uploaded Image"
+                  />
+                ) : (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      height: "100%",
+                      alignItems: "flex-start",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <div>
+                    <div style={{fontFamily: "HelveticcaBold", textAlign: "start", fontSize: "2rem"}}>Upload Image</div>
+                    <div style={{ fontFamily: "HelveticcaRegular", textAlign: "start", color: "#999", marginTop: "1rem" }}>
+                      Upload your midjourney prompts or any image of your choice
+                    </div>
+                    </div>
+                    <input type="file" onChange={handleFileUpload} />
+                    {/* <button onClick={handleCloseModal}>Close</button> */}
+                  </div>
+                )}
+                {imageSrc && (
+                  <form
+                    onSubmit={handleSubmitForm}
+                    style={{ height: "auto", justifyContent: "center", paddingTop: "10px" }}
+                  >
+                    <button
+                      type="submit"
+                      style={{ marginRight: "10px", color: "white", backgroundColor: "transparent" }}
+                    >
+                      Submit
+                    </button>
+                    <button
+                      onClick={handleCloseModal}
+                      style={{ marginLeft: "10px", color: "white", backgroundColor: "transparent" }}
+                    >
+                      Cancel
+                    </button>
+                  </form>
+                )}
+              </div>
             </div>
-          </div>
           )}
         </div>
       )}
