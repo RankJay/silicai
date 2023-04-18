@@ -23,6 +23,8 @@ export default function PromptBar() {
       buttomElement.style.color = "#fff";
       buttomElement.style.background =
         "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
+        buttomElement.style.webkitAnimation =
+        "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
       buttomElement.style.backgroundSize = "400% 400%";
       buttomElement.innerText = `Generating...`;
     } else if (isGenerating === false) {
