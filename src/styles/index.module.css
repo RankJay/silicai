@@ -69,7 +69,9 @@
   border-radius: 0.45rem;
   outline: none;
   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-  animation: gradient 5s ease infinite
+  animation: gradient 5s ease infinite;
+  -webkit-animation: gradient 5s ease infinite;
+  -moz-animation: gradient 5s ease infinite;
 }
 
 .signUpButton1 {
@@ -110,20 +112,33 @@
   }
 }
 
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+.customFileInput::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.customFileInput::before {
+  content: 'Select some files';
+  display: inline-block;
+  background: linear-gradient(to top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.customFileInput:hover::before {
+  border-color: black;
+}
+.customFileInput:active::before {
+  background: -webkit-linear-gradient(to top, #e3e3e3, #f9f9f9);
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
 }
 
 @-webkit-keyframes gradient {
@@ -135,5 +150,17 @@
 	}
 	100% {
 		-webkit-background-position: 0% 50%;
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
 	}
 }

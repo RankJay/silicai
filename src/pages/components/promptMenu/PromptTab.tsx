@@ -265,7 +265,7 @@ const PromptTab = () => {
                       Upload your midjourney prompts or any image of your choice
                     </div>
                     </div>
-                    <input type="file" onChange={handleFileUpload} />
+                    <input style={{fontSize: "1.25rem"}} type="file" onChange={handleFileUpload} id={styles.customFileInput} name="file-upload" className={styles.customFileInput} />
                     {/* <button onClick={handleCloseModal}>Close</button> */}
                   </div>
                 )}
