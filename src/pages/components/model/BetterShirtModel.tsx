@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
   useGLTF,
@@ -16,6 +16,7 @@ import { useSnapshot } from "valtio";
 import store from "@/store";
 import styles from "@/styles/index.module.css";
 import * as THREE from "three";
+import Loader from "../common/Loader";
 
 
 interface AppProps {
@@ -32,6 +33,7 @@ const BetterShirtModel = ({
 }) => {
   const snap = useSnapshot(store);
   return (
+    <Suspense fallback={<><div>Loading 3D Model...</div></>}>
     <Canvas
     id={styles.modelcanvas}
       shadows
@@ -58,6 +60,7 @@ const BetterShirtModel = ({
       {/* </Center> */}
       {/* </CameraRig> */}
     </Canvas>
+    </Suspense>
   );
 };
 
