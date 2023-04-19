@@ -13,6 +13,8 @@ const store = proxy({
   isSuggestionsModalOpen: false,
   isAutoGPTModalOpen: false,
   isFileUploadModalOpen: false,
+  isLiked: false,
+  isDisliked: false,
 });
 
 export const supabaseStore = createClient(supabaseUrl, supabaseAnonKey);

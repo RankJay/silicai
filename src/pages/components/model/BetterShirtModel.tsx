@@ -39,7 +39,6 @@ const BetterShirtModel = ({
       shadows
       camera={{ position, fov }}
       gl={{ preserveDrawingBuffer: true }}
-      eventSource={document.getElementById("dd") as HTMLElement}
       eventPrefix="layer"
       // style={{
       //   zIndex: "1"
