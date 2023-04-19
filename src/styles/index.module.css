@@ -10,6 +10,95 @@
   height: 100vh;
 }
 
+.indexPageOfferingSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border-radius: 50px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* backdrop-filter: blur(10px); */
+  height: 100vh;
+}
+
+.OfferingHeading {
+  font-family: HelveticcaRegular;
+  font-size: 2.5vw;
+  /* letter-spacing: -0.1rem; */
+}
+
+.Offerings {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+.Offering {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.105);
+  min-width: 10rem;
+  width: 25rem;
+  min-height: 5rem;
+  height: auto;
+  border-radius: 2rem;
+  /* width: 100%; */
+  /* flex-wrap: wrap; */
+}
+
+
+.indexPageHowSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 2rem;
+  flex-wrap: wrap;
+  /* border-radius: 50px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* backdrop-filter: blur(10px); */
+  height: 100vh;
+}
+
+.HowHeading {
+  font-family: HelveticcaRegular;
+  font-size: 5vw;
+  min-width: 200px;
+  width: 50%;
+  align-items: center;
+  text-align: center;
+  /* letter-spacing: -0.1rem; */
+}
+
+.HowSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  width: 50%;
+  height: auto;
+}
+
+.indexPageFAQSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border-radius: 50px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* backdrop-filter: blur(10px); */
+  height: 100vh;
+}
+
 .indexPageHeading {
   font-family: HelveticcaRegular;
   font-size: 10vw;
@@ -133,6 +222,19 @@
 
   .banner {
     font-size: 0.85rem;
+  }
+
+  .OfferingHeading {
+    font-size: 3.5rem;
+  }
+
+  .HowHeading {
+    font-size: 3.5rem;
+    width: 100%;
+  }
+
+  .HowSection {
+    width: 100%;
   }
 }
 

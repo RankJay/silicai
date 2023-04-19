@@ -86,17 +86,24 @@ export default function Home() {
         <link rel="apple-touch-icon" href="" />
       </Head>
       <main>
-        <video ref={videoRef} src="valo.mp4" width="250" loop muted style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: "-10",
-        }}></video>
+        <video
+          ref={videoRef}
+          src="valo.mp4"
+          width="250"
+          loop
+          muted
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: "-10",
+          }}
+        ></video>
         <div className={styles.indePageLandingSection}>
-        <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" />
+          <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" />
           <div className={styles.indexPageHeading}>SILIC</div>
           <div className={styles.indexPageSubHeading}>
             Self-Generating Fashion Agent
@@ -118,6 +125,28 @@ export default function Home() {
             fontSize: "1rem",
             fontFamily: "HelveticcaRegular"
           }}>Visit Gallery</Link> */}
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.OfferingHeading}>Offerings</div>
+          <div className={styles.Offerings}>
+            <div className={styles.Offering}></div>
+            <div className={styles.Offering}></div>
+            <div className={styles.Offering}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageHowSection}>
+          <div className={styles.HowHeading}>How it works?</div>
+          <div className={styles.HowSection}>
+            <ul>
+              <li>Prompt-to-Design UI</li>
+              <li>Earn Rewards & Royalties</li>
+              <li>On-demand Manufacturing & Shipping</li>
+              <li>Quality of clothing/fabric</li>
+            </ul>
+          </div>
+        </div>
+        <div className={styles.indexPageFAQSection}>
+          <div className={styles.OfferingHeading}>FAQs</div>
         </div>
       </main>
     </>
