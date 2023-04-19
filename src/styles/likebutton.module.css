@@ -4,9 +4,9 @@
   width: 100%;
   max-width: 700px;
   height: 25%;
-  max-height: 200px;
+  max-height: 150px;
   align-items: flex-end;
-  justify-content: space-around;
+  justify-content: space-evenly;
   position: fixed;
   z-index: 9;
   bottom: 25%;
@@ -81,7 +81,7 @@
 /* Mobile */
 @media (max-width: 700px) {
   .container {
-    bottom: 30%;
+    bottom: 20%;
     padding-right: 1rem;
   }
 }

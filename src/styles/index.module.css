@@ -86,13 +86,33 @@
   border-radius: 0.45rem;
   outline: none;
   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-  animation: gradient 5s ease infinite
+  animation: gradient 5s ease infinite;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  /* position: fixed; */
+  width: 100%;
+  max-width: fit-content;
+  top: 20%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 10px rgba(150, 150, 150, 0.5);
+  color: #fff;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid #888;
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   #modelcanvas {
-    top: -5%
+    top: -5%;
   }
   .indexPageHeading {
     font-size: 5rem;
@@ -110,13 +130,17 @@
   .signUp {
     bottom: 8%;
   }
+
+  .banner {
+    font-size: 0.85rem;
+  }
 }
 
 .customFileInput::-webkit-file-upload-button {
   visibility: hidden;
 }
 .customFileInput::before {
-  content: 'Select some files';
+  content: "Select some files";
   display: inline-block;
   background: linear-gradient(to top, #f9f9f9, #e3e3e3);
   border: 1px solid #999;
@@ -142,25 +166,25 @@
 }
 
 @-webkit-keyframes gradient {
-	0% {
-		-webkit-background-position: 0% 50%;
-	}
-	50% {
-		-webkit-background-position: 100% 50%;
-	}
-	100% {
-		-webkit-background-position: 0% 50%;
-	}
+  0% {
+    -webkit-background-position: 0% 50%;
+  }
+  50% {
+    -webkit-background-position: 100% 50%;
+  }
+  100% {
+    -webkit-background-position: 0% 50%;
+  }
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

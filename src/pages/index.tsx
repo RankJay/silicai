@@ -3,6 +3,7 @@ import styles from "@/styles/index.module.css";
 import { useRouter } from "next/router";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import Banner from "./components/common/Banner";
 
 export default function Home() {
   const router = useRouter();
@@ -95,6 +96,7 @@ export default function Home() {
           zIndex: "-10",
         }}></video>
         <div className={styles.indePageLandingSection}>
+        <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" />
           <div className={styles.indexPageHeading}>SILIC</div>
           <div className={styles.indexPageSubHeading}>
             Self-Generating Fashion Agent
