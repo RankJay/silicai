@@ -1,7 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
+  align-self: flex-end;
   max-width: 700px;
   height: 25%;
   max-height: 150px;
@@ -9,6 +10,7 @@
   justify-content: space-evenly;
   position: fixed;
   z-index: 9;
+  right: calc(100vw/2 - 350px);
   bottom: 25%;
   /* padding-left: 5rem; */
 }
@@ -82,6 +84,7 @@
 @media (max-width: 700px) {
   .container {
     bottom: 20%;
+    right: 2%;
     padding-right: 1rem;
   }
 }

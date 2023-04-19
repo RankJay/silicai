@@ -126,23 +126,40 @@ export default function Home() {
             fontFamily: "HelveticcaRegular"
           }}>Visit Gallery</Link> */}
         </div>
-        <div className={styles.indexPageOfferingSection}>
-          <div className={styles.OfferingHeading}>Offerings</div>
-          <div className={styles.Offerings}>
-            <div className={styles.Offering}></div>
-            <div className={styles.Offering}></div>
-            <div className={styles.Offering}></div>
-          </div>
-        </div>
         <div className={styles.indexPageHowSection}>
-          <div className={styles.HowHeading}>How it works?</div>
           <div className={styles.HowSection}>
+            <div className={styles.HowHeading}>How it works?</div>
             <ul>
               <li>Prompt-to-Design UI</li>
               <li>Earn Rewards & Royalties</li>
               <li>On-demand Manufacturing & Shipping</li>
               <li>Quality of clothing/fabric</li>
             </ul>
+          </div>
+          <div className={styles.SectionAttachment}>d</div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering}>
+            <div className={styles.OfferingHeading}>Prompt-to-Design UI</div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering} style={{flexDirection: "row-reverse"}}>
+            <div className={styles.OfferingHeading}>Earn Rewards & Royalties</div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering}>
+            <div className={styles.OfferingHeading}>On-demand Manufacturing</div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering} style={{flexDirection: "row-reverse"}}>
+            <div className={styles.OfferingHeading}>Quality of Fabric</div>
+            <div className={styles.SectionOfferingAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageFAQSection}>

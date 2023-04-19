@@ -75,6 +75,16 @@ form {
   justify-content: space-between;
 }
 
+ul {
+  /* list-style-type: none; */
+  padding-left: 2rem;
+}
+
+li {
+  padding: 0.25rem;
+  font-size: 1.2rem;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   max-height: 1px;

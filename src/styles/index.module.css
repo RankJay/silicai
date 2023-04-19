@@ -12,42 +12,37 @@
 
 .indexPageOfferingSection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 2rem;
   /* border-radius: 50px; */
   /* background-color: rgb(255, 0, 0); */
   /* backdrop-filter: blur(10px); */
-  height: 100vh;
+  height: 50vh;
 }
 
 .OfferingHeading {
+  width: 50%;
   font-family: HelveticcaRegular;
   font-size: 2.5vw;
+  text-align: center;
   /* letter-spacing: -0.1rem; */
-}
-
-.Offerings {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: auto;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-evenly;
-  padding: 2rem;
 }
 
 .Offering {
   display: flex;
-  flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.105);
-  min-width: 10rem;
-  width: 25rem;
-  min-height: 5rem;
-  height: auto;
-  border-radius: 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 75%;
+  height: 100%;
+  background-color: rgba(139, 139, 139, 0.31);
+  border-radius: 2.5rem;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
   /* width: 100%; */
   /* flex-wrap: wrap; */
 }
@@ -71,16 +66,40 @@
   font-family: HelveticcaRegular;
   font-size: 5vw;
   min-width: 200px;
-  width: 50%;
+  width: 100%;
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   /* letter-spacing: -0.1rem; */
+}
+
+.SectionOfferingAttachment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 200px;
+  width: 40%;
+  background-color: black;
+  border-radius: 2rem;
+  height: 100%;
+}
+
+.SectionAttachment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 200px;
+  width: 40%;
+  background-color: black;
+  border-radius: 2rem;
+  height: 65%;
 }
 
 .HowSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   min-width: 200px;
   width: 50%;
@@ -235,6 +254,34 @@
 
   .HowSection {
     width: 100%;
+  }
+
+  .SectionAttachment {
+    width: 100%;
+  }
+
+  .OfferingHeading {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .indexPageOfferingSection {
+    height: 75vh;
+  }
+
+  .Offering {
+    width: 100%;
+    height: 100%;
+  }
+
+  .SectionAttachment {
+    width: 100%;
+  }
+
+  .SectionOfferingAttachment {
+    width: 100%;
+    height: 75%;
+    align-self: flex-end;
   }
 }
 
