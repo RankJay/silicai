@@ -282,13 +282,13 @@ const PromptTab = () => {
                       display: "flex",
                       flexDirection: "column",
                       height: "100%",
-                      alignItems: "flex-start",
+                      alignItems: "center",
                       justifyContent: "space-between",
                     }}
                   >
                     <div>
-                    <div style={{fontFamily: "HelveticcaBold", textAlign: "start", fontSize: "2rem"}}>Upload Image</div>
-                    <div style={{ fontFamily: "HelveticcaRegular", textAlign: "start", color: "#999", marginTop: "1rem" }}>
+                    <div style={{fontFamily: "HelveticcaBold", textAlign: "center", fontSize: "2rem"}}>Upload Image</div>
+                    <div style={{ fontFamily: "HelveticcaRegular", textAlign: "center", color: "#999", marginTop: "1rem" }}>
                       Upload your midjourney prompts or any image of your choice
                     </div>
                     </div>

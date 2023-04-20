@@ -53,72 +53,15 @@ const BetterShirtModel = ({
       <Environment preset="city"  />
       {/* <CameraRig> */}
       {/* <Backdrop /> */}
-      {/* <Center> */}
+      <Center>
       <OrbitControls autoRotate={true} autoRotateSpeed={snap.loadingSpeed} />
       <Shirt />
-      {/* </Center> */}
+      </Center>
       {/* </CameraRig> */}
     </Canvas>
     </Suspense>
   );
 };
-
-function Backdrop(): JSX.Element {
-  const shadows = useRef<any>(null);
-  useFrame((store, delta) =>
-    easing.dampC(shadows.current?.getMesh().material.color, 2, 0.25, delta)
-  );
-  return (
-    <AccumulativeShadows
-      ref={shadows}
-      temporal
-      frames={60}
-      alphaTest={0.85}
-      scale={10}
-      rotation={[Math.PI / 2, 0, 0]}
-      position={[0, 0, -0.14]}
-    >
-      <RandomizedLight
-        amount={4}
-        radius={9}
-        intensity={0.55}
-        ambient={0.25}
-        position={[5, 5, -10]}
-      />
-      <RandomizedLight
-        amount={4}
-        radius={5}
-        intensity={0.25}
-        ambient={0.55}
-        position={[-5, 5, -9]}
-      />
-    </AccumulativeShadows>
-  );
-}
-
-interface CameraRigProps {
-  children: JSX.Element[];
-}
-
-function CameraRig({ children }: CameraRigProps): JSX.Element {
-  const group = useRef<THREE.Group>(new THREE.Group());
-  const snap = useSnapshot(store);
-  useFrame((store, delta) => {
-    easing.damp3(
-      store.camera.position,
-      [false ? -store.viewport.width / 4 : 0, 0, 2],
-      0.25,
-      delta
-    );
-    easing.dampE(
-      group.current.rotation,
-      [store.pointer.y / 10, -store.pointer.x / 5, 0],
-      0.25,
-      delta
-    );
-  });
-  return <group ref={group}>{children}</group>;
-}
 
 interface ShirtProps {
   [propName: string]: any;
@@ -149,6 +92,8 @@ function Shirt(props: ShirtProps): JSX.Element {
       store.loadingSpeed = 20;
     }
   });
+
+  // console.log((nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getX(1), (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getY(1), (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getZ(1));
   return (
     <mesh
       castShadow
@@ -159,13 +104,13 @@ function Shirt(props: ShirtProps): JSX.Element {
       dispose={null}
       scale={0.8}
     >
-      {/* <Decal
+      <Decal
         position={[0, 0.04, 0.15]}
         rotation={[0, 0, 0]}
         scale={1}
-        // map={texture}
+        map={texture}
         // map-anisotropy={16}
-      /> */}
+      />
     </mesh>
   );
 }
