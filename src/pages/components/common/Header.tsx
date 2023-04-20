@@ -5,8 +5,9 @@ import { useRouter } from "next/router";
 import styles from "@/styles/header.module.css";
 
 const Header: NextPage = () => {
-  const { isSignedIn } = useAuth();
+  const { isSignedIn, userId } = useAuth();
   const router = useRouter();
+  const userClosetURL = `/closet/${userId}`
   
   const handleImagineClick = () => {
     if (router) {
@@ -19,7 +20,7 @@ const Header: NextPage = () => {
   return (
     <div className={styles.headerContainer} id="headerContainer">
       <div className={styles.header}>
-        <div className={styles.headerChild}><Link href="/gallery">Closet</Link></div>
+        <div className={styles.headerChild}><Link href={userClosetURL}>Closet</Link></div>
         <div className={styles.headerChild} style={{fontSize: "30px", cursor: "pointer"}} onClick={() => router.push("/")}>SILIC</div>
         {/* <div className={styles.link}> */}
           {/* <Link href="/gallery">Gallery</Link> */}

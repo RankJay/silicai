@@ -9,7 +9,7 @@ const LikeButton = () => {
     <div className={styles.container}>
       <button
         className={styles.likeButton}
-        onClick={() => (store.isLiked = snap.isLiked ? false : true)}
+        onClick={() => {store.isLiked = snap.isLiked ? false : true; store.isDisliked = false}}
       >
         <svg
           version="1.0"
@@ -42,7 +42,7 @@ const LikeButton = () => {
       <button
         style={{ transform: "rotate(180deg)" }}
         className={styles.likeButton}
-        onClick={() => (store.isDisliked = snap.isDisliked ? false : true)}
+        onClick={() => {store.isDisliked = snap.isDisliked ? false : true; store.isLiked = false}}
       >
         <svg
           version="1.0"
