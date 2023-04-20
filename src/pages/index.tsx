@@ -108,6 +108,12 @@ export default function Home() {
           <div className={styles.indexPageSubHeading}>
             Self-Generating Fashion Agent
           </div>
+          <div className={styles.indexPageSubHeading}>
+            +
+          </div>
+          <div className={styles.indexPageSubHeading}>
+            Manufactured on-demand
+          </div>
           <button
             type="submit"
             className={styles.signUpButton}
