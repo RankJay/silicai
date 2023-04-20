@@ -103,7 +103,7 @@ export default function Home() {
           }}
         ></video>
         <div className={styles.indePageLandingSection}>
-          <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" />
+          {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
           <div className={styles.indexPageHeading}>SILIC</div>
           <div className={styles.indexPageSubHeading}>
             Self-Generating Fashion Agent

@@ -11,15 +11,20 @@ import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useState } from "react";
 import Header from "./components/common/Header";
+import { Analytics } from "@vercel/analytics/react";
 
-const publicPages = ["/sign-in/[[...index]]", "/sign-up/[[...index]]", "/", "/gallery"];
+const publicPages = [
+  "/sign-in/[[...index]]",
+  "/sign-up/[[...index]]",
+  "/",
+  "/gallery",
+];
 
 export default function App({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
   const isPublicPage = publicPages.includes(pathname);
 
-  const [supabase] = useState(() => createBrowserSupabaseClient())
-
+  const [supabase] = useState(() => createBrowserSupabaseClient());
 
   return (
     <ClerkProvider {...pageProps}>
@@ -29,8 +34,11 @@ export default function App({ Component, pageProps }: AppProps) {
       ) : (
         <>
           <SignedIn>
-          <SessionContextProvider supabaseClient={supabase} initialSession={pageProps.initialSession}>
-            <Component {...pageProps} />
+            <SessionContextProvider
+              supabaseClient={supabase}
+              initialSession={pageProps.initialSession}
+            >
+              <Component {...pageProps} />
             </SessionContextProvider>
           </SignedIn>
           <SignedOut>
@@ -38,6 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
           </SignedOut>
         </>
       )}
+      <Analytics />
     </ClerkProvider>
   );
 }

@@ -20,7 +20,7 @@ const Header: NextPage = () => {
     <div className={styles.headerContainer}>
       <div className={styles.header}>
         <div className={styles.headerChild}></div>
-        <div className={styles.headerChild} style={{fontSize: "30px"}}>SILIC</div>
+        <div className={styles.headerChild} style={{fontSize: "30px", cursor: "pointer"}} onClick={() => router.push("/")}>SILIC</div>
         {/* <div className={styles.link}> */}
           {/* <Link href="/gallery">Gallery</Link> */}
         {/* </div> */}
