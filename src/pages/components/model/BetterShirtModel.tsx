@@ -128,9 +128,10 @@ function Shirt(props: ShirtProps): JSX.Element {
   const snap = useSnapshot(store);
   const isLoading = snap.isGenerating;
   const texture = useTexture(snap.imageURI);
-  // texture.wrapS = THREE.MirroredRepeatWrapping;
-  // texture.wrapT = THREE.MirroredRepeatWrapping;
-  // texture.repeat.set(2, 2);
+  texture.wrapS = THREE.MirroredRepeatWrapping;
+  texture.wrapT = THREE.MirroredRepeatWrapping;
+  texture.magFilter = THREE.NearestFilter;
+  texture.repeat.set(2, 2);
   // texture.offset.set(-0.5, -0.5);
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
   (materials.lambert1 as THREE.MeshStandardMaterial).map = texture;

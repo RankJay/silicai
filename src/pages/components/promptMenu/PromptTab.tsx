@@ -80,7 +80,7 @@ const PromptTab = () => {
             : (store.isModalOpen = true)
         }
       >
-        {snap.isModalOpen ? (
+        {snap.isModalOpen && !snap.isGenerating ? (
           <div style={{ paddingBottom: "1rem" }}>Close</div>
         ) : (
           <div className={styles.promptTabs}>
@@ -101,7 +101,7 @@ const PromptTab = () => {
                 store.isSuggestionsModalOpen = true;
               }}
             >
-              Suggestions
+              Prompts
             </div>
             <div
               style={{
@@ -147,7 +147,7 @@ const PromptTab = () => {
                 store.isAutoGPTModalOpen = true;
               }}
             >
-              Design Agent
+              Auto Agent
             </div>
           </div>
         )}
