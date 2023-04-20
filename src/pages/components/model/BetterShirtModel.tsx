@@ -50,7 +50,7 @@ const BetterShirtModel = ({
       // }}
     >
       <ambientLight intensity={0.5} />
-      <Environment preset="apartment"  />
+      <Environment preset="city"  />
       {/* <CameraRig> */}
       {/* <Backdrop /> */}
       {/* <Center> */}
