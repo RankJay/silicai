@@ -11,6 +11,7 @@
   padding: 1rem;
   z-index: 11;
   background-color: transparent;
+  transition: top 0.5s;
 }
 
 .header {

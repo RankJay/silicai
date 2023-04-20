@@ -17,7 +17,7 @@ const Header: NextPage = () => {
   const loggedInContent = isSignedIn ? <div className={styles.headerChild} style={{alignItems: "flex-end"}}><UserButton /></div> : null;
 
   return (
-    <div className={styles.headerContainer}>
+    <div className={styles.headerContainer} id="headerContainer">
       <div className={styles.header}>
         <div className={styles.headerChild}></div>
         <div className={styles.headerChild} style={{fontSize: "30px", cursor: "pointer"}} onClick={() => router.push("/")}>SILIC</div>

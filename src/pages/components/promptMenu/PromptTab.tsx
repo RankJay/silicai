@@ -156,20 +156,21 @@ const PromptTab = () => {
         <div className={styles.suggestionsModal}>
           {/* <div className={styles.suggestionsModalHeading}>Suggestions</div> */}
           {loading && (
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                color: "white",
-                fontSize: "1.25rem",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              Loading...
-            </div>
+            <></>
+            // <div
+            //   style={{
+            //     width: "100%",
+            //     // height: "100%",
+            //     display: "flex",
+            //     flexDirection: "column",
+            //     color: "white",
+            //     fontSize: "1.25rem",
+            //     justifyContent: "center",
+            //     alignItems: "center",
+            //   }}
+            // >
+            //   Loading...
+            // </div>
           )}
           {snap.isSuggestionsModalOpen && suggestions && !snap.isGenerating && (
             <div className={styles.suggestionsContainer}>

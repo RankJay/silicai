@@ -50,7 +50,7 @@ const BetterShirtModel = ({
       // }}
     >
       <ambientLight intensity={0.5} />
-      <Environment preset="city" />
+      <Environment preset="apartment"  />
       {/* <CameraRig> */}
       {/* <Backdrop /> */}
       {/* <Center> */}
@@ -133,11 +133,13 @@ function Shirt(props: ShirtProps): JSX.Element {
   // texture.repeat.set(2, 2);
   // texture.offset.set(-0.5, -0.5);
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
+  (materials.lambert1 as THREE.MeshStandardMaterial).map = texture;
   useFrame((store, delta) =>{
-    easing.dampC((materials.lambert1 as THREE.MeshStandardMaterial).color, 'black', 0.25, delta)
+    // easing.dampC((materials.lambert1 as THREE.MeshStandardMaterial).color, 'black', 0.25, delta)
 });
 
   useEffect(() => {
+    console.log(materials);
     if (isLoading === false) {
       store.isGenerating = false;
       store.loadingSpeed = 10;
@@ -155,13 +157,13 @@ function Shirt(props: ShirtProps): JSX.Element {
       dispose={null}
       scale={0.8}
     >
-      <Decal
+      {/* <Decal
         position={[0, 0.04, 0.15]}
         rotation={[0, 0, 0]}
         scale={1}
-        map={texture}
-        map-anisotropy={16}
-      />
+        // map={texture}
+        // map-anisotropy={16}
+      /> */}
     </mesh>
   );
 }
