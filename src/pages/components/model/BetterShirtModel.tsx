@@ -134,6 +134,7 @@ function Shirt(props: ShirtProps): JSX.Element {
   // texture.offset.set(-0.5, -0.5);
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
   (materials.lambert1 as THREE.MeshStandardMaterial).map = texture;
+  (materials.lambert1 as THREE.MeshStandardMaterial).aoMapIntensity = 0;
   useFrame((store, delta) =>{
     // easing.dampC((materials.lambert1 as THREE.MeshStandardMaterial).color, 'black', 0.25, delta)
 });
