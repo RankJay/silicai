@@ -41,6 +41,10 @@ export default function PromptBar() {
     const promptValue = questionInput.value;
 
     store.isGenerating = true;
+    store.isSuggestionsModalOpen = false;
+    store.isFileUploadModalOpen = false;
+    store.isAutoGPTModalOpen = false;
+    store.isModalOpen = false;
 
     const render = await axios.post(
       `https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/generate`,

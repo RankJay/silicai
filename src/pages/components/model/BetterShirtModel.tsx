@@ -54,7 +54,7 @@ const BetterShirtModel = ({
       {/* <CameraRig> */}
       {/* <Backdrop /> */}
       <Center>
-      <OrbitControls autoRotate={true} autoRotateSpeed={snap.loadingSpeed} />
+      <OrbitControls autoRotate={true} autoRotateSpeed={snap.loadingSpeed} enablePan={false} minDistance={0} maxDistance={5} />
       <Shirt />
       </Center>
       {/* </CameraRig> */}
@@ -104,13 +104,13 @@ function Shirt(props: ShirtProps): JSX.Element {
       dispose={null}
       scale={0.8}
     >
-      <Decal
+      {/* <Decal
         position={[0, 0.04, 0.15]}
         rotation={[0, 0, 0]}
         scale={1}
         map={texture}
-        // map-anisotropy={16}
-      />
+        map-anisotropy={16}
+      /> */}
     </mesh>
   );
 }
