@@ -116,7 +116,23 @@ function Shirt(props: ShirtProps): JSX.Element {
       scale={0.8}
     >
       <Decal
-        position={[(nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getX(1), (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getY(1), (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getZ(1)]}
+        position={[
+          (
+            (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv as
+              | THREE.BufferAttribute
+              | THREE.InterleavedBufferAttribute
+          ).getX(1),
+          (
+            (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv as
+              | THREE.BufferAttribute
+              | THREE.InterleavedBufferAttribute
+          ).getY(1),
+          (
+            (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv as
+              | THREE.BufferAttribute
+              | THREE.InterleavedBufferAttribute
+          ).getZ(1),
+        ]}
         rotation={[0, 0, 0]}
         scale={1}
         map={texture}
