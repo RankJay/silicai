@@ -14,19 +14,19 @@ export default function PromptBar() {
     // const prompt
   };
 
-  window.addEventListener("input", function () {
-    const questionInput = document.getElementById(
-      "prompt"
-    ) as HTMLTextAreaElement;
-    const parr = document.getElementById("signup1") as HTMLElement;
-    questionInput.style.height =
-      questionInput.scrollHeight + "px"; /* set height to content height */
-    if (questionInput.scrollHeight > parr.offsetHeight) {
-      console.log(questionInput.style.lineHeight, parr.clientHeight);
-      // questionInput.style.height = "1px"; /* reset height to one line */
-      parr.style.height = parr.offsetHeight + 13 + "px";
-    }
-  });
+  // window.addEventListener("input", function () {
+  //   const questionInput = document.getElementById(
+  //     "prompt"
+  //   ) as HTMLTextAreaElement;
+  //   const parr = document.getElementById("signup1") as HTMLElement;
+  //   questionInput.style.height =
+  //     questionInput.scrollHeight + "px"; /* set height to content height */
+  //   if (questionInput.scrollHeight > parr.offsetHeight) {
+  //     console.log(questionInput.style.lineHeight, parr.clientHeight);
+  //     // questionInput.style.height = "1px"; /* reset height to one line */
+  //     parr.style.height = parr.offsetHeight + 13 + "px";
+  //   }
+  // });
 
   useEffect(() => {
     const buttomElement = document.getElementById(
@@ -78,6 +78,7 @@ export default function PromptBar() {
     store.imageURI = `data:image/png;base64,${imageData.toString("base64")}`; // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
     store.isGenerating = false;
     questionInput.value = "";
+    questionInput.style.height = "initial";
   };
   return (
     <div className={styles.signUp} id="signup1">
