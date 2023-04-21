@@ -24,7 +24,7 @@ interface AppProps {
 }
 
 const BetterShirtModel = ({
-  position = [0, 0, 2.5],
+  position = [0, 0, 0],
   fov = 25,
 }: {
   position: [x: number, y: number, z: number];
@@ -32,13 +32,13 @@ const BetterShirtModel = ({
 }) => {
   const snap = useSnapshot(store);
   return (
-    <Suspense
-      fallback={
-        <>
-          <div>Loading 3D Model...</div>
-        </>
-      }
-    >
+    // <Suspense
+    //   fallback={
+    //     <>
+    //       <div>Loading 3D Model...</div>
+    //     </>
+    //   }
+    // >
       <Canvas
         id={styles.modelcanvas}
         shadows
@@ -70,7 +70,7 @@ const BetterShirtModel = ({
         </Center>
         {/* </CameraRig> */}
       </Canvas>
-    </Suspense>
+    // </Suspense>
   );
 };
 
