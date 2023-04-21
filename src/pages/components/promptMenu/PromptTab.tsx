@@ -289,7 +289,7 @@ const PromptTab = () => {
                     <div>
                     <div style={{fontFamily: "HelveticcaBold", textAlign: "center", fontSize: "2rem"}}>Upload Image</div>
                     <div style={{ fontFamily: "HelveticcaRegular", textAlign: "center", color: "#999", marginTop: "1rem" }}>
-                      Upload your midjourney prompts or any image of your choice
+                      Upload your midjourney creations or any image of your choice
                     </div>
                     </div>
                     <label className={styles.customimageupload} htmlFor="customimageupload">Choose Image</label>

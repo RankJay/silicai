@@ -26,20 +26,20 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const [supabase] = useState(() => createBrowserSupabaseClient());
 
-  useEffect(() => {
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function () {
-      var currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        (document.getElementById("headerContainer") as HTMLElement).style.top =
-          "0";
-      } else {
-        (document.getElementById("headerContainer") as HTMLElement).style.top =
-          "-1rem";
-      }
-      prevScrollpos = currentScrollPos;
-    };
-  });
+  // useEffect(() => {
+  //   var prevScrollpos = window.pageYOffset;
+  //   window.onscroll = function () {
+  //     var currentScrollPos = window.pageYOffset;
+  //     if (prevScrollpos > currentScrollPos) {
+  //       (document.getElementById("headerContainer") as HTMLElement).style.top =
+  //         "0";
+  //     } else {
+  //       (document.getElementById("headerContainer") as HTMLElement).style.top =
+  //         "-1rem";
+  //     }
+  //     prevScrollpos = currentScrollPos;
+  //   };
+  // });
 
   return (
     <ClerkProvider {...pageProps}>
