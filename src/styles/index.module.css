@@ -221,7 +221,7 @@
 
 /* Mobile */
 @media (max-width: 700px) {
-  #modelcanvas {
+  .modelcanvas {
     top: -12%;
   }
   .indexPageHeading {
@@ -314,7 +314,7 @@
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
-  #modelcanvas {
+  .modelcanvas {
     top: -12%;
   }
 }
