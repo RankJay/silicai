@@ -40,7 +40,7 @@ const BetterShirtModel = ({
     //   }
     // >
       <Canvas
-        id={styles.modelcanvas}
+        className={styles.modelcanvas}
         shadows
         camera={{ position, fov }}
         gl={{ preserveDrawingBuffer: true }}
