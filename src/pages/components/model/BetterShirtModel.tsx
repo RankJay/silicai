@@ -32,13 +32,13 @@ const BetterShirtModel = ({
 }) => {
   const snap = useSnapshot(store);
   return (
-    // <Suspense
-    //   fallback={
-    //     <>
-    //       <div>Loading 3D Model...</div>
-    //     </>
-    //   }
-    // >
+    <Suspense
+      fallback={
+        <>
+          <div>Loading 3D Model...</div>
+        </>
+      }
+    >
       <Canvas
         className={styles.modelcanvas}
         shadows
@@ -70,7 +70,7 @@ const BetterShirtModel = ({
         </Center>
         {/* </CameraRig> */}
       </Canvas>
-    // </Suspense>
+    </Suspense>
   );
 };
 
@@ -115,13 +115,13 @@ function Shirt(props: ShirtProps): JSX.Element {
       dispose={null}
       scale={0.8}
     >
-      {/* <Decal
-        position={[0, 0.04, 0.15]}
+      <Decal
+        position={[(nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getX(1), (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getY(1), (nodes.T_Shirt_male as THREE.Mesh).geometry.attributes.uv.getZ(1)]}
         rotation={[0, 0, 0]}
         scale={1}
         map={texture}
         map-anisotropy={16}
-      /> */}
+      />
     </mesh>
   );
 }

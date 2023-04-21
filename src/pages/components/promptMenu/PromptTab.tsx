@@ -148,13 +148,19 @@ const PromptTab = () => {
                 store.isFileUploadModalOpen = true;
               }}
             >
-              <Image
-                width={24}
-                height={24}
-                src={"/assets/upload-image.png"}
-                alt={""}
-                style={{ marginBottom: "-0.15rem" }}
-              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                version="1.1"
+              >
+                <g id="surface1">
+                  <path
+                    d="M 19 13 C 18.449219 13 18 13.449219 18 14 L 18 14.378906 L 16.519531 12.898438 C 15.433594 11.820312 13.679688 11.820312 12.589844 12.898438 L 11.890625 13.601562 L 9.410156 11.121094 C 8.308594 10.074219 6.582031 10.074219 5.480469 11.121094 L 4 12.601562 L 4 7 C 4 6.449219 4.449219 6 5 6 L 12 6 C 12.550781 6 13 5.550781 13 5 C 13 4.449219 12.550781 4 12 4 L 5 4 C 3.34375 4 2 5.34375 2 7 L 2 19 C 2 20.65625 3.34375 22 5 22 L 17 22 C 18.65625 22 20 20.65625 20 19 L 20 14 C 20 13.449219 19.550781 13 19 13 Z M 5 20 C 4.449219 20 4 19.550781 4 19 L 4 15.429688 L 6.898438 12.53125 C 7.207031 12.238281 7.683594 12.238281 7.988281 12.53125 L 11.160156 15.699219 L 15.460938 20 Z M 18 19 C 18 19.191406 17.933594 19.378906 17.820312 19.53125 L 13.308594 15 L 14.011719 14.300781 C 14.15625 14.152344 14.351562 14.070312 14.558594 14.070312 C 14.765625 14.070312 14.964844 14.152344 15.109375 14.300781 L 18 17.210938 Z M 22.710938 4.289062 L 19.710938 1.289062 C 19.613281 1.199219 19.503906 1.128906 19.378906 1.078125 C 19.136719 0.980469 18.863281 0.980469 18.621094 1.078125 C 18.496094 1.128906 18.386719 1.199219 18.289062 1.289062 L 15.289062 4.289062 C 14.898438 4.683594 14.898438 5.316406 15.289062 5.710938 C 15.683594 6.101562 16.316406 6.101562 16.710938 5.710938 L 18 4.410156 L 18 10 C 18 10.550781 18.449219 11 19 11 C 19.550781 11 20 10.550781 20 10 L 20 4.410156 L 21.289062 5.710938 C 21.476562 5.898438 21.734375 6.003906 22 6.003906 C 22.265625 6.003906 22.523438 5.898438 22.710938 5.710938 C 22.898438 5.523438 23.003906 5.265625 23.003906 5 C 23.003906 4.734375 22.898438 4.476562 22.710938 4.289062 Z M 22.710938 4.289062 "
+                    fill="#ffffff" />
+                </g>
+              </svg>
             </div>
             <div
               style={{
@@ -270,7 +276,12 @@ const PromptTab = () => {
             <div className={styles.modal}>
               <div className={styles.modalContent}>
                 {imageSrc ? (
-                  <svg id="SvgjsSvg1011" width="288" height="288" version="1.1"><defs id="SvgjsDefs1012"></defs><g id="SvgjsG1013"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="288" height="288"><path d="M19,13a1,1,0,0,0-1,1v.38L16.52,12.9a2.79,2.79,0,0,0-3.93,0l-.7.7L9.41,11.12a2.85,2.85,0,0,0-3.93,0L4,12.6V7A1,1,0,0,1,5,6h7a1,1,0,0,0,0-2H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V14A1,1,0,0,0,19,13ZM5,20a1,1,0,0,1-1-1V15.43l2.9-2.9a.79.79,0,0,1,1.09,0l3.17,3.17,0,0L15.46,20Zm13-1a.89.89,0,0,1-.18.53L13.31,15l.7-.7a.77.77,0,0,1,1.1,0L18,17.21ZM22.71,4.29l-3-3a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-3,3a1,1,0,0,0,1.42,1.42L18,4.41V10a1,1,0,0,0,2,0V4.41l1.29,1.3a1,1,0,0,0,1.42,0A1,1,0,0,0,22.71,4.29Z" fill="#ffffff"></path></svg></g></svg>
+                  <Image
+                    src={imageSrc}
+                    width={180}
+                    height={180}
+                    alt="Uploaded Image"
+                  />
                 ) : (
                   <div
                     style={{
@@ -282,30 +293,70 @@ const PromptTab = () => {
                     }}
                   >
                     <div>
-                    <div style={{fontFamily: "HelveticcaBold", textAlign: "center", fontSize: "2rem"}}>Upload Image</div>
-                    <div style={{ fontFamily: "HelveticcaRegular", textAlign: "center", color: "#999", marginTop: "1rem" }}>
-                      Upload your midjourney creations or any image of your choice
+                      <div
+                        style={{
+                          fontFamily: "HelveticcaBold",
+                          textAlign: "center",
+                          fontSize: "2rem",
+                        }}
+                      >
+                        Upload Image
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: "HelveticcaRegular",
+                          textAlign: "center",
+                          color: "#999",
+                          marginTop: "1rem",
+                        }}
+                      >
+                        Upload your midjourney creations or any image of your
+                        choice
+                      </div>
                     </div>
-                    </div>
-                    <label className={styles.customimageupload} htmlFor="customimageupload">Choose Image</label>
-                    <input id="customimageupload" style={{display: "none", fontSize: "1.25rem"}} type="file" onChange={handleFileUpload} name="file-upload" className={styles.customFileInput} />
+                    <label
+                      className={styles.customimageupload}
+                      htmlFor="customimageupload"
+                    >
+                      Choose Image
+                    </label>
+                    <input
+                      id="customimageupload"
+                      style={{ display: "none", fontSize: "1.25rem" }}
+                      type="file"
+                      onChange={handleFileUpload}
+                      name="file-upload"
+                      className={styles.customFileInput}
+                    />
                     {/* <button onClick={handleCloseModal}>Close</button> */}
                   </div>
                 )}
                 {imageSrc && (
                   <form
                     onSubmit={handleSubmitForm}
-                    style={{ height: "auto", justifyContent: "center", paddingTop: "10px" }}
+                    style={{
+                      height: "auto",
+                      justifyContent: "center",
+                      paddingTop: "10px",
+                    }}
                   >
                     <button
                       type="submit"
-                      style={{ marginRight: "10px", color: "white", backgroundColor: "transparent" }}
+                      style={{
+                        marginRight: "10px",
+                        color: "white",
+                        backgroundColor: "transparent",
+                      }}
                     >
                       Submit
                     </button>
                     <button
                       onClick={handleCloseModal}
-                      style={{ marginLeft: "10px", color: "white", backgroundColor: "transparent" }}
+                      style={{
+                        marginLeft: "10px",
+                        color: "white",
+                        backgroundColor: "transparent",
+                      }}
                     >
                       Cancel
                     </button>
