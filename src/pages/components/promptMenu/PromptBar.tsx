@@ -14,6 +14,20 @@ export default function PromptBar() {
     // const prompt
   };
 
+  window.addEventListener("input", function () {
+    const questionInput = document.getElementById(
+      "prompt"
+    ) as HTMLTextAreaElement;
+    const parr = document.getElementById("signup1") as HTMLElement;
+    questionInput.style.height =
+      questionInput.scrollHeight + "px"; /* set height to content height */
+    if (questionInput.scrollHeight > parr.offsetHeight) {
+      console.log(questionInput.style.lineHeight, parr.clientHeight);
+      // questionInput.style.height = "1px"; /* reset height to one line */
+      parr.style.height = parr.offsetHeight + 13 + "px";
+    }
+  });
+
   useEffect(() => {
     const buttomElement = document.getElementById(
       "signUpButton"
@@ -23,7 +37,7 @@ export default function PromptBar() {
       buttomElement.style.color = "#fff";
       buttomElement.style.background =
         "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
-        buttomElement.style.webkitAnimation =
+      buttomElement.style.webkitAnimation =
         "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)";
       buttomElement.style.backgroundSize = "400% 400%";
       buttomElement.innerText = `Generating...`;
@@ -61,16 +75,16 @@ export default function PromptBar() {
     } = await axios.get(imageURl, { responseType: "arraybuffer" });
 
     const imageData = Buffer.from(response.data, "binary");
-    store.imageURI = `data:image/png;base64,${imageData.toString('base64')}`; // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
+    store.imageURI = `data:image/png;base64,${imageData.toString("base64")}`; // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
     store.isGenerating = false;
     questionInput.value = "";
   };
   return (
-    <div className={styles.signUp}>
-      <form onSubmit={handleChatSubmit}>
-        <input
+    <div className={styles.signUp} id="signup1">
+      <form onSubmit={handleChatSubmit} style={{alignItems: "flex-end"}}>
+        <textarea
           id="prompt"
-          type="text"
+          // type="text"
           className={styles.signUpInput}
           style={{
             fontFamily: "HelveticcaRegular",

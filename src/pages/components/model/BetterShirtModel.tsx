@@ -18,7 +18,6 @@ import styles from "@/styles/index.module.css";
 import * as THREE from "three";
 import Loader from "../common/Loader";
 
-
 interface AppProps {
   position?: [number, number, number];
   fov?: number;
@@ -33,32 +32,44 @@ const BetterShirtModel = ({
 }) => {
   const snap = useSnapshot(store);
   return (
-    <Suspense fallback={<><div>Loading 3D Model...</div></>}>
-    <Canvas
-    id={styles.modelcanvas}
-      shadows
-      camera={{ position, fov }}
-      gl={{ preserveDrawingBuffer: true }}
-      eventPrefix="layer"
-      // style={{
-      //   zIndex: "1"
+    <Suspense
+      fallback={
+        <>
+          <div>Loading 3D Model...</div>
+        </>
+      }
+    >
+      <Canvas
+        id={styles.modelcanvas}
+        shadows
+        camera={{ position, fov }}
+        gl={{ preserveDrawingBuffer: true }}
+        eventPrefix="layer"
+        // style={{
+        //   zIndex: "1"
         // justifyContent: "center",
         // backgroundColor: "#010",
         // display: "flex",
         // width: "550px",
         // height: "75vh",
-      // }}
-    >
-      <ambientLight intensity={0.5} />
-      <Environment preset="city"  />
-      {/* <CameraRig> */}
-      {/* <Backdrop /> */}
-      <Center>
-      <OrbitControls autoRotate={true} autoRotateSpeed={snap.loadingSpeed} enablePan={false} minDistance={0} maxDistance={5} />
-      <Shirt />
-      </Center>
-      {/* </CameraRig> */}
-    </Canvas>
+        // }}
+      >
+        <ambientLight intensity={0.5} />
+        <Environment preset="city" />
+        {/* <CameraRig> */}
+        {/* <Backdrop /> */}
+        <Center>
+          <OrbitControls
+            autoRotate={true}
+            autoRotateSpeed={snap.loadingSpeed}
+            // enablePan={false}
+            minDistance={0}
+            maxDistance={5}
+          />
+          <Shirt />
+        </Center>
+        {/* </CameraRig> */}
+      </Canvas>
     </Suspense>
   );
 };
@@ -79,9 +90,9 @@ function Shirt(props: ShirtProps): JSX.Element {
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
   (materials.lambert1 as THREE.MeshStandardMaterial).map = texture;
   (materials.lambert1 as THREE.MeshStandardMaterial).aoMapIntensity = 0;
-  useFrame((store, delta) =>{
+  useFrame((store, delta) => {
     // easing.dampC((materials.lambert1 as THREE.MeshStandardMaterial).color, 'black', 0.25, delta)
-});
+  });
 
   useEffect(() => {
     console.log(materials);
