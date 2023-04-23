@@ -5,6 +5,7 @@ import styles from "@/styles/new.module.css";
 import PromptTab from "./components/promptMenu/PromptTab";
 import LikeButton from "./components/promptMenu/like.button";
 import Head from "next/head";
+import BuyButton from "./components/promptMenu/buy.button";
 
 export default function New() {
   return (
@@ -73,6 +74,7 @@ export default function New() {
       </Head>
       <div className={styles.newPageLandingSection}>
         {/* <UserButton /> */}
+        <BuyButton />
         <LikeButton />
         <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
         <PromptBar />

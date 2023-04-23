@@ -61,13 +61,13 @@ export default function PromptBar() {
     store.isModalOpen = false;
 
     const render = await axios.post(
-      `https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/generate`,
+      `/api/generate`,
       { prompt: promptValue, email: user?.emailAddresses[0].emailAddress }
     );
 
     const resp = await render.data;
     const imageURl = await resp.image;
-    console.log(imageURl);
+    store.checkoutURL = imageURl;
     const response: {
       data:
         | WithImplicitCoercion<string>
