@@ -11,7 +11,6 @@ import {
   OrbitControls,
 } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { easing } from "maath";
 import { useSnapshot } from "valtio";
 import store from "@/store";
 import styles from "@/styles/index.module.css";
@@ -62,7 +61,7 @@ const BetterShirtModel = ({
           <OrbitControls
             autoRotate={true}
             autoRotateSpeed={snap.loadingSpeed}
-            // enablePan={false}
+            enablePan={false}
             minDistance={0}
             maxDistance={5}
           />
