@@ -11,6 +11,7 @@
   padding: 1rem;
   z-index: 11;
   background-color: transparent;
+  transition: top 0.5s;
 }
 
 .header {
@@ -52,7 +53,7 @@
   max-width: 150px;
   text-decoration: none;
   border: none;
-  /* background: #0069ff; */
+  background: transparent; /* #0069ff; */
   color: #fdfdfd;
   border-radius: 0.45rem;
   outline: none;

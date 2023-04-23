@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import styles from "../../styles/autogpt.module.css";
+import { useState } from "react";
+import styles from "@/styles/autogpt.module.css";
 import { useSnapshot } from "valtio";
 import store from "@/store";
 
@@ -10,8 +10,6 @@ interface Suggestion {
 
 const AutoGPT = () => {
   const snap = useSnapshot(store);
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleSuggestionClick = (text: string) => {
     const textbox = document.getElementById("prompt") as HTMLInputElement;
@@ -22,29 +20,13 @@ const AutoGPT = () => {
     <div className={styles.suggestionsModalSection}>
       <div
         className={styles.suggestionsFooter}
-        onClick={() => (isModalOpen ? setModalOpen(false) : setModalOpen(true))}
+        onClick={() => (snap.isModalOpen ? store : {})}
       >
-        {isModalOpen ? "Close" : "Auto Designer"}
+        {snap.isModalOpen && snap.isAutoGPTModalOpen ? "Close" : "Auto Designer"}
       </div>
-      {!snap.isGenerating && isModalOpen && (
+      {!snap.isGenerating && snap.isModalOpen && (
         <div className={styles.suggestionsModal}>
           {/* <div className={styles.suggestionsModalHeading}>Suggestions</div> */}
-          {loading && (
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                color: "white",
-                fontSize: "1.25rem",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              Loading...
-            </div>
-          )}
           <div className={styles.autoGPT}>
             <form style={{ flexDirection: "column", justifyContent: "flex-start" }}>
               {/* <div> */}
@@ -93,8 +75,7 @@ const AutoGPT = () => {
               </div> */}
             </form>
           </div>
-        </div>
-      )}
+        </div>)}
     </div>
   );
 };

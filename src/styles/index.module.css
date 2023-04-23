@@ -10,6 +10,114 @@
   height: 100vh;
 }
 
+.indexPageOfferingSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  /* border-radius: 50px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* backdrop-filter: blur(10px); */
+  height: 50vh;
+}
+
+.OfferingHeading {
+  width: 50%;
+  font-family: HelveticcaRegular;
+  font-size: 2.5vw;
+  text-align: center;
+  /* letter-spacing: -0.1rem; */
+}
+
+.Offering {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 75%;
+  height: 100%;
+  background-color: rgba(139, 139, 139, 0.31);
+  border-radius: 2.5rem;
+  padding: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  /* width: 100%; */
+  /* flex-wrap: wrap; */
+}
+
+
+.indexPageHowSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 2rem;
+  flex-wrap: wrap;
+  /* border-radius: 50px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* backdrop-filter: blur(10px); */
+  height: 100vh;
+}
+
+.HowHeading {
+  font-family: HelveticcaRegular;
+  font-size: 5vw;
+  min-width: 200px;
+  width: 100%;
+  align-items: center;
+  /* text-align: center; */
+  /* letter-spacing: -0.1rem; */
+}
+
+.SectionOfferingAttachment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 200px;
+  width: 40%;
+  background-color: black;
+  border-radius: 2rem;
+  height: 100%;
+}
+
+.SectionAttachment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 200px;
+  width: 40%;
+  background-color: black;
+  border-radius: 2rem;
+  height: 65%;
+}
+
+.HowSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 200px;
+  width: 50%;
+  height: auto;
+}
+
+.indexPageFAQSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border-radius: 50px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* backdrop-filter: blur(10px); */
+  height: 100vh;
+}
+
 .indexPageHeading {
   font-family: HelveticcaRegular;
   font-size: 10vw;
@@ -31,7 +139,8 @@
   bottom: 10%;
   width: 100%;
   max-width: 700px;
-  height: 4rem;
+  height: auto;
+  min-height: 4rem;
   background: #ffffff;
   box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.119);
   backdrop-filter: blur(50px);
@@ -46,7 +155,7 @@
   color: inherit;
   text-decoration: none;
   width: max-content;
-  height: 100%;
+  /* height: 100%; */
   border-radius: 12px;
   /* font-family: ArticulatCF-DemiBold; */
   font-size: 1rem;
@@ -61,6 +170,7 @@
   font-size: 1rem;
   width: 35%;
   max-width: 200px;
+  height: 3rem;
   text-decoration: none;
   border: none;
   background-color: black;
@@ -68,12 +178,51 @@
   color: #fdfdfd;
   border-radius: 0.45rem;
   outline: none;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  animation: gradient 5s ease infinite;
+  -webkit-animation: gradient 5s ease infinite;
+  -moz-animation: gradient 5s ease infinite;
+}
+
+.signUpButton1 {
+  font-size: 1rem;
+  width: 35%;
+  max-width: 200px;
+  text-decoration: none;
+  border: none;
+  /* background-color: black; */
+  /* background: linear-gradient(0deg, rgb(0, 0, 0), rgb(47, 47, 47) 95%) no-repeat; */
+  color: #fdfdfd;
+  border-radius: 0.45rem;
+  outline: none;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  animation: gradient 5s ease infinite;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  /* position: fixed; */
+  width: 100%;
+  max-width: fit-content;
+  top: 20%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 10px rgba(150, 150, 150, 0.5);
+  color: #fff;
+  border-radius: 5rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 2px solid #888;
 }
 
 /* Mobile */
 @media (max-width: 700px) {
-  #modelcanvas {
-    top: -5%
+  .modelcanvas {
+    top: -12%;
   }
   .indexPageHeading {
     font-size: 5rem;
@@ -81,18 +230,115 @@
 
   .indexPageSubHeading {
     font-size: 1rem;
-    max-width: 200px;
+    /* max-width: 200px; */
   }
 
   .signUpButton {
-    width: 250px;
+    width: 185px;
   }
 
   .signUp {
     bottom: 8%;
   }
+
+  .banner {
+    font-size: 0.85rem;
+  }
+
+  .OfferingHeading {
+    font-size: 3.5rem;
+  }
+
+  .HowHeading {
+    font-size: 3.5rem;
+    width: 100%;
+  }
+
+  .HowSection {
+    width: 100%;
+  }
+
+  .SectionAttachment {
+    width: 100%;
+  }
+
+  .OfferingHeading {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .indexPageOfferingSection {
+    height: 75vh;
+  }
+
+  .Offering {
+    width: 100%;
+    height: 100%;
+  }
+
+  .SectionAttachment {
+    width: 100%;
+  }
+
+  .SectionOfferingAttachment {
+    width: 100%;
+    height: 75%;
+    align-self: flex-end;
+  }
+}
+
+.customFileInput::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.customFileInput::before {
+  content: "Select some files";
+  display: inline-block;
+  background: linear-gradient(to top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.customFileInput:hover::before {
+  border-color: black;
+}
+.customFileInput:active::before {
+  background: -webkit-linear-gradient(to top, #e3e3e3, #f9f9f9);
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
+  .modelcanvas {
+    top: -12%;
+  }
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    -webkit-background-position: 0% 50%;
+  }
+  50% {
+    -webkit-background-position: 100% 50%;
+  }
+  100% {
+    -webkit-background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

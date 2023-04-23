@@ -3,6 +3,7 @@ import styles from "@/styles/index.module.css";
 import { useRouter } from "next/router";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
+import Banner from "./components/common/Banner";
 
 export default function Home() {
   const router = useRouter();
@@ -85,19 +86,33 @@ export default function Home() {
         <link rel="apple-touch-icon" href="" />
       </Head>
       <main>
-        <video ref={videoRef} src="valo.mp4" width="250" loop muted style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: "-10",
-        }}></video>
+        <video
+          ref={videoRef}
+          src="valo.mp4"
+          width="250"
+          loop
+          muted
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: "-10",
+          }}
+        ></video>
         <div className={styles.indePageLandingSection}>
+          {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
           <div className={styles.indexPageHeading}>SILIC</div>
           <div className={styles.indexPageSubHeading}>
             Self-Generating Fashion Agent
+          </div>
+          <div className={styles.indexPageSubHeading}>
+            +
+          </div>
+          <div className={styles.indexPageSubHeading}>
+            Manufactured on-demand
           </div>
           <button
             type="submit"
@@ -116,6 +131,45 @@ export default function Home() {
             fontSize: "1rem",
             fontFamily: "HelveticcaRegular"
           }}>Visit Gallery</Link> */}
+        </div>
+        <div className={styles.indexPageHowSection}>
+          <div className={styles.HowSection}>
+            <div className={styles.HowHeading}>How it works?</div>
+            <ul>
+              <li>Prompt-to-Design UI</li>
+              <li>Earn Rewards & Royalties</li>
+              <li>On-demand Manufacturing & Shipping</li>
+              <li>Quality of clothing/fabric</li>
+            </ul>
+          </div>
+          <div className={styles.SectionAttachment}>d</div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering}>
+            <div className={styles.OfferingHeading}>Prompt-to-Design UI</div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering} style={{flexDirection: "row-reverse"}}>
+            <div className={styles.OfferingHeading}>Earn Rewards & Royalties</div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering}>
+            <div className={styles.OfferingHeading}>On-demand Manufacturing</div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering} style={{flexDirection: "row-reverse"}}>
+            <div className={styles.OfferingHeading}>Quality of Fabric</div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageFAQSection}>
+          <div className={styles.OfferingHeading}>FAQs</div>
         </div>
       </main>
     </>

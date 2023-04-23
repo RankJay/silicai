@@ -1,58 +1,28 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
-import { Leap } from "@leap-ai/sdk";
-import { supabaseStore } from "@/store";
+import type { NextApiRequest, NextApiResponse } from "next";
+import Replicate from "replicate";
 
-const leap = new Leap(process.env.LEAP_API_KEY as string);
-leap.useModel(process.env.LEAP_AI_MODEL_ID as string);
-
-type ResponseData = {
-  image: string;
-};
+const replicate = new Replicate({
+  auth: process.env.REPLICATE_API_KEY!,
+});
+const model = process.env.REPLICATE_AI_MODEL as `${string}/${string}:${string}`;
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
+  res: NextApiResponse
 ) {
-  const { prompt, user } = req.body;
-  const { data, error } = await leap.generate.generateImage({
-    prompt,
-    width: 1024,
-    height: 1024,
+  const { prompt, email } = req.body;
+  const output: any = await replicate.run(model, {
+    input: {
+      prompt,
+    },
   });
-  if (error) {
-    console.log(error);
-    res.status(200).json({
-      image: "Something went wrong while generating image!",
-    });
-    return;
-  }
-  if (data) {
-    const imageUrl = data.images[0].uri;
-    const response: {
-      data:
-        | WithImplicitCoercion<string>
-        | { [Symbol.toPrimitive](hint: "string"): string };
-    } = await axios.get(imageUrl, { responseType: "arraybuffer" });
 
-    const imageData = Buffer.from(response.data, "binary");
-    const image = `data:image/png;base64,${imageData.toString("base64")}`;
+  const ff = await axios.post("https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/save", {
+    email,
+    url: await output[0],
+    prompt
+  })
 
-    const userFromSupabase = await supabaseStore.from('user').select('email').eq('email', user.emailAddresses[0].emailAddress)
-
-    console.log(userFromSupabase);
-
-    const resp = await supabaseStore.from('inventory').insert({
-      email: user.emailAddresses[0].emailAddress,
-      image
-    });
-
-    if (resp.status === 201) {
-      console.log("added.")
-    }
-
-    res.status(200).json({ image });
-    return;
-  }
-  return;
+  res.json({ image: await output[0] });
 }

@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  align-self: flex-end;
+  max-width: 700px;
+  width: 50px;
+  height: 50px;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  background-color: #0069ff;
+  border-radius: 0.5rem;
+  position: fixed;
+  z-index: 9;
+  right: calc(100vw / 2 - 350px);
+  bottom: 45%;
+  /* padding-left: 5rem; */
+}
+
+.buyButton {
+  /* position: absolute; */
+  transform: translateY(0%);
+  /* padding: 10px; */
+  width: 50px;
+  /* height: 100%; */
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .container {
+    bottom: 35%;
+    right: 2%;
+    /* padding-right: 1rem; */
+  }
+}

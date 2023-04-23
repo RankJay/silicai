@@ -12,6 +12,10 @@ const store = proxy({
   isModalOpen: false,
   isSuggestionsModalOpen: false,
   isAutoGPTModalOpen: false,
+  isFileUploadModalOpen: false,
+  isLiked: false,
+  isDisliked: false,
+  checkoutURL: 'https://silic.vercel.app/assets/default.jpg'
 });
 
 export const supabaseStore = createClient(supabaseUrl, supabaseAnonKey);
