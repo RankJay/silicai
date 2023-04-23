@@ -15,7 +15,7 @@ interface InventoryObjects {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
-    `https://silicai-server-jrg2.zeet-silicai.zeet.app/api/inventory/`
+    `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/`
   );
   const data: InventoryObjects[] = await res.json();
 
@@ -34,7 +34,7 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
     const fetchImageData = async (imageId: string) => {
       const response = await supabaseStore.storage
         .from("silicai-bucket")
-        .download(`${process.env.NODE_ENV}/${imageId}.png`);
+        .download(`${process.env.DATABASEENVIRONMENT}/${imageId}.png`);
       console.log(imageId, response);
       const blob = response.data as Blob;
       const dataUrl = await new Promise<string>((resolve) => {

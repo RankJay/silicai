@@ -106,9 +106,7 @@ export default function Home() {
           <div className={styles.indexPageSubHeading}>
             Self-Generating Fashion Agent
           </div>
-          <div className={styles.indexPageSubHeading}>
-            +
-          </div>
+          <div className={styles.indexPageSubHeading}>+</div>
           <div className={styles.indexPageSubHeading}>
             Manufactured on-demand
           </div>
@@ -132,42 +130,81 @@ export default function Home() {
         </div>
         <div className={styles.indexPageHowSection}>
           <div className={styles.HowSection}>
-            <div className={styles.HowHeading}>How it works?</div>
+            <div className={styles.HowHeading}>Prompt-to-Design UI</div>
             <ul>
-              <li>Prompt-to-Design UI</li>
-              <li>Earn Rewards & Royalties</li>
+              <li>
+                Type in anything you imagine, the possibilites are infinite...
+              </li>
+              {/* <li>Earn Rewards & Royalties</li>
               <li>On-demand Manufacturing & Shipping</li>
-              <li>Quality of clothing/fabric</li>
+              <li>Quality of clothing/fabric</li> */}
             </ul>
           </div>
           <div className={styles.SectionAttachment}>d</div>
         </div>
+        {/* <div className={styles.indexPageOfferingSection}>
+          <div className={styles.Offering}>
+            <div className={styles.OfferingHeading}>Prompt-to-Design UI<h6>Type in anything you imagine, the possibilites and infinte</h6></div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div> */}
+        <div className={styles.indexPageOfferingSection}>
+          <div
+            className={styles.Offering}
+            style={{ flexDirection: "row-reverse" }}
+          >
+            <div className={styles.OfferingHeading}>
+              <div>Earn Rewards & Royalties</div>
+              <div className={styles.OfferingSubHeading}>
+                When you create a design, it has the potential to earn you
+                income. If another user orders your design from the marketplace,
+                you earn a royalty.{" "}
+              </div>
+            </div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
         <div className={styles.indexPageOfferingSection}>
           <div className={styles.Offering}>
-            <div className={styles.OfferingHeading}>Prompt-to-Design UI</div>
+            <div className={styles.OfferingHeading}>
+              On-demand Manufacturing
+            </div>
             <div className={styles.SectionOfferingAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageOfferingSection}>
-          <div className={styles.Offering} style={{flexDirection: "row-reverse"}}>
-            <div className={styles.OfferingHeading}>Earn Rewards & Royalties</div>
+          <div
+            className={styles.Offering}
+            style={{ flexDirection: "row-reverse" }}
+          >
+            <div className={styles.OfferingHeading}>
+              <div>Silic Garments</div>
+              <div className={styles.OfferingSubHeading}>
+                This is not merch, it&#39;s high quality couture. SILIC garments
+                are digitally printing directly onto custom ultra soft circular
+                knit textiles. Each garment is cut and sewn ensure a beautiful
+                fit and feel to the fabric.
+              </div>
+            </div>
             <div className={styles.SectionOfferingAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageOfferingSection}>
           <div className={styles.Offering}>
-            <div className={styles.OfferingHeading}>On-demand Manufacturing</div>
-            <div className={styles.SectionOfferingAttachment}></div>
-          </div>
-        </div>
-        <div className={styles.indexPageOfferingSection}>
-          <div className={styles.Offering} style={{flexDirection: "row-reverse"}}>
-            <div className={styles.OfferingHeading}>Quality of Fabric</div>
+            <div className={styles.OfferingHeading}>
+              <div>Intelligence</div>
+              <div className={styles.OfferingSubHeading}>
+                The more you use SILIC the better our Ai will understand you.
+                Designs you&#39;re likely to desire will be suggested to you in
+                the future. Soon you can deploy your own AutoGPT designer that
+                can automate your creations and suggest them to customers.
+              </div>
+            </div>
             <div className={styles.SectionOfferingAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageFAQSection}>
-          <div className={styles.OfferingHeading}>FAQs</div>
+          <div className={styles.OfferingHeading} style={{textAlign: "center"}}>FAQs</div>
         </div>
       </main>
     </>

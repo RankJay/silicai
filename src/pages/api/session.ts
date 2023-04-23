@@ -9,7 +9,7 @@ export default async function handler(
   const { item } = req.body;
 
   const checkoutSession = await axios.post(
-    "https://silicai-server-jrg2.zeet-silicai.zeet.app/api/stripe/session",
+    "https://silicai-server-0sdj.zeet-silicai.zeet.app/api/stripe/session",
     {
       ...item,
     }

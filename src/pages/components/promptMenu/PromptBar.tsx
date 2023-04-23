@@ -62,7 +62,7 @@ export default function PromptBar() {
 
     const render = await axios.post(
       `/api/generate`,
-      { prompt: promptValue, email: user?.emailAddresses[0].emailAddress }
+      { prompt: promptValue, clerk_id: user?.id }
     );
 
     const resp = await render.data;

@@ -14,7 +14,7 @@ interface Designs {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`https://silicai-server-jrg2.zeet-silicai.zeet.app/api/inventory/`);
+  const res = await fetch(`https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/`);
   const data: InventoryObjects[] = await res.json();
 
   // Get the paths we want to pre-render based on posts

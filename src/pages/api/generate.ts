@@ -11,18 +11,20 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const { prompt, email } = req.body;
+  const { prompt, clerk_id } = req.body;
   const output: any = await replicate.run(model, {
     input: {
       prompt,
     },
   });
 
-  axios.post("https://silicai-server-jrg2.zeet-silicai.zeet.app/api/user/save", {
-    email,
+  await axios.post("https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/save", {
+    clerk_id,
     url: await output[0],
     prompt
   })
+
+  // console.log(ff.data);
 
   res.json({ image: await output[0] });
 }

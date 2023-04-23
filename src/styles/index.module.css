@@ -25,9 +25,22 @@
 
 .OfferingHeading {
   width: 50%;
+  height: 75%;
   font-family: HelveticcaRegular;
   font-size: 2.5vw;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: space-evenly;
+  /* letter-spacing: -0.1rem; */
+}
+
+.OfferingSubHeading {
+  width: 100%;
+  font-family: HelveticcaRegular;
+  font-size: 1.25vw;
+  text-align: start;
+  color: #555;
   /* letter-spacing: -0.1rem; */
 }
 
@@ -37,7 +50,7 @@
   flex-wrap: wrap;
   width: 75%;
   height: 100%;
-  background-color: rgba(139, 139, 139, 0.31);
+  /* background-color: rgba(139, 139, 139, 0.31); */
   border-radius: 2.5rem;
   padding: 2rem;
   justify-content: space-between;
@@ -90,7 +103,7 @@
   align-items: flex-start;
   justify-content: center;
   min-width: 200px;
-  width: 40%;
+  width: 50%;
   background-color: black;
   border-radius: 2rem;
   height: 65%;
@@ -247,6 +260,11 @@
 
   .OfferingHeading {
     font-size: 3.5rem;
+    height: 40%;
+  }
+
+  .OfferingSubHeading {
+    font-size: 3vw;
   }
 
   .HowHeading {
