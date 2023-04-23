@@ -18,7 +18,7 @@ export default async function handler(
     },
   });
 
-  axios.post("https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/save", {
+  axios.post("https://silicai-server-jrg2.zeet-silicai.zeet.app/api/user/save", {
     email,
     url: await output[0],
     prompt
