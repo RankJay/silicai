@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useSnapshot } from "valtio";
 import styles from "@/styles/fileupload.module.css";
 import store from "@/store";

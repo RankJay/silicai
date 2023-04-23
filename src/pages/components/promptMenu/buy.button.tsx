@@ -1,10 +1,8 @@
 import store from "@/store";
 import styles from "@/styles/buy.module.css";
 import { useSnapshot } from "valtio";
-import { Elements, PaymentElement } from "@stripe/react-stripe-js";
 import { Stripe, loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
-import { useState } from "react";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 const stripePromise = loadStripe(

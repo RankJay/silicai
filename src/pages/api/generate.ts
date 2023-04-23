@@ -5,7 +5,7 @@ import Replicate from "replicate";
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_KEY!,
 });
-const model = process.env.REPLICATE_AI_MODEL as `${string}/${string}:${string}`;
+const model = process.env.REPLICATE_AI_MODEL! as `${string}/${string}:${string}`;
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,7 +18,7 @@ export default async function handler(
     },
   });
 
-  const ff = await axios.post("https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/save", {
+  axios.post("https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/save", {
     email,
     url: await output[0],
     prompt

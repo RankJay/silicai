@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^4.16.1",
-    "@leap-ai/sdk": "^0.0.119",
     "@react-three/drei": "^9.64.0",
     "@react-three/fiber": "^8.12.0",
     "@stripe/react-stripe-js": "^2.1.0",
@@ -29,7 +28,6 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "replicate": "^0.11.1",
-    "stripe": "^12.2.0",
     "typescript": "5.0.4",
     "valtio": "^1.10.4"
   }

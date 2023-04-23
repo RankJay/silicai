@@ -35,7 +35,7 @@ export default function handler(
     { id: 20, text: "Herringbone" },
     { id: 20, text: "Foulard" },
     { id: 20, text: "Ogee" },
-    { id: 20, text: "Trompe l'oeil" },
+    { id: 21, text: "Trompe l'oeil" },
   ];
   res.status(200).json({ data: resp });
 }

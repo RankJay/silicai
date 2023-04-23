@@ -1,10 +1,8 @@
-import { Suspense, useEffect, useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Suspense, useEffect } from "react";
+import { Canvas, useLoader } from "@react-three/fiber";
 import {
   useGLTF,
   useTexture,
-  AccumulativeShadows,
-  RandomizedLight,
   Decal,
   Environment,
   Center,
@@ -15,7 +13,6 @@ import { useSnapshot } from "valtio";
 import store from "@/store";
 import styles from "@/styles/index.module.css";
 import * as THREE from "three";
-import Loader from "../common/Loader";
 
 interface AppProps {
   position?: [number, number, number];
@@ -55,8 +52,6 @@ const BetterShirtModel = ({
       >
         <ambientLight intensity={0.5} />
         <Environment preset="city" />
-        {/* <CameraRig> */}
-        {/* <Backdrop /> */}
         <Center>
           <OrbitControls
             autoRotate={true}
@@ -67,7 +62,6 @@ const BetterShirtModel = ({
           />
           <Shirt />
         </Center>
-        {/* </CameraRig> */}
       </Canvas>
     </Suspense>
   );
@@ -90,12 +84,11 @@ function Shirt(props: ShirtProps): JSX.Element {
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
   (materials.lambert1 as THREE.MeshStandardMaterial).map = texture;
   (materials.lambert1 as THREE.MeshStandardMaterial).aoMapIntensity = 0;
-  useFrame((store, delta) => {
+  // useFrame((store, delta) => {
     // easing.dampC((materials.lambert1 as THREE.MeshStandardMaterial).color, 'black', 0.25, delta)
-  });
+  // });
 
   useEffect(() => {
-    console.log(materials);
     if (isLoading === false) {
       store.isGenerating = false;
       store.loadingSpeed = 10;

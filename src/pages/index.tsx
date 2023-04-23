@@ -2,8 +2,6 @@ import Head from "next/head";
 import styles from "@/styles/index.module.css";
 import { useRouter } from "next/router";
 import { useRef, useEffect } from "react";
-import Link from "next/link";
-import Banner from "./components/common/Banner";
 
 export default function Home() {
   const router = useRouter();

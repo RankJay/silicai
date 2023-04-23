@@ -1,6 +1,5 @@
 import store from "@/store";
 import styles from "@/styles/likebutton.module.css";
-import Image from "next/image";
 import { useSnapshot } from "valtio";
 
 const LikeButton = () => {

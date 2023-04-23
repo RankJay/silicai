@@ -1,5 +1,4 @@
 import BetterShirtModel from "./components/model/BetterShirtModel";
-import FileUpload from "./components/promptMenu/FileUpload";
 import PromptBar from "./components/promptMenu/PromptBar";
 import styles from "@/styles/new.module.css";
 import PromptTab from "./components/promptMenu/PromptTab";

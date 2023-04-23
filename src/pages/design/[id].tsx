@@ -1,4 +1,3 @@
-import store from "@/store";
 import ShirtModel from "@/pages/components/model/ShirtModel";
 import styles from "@/styles/design.module.css";
 import { GetStaticPaths } from "next";
