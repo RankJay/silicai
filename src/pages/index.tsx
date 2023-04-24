@@ -7,7 +7,7 @@ export default function Home() {
   const router = useRouter();
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-    useEffect(() => {
+  useEffect(() => {
     var prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
       var currentScrollPos = window.pageYOffset;
@@ -141,17 +141,24 @@ export default function Home() {
         </div>
         <div className={styles.indexPageHowSection}>
           <div className={styles.HowSection}>
-            <div className={styles.HowHeading}>Prompt-to-Design UI</div>
+            <div className={styles.HowHeading}>Prompt-Driven Design.</div>
             <ul>
+              <li>Begin with a prompt, infinite design possibilies await.</li>
               <li>
-                Type in anything you imagine, the possibilites are infinite...
+                Our suggestioned guide you to produce beautiful generative
+                textile designs.{" "}
+              </li>
+              <li>Unlock your creative potential.</li>
+              <li>
+                {" "}
+                Each design is saved in your closet for you to view later.
               </li>
               {/* <li>Earn Rewards & Royalties</li>
               <li>On-demand Manufacturing & Shipping</li>
               <li>Quality of clothing/fabric</li> */}
             </ul>
           </div>
-          <div className={styles.SectionAttachment}>d</div>
+          <div className={styles.SectionAttachment}></div>
         </div>
         {/* <div className={styles.indexPageOfferingSection}>
           <div className={styles.Offering}>
@@ -167,9 +174,19 @@ export default function Home() {
             <div className={styles.OfferingHeading}>
               <div>Earn Rewards & Royalties</div>
               <div className={styles.OfferingSubHeading}>
-                When you create a design, it has the potential to earn you
-                income. If another user orders your design from the marketplace,
-                you earn a royalty.{" "}
+                <ul>
+                  <li>
+                    Create a design, and earn up to 50% profit share when other
+                    users purchase it.
+                  </li>
+                  <li>
+                    When you create a design, it is showcased in our public
+                    marketplace allowing it to be discoved and ordered.
+                  </li>
+                  <li>
+                    Each design you create is unquiely labled as your creation.
+                  </li>
+                </ul>
               </div>
             </div>
             <div className={styles.SectionOfferingAttachment}></div>
@@ -178,9 +195,28 @@ export default function Home() {
         <div className={styles.indexPageOfferingSection}>
           <div className={styles.Offering}>
             <div className={styles.OfferingHeading}>
-              Manufacturing On-Demand
+              <div>Manufacturing On-Demand</div>
+              <div className={styles.OfferingSubHeading}>
+                <ul>
+                  <li>
+                    Each garment is made-to-order, tailored to fit every
+                    customer comfortably.
+                  </li>
+                  <li>
+                    Using state of the are digital printing infastrucutre we
+                    ensure designer grade quality in every garment.
+                  </li>
+                  <li>
+                    Experience true mass customization and with the highest
+                    degree of craftsmanship.
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div id={styles.printer} className={styles.SectionOfferingAttachment}></div>
+            <div
+              id={styles.printer}
+              className={styles.SectionOfferingAttachment}
+            ></div>
           </div>
         </div>
         <div className={styles.indexPageOfferingSection}>
@@ -191,13 +227,25 @@ export default function Home() {
             <div className={styles.OfferingHeading}>
               <div>Silic Garments</div>
               <div className={styles.OfferingSubHeading}>
-                This is not merch, it&#39;s high quality couture. SILIC garments
-                are digitally printing directly onto custom ultra soft circular
-                knit textiles. Each garment is cut and sewn ensure a beautiful
-                fit and feel to the fabric.
+                <ul>
+                  <li>
+                    This is not mass-produced merch; we mill our own high-end
+                    fabric, avoiding stock or blanks.
+                  </li>
+                  <li>
+                    {" "}
+                    Our garments are produced with the same attention to detail
+                    as top-tier fashion designers, ensuring luxurious textiles
+                    and lasting quality for discerning clients.
+                  </li>
+                  <li>Embrace the artistry of superior fashion design.</li>
+                </ul>
               </div>
             </div>
-            <div id={styles.fabric} className={styles.SectionOfferingAttachment}></div>
+            <div
+              id={styles.fabric}
+              className={styles.SectionOfferingAttachment}
+            ></div>
           </div>
         </div>
         <div className={styles.indexPageOfferingSection}>
@@ -205,10 +253,20 @@ export default function Home() {
             <div className={styles.OfferingHeading}>
               <div>Intelligence</div>
               <div className={styles.OfferingSubHeading}>
-                The more you use SILIC the better our Ai will understand you.
-                Designs you&#39;re likely to desire will be suggested to you in
-                the future. Soon you can deploy your own AutoGPT designer that
-                can automate your creations and suggest them to customers.
+                <ul>
+                  <li>
+                    The more you use SILIC the better our Ai will understand
+                    you.
+                  </li>
+                  <li>
+                    Designs you&#39;re likely to desire will be suggested to you
+                    in the future.
+                  </li>
+                  <li>
+                    Soon you can deploy your own AutoGPT designer that can
+                    automate your creations and suggest them to customers.
+                  </li>
+                </ul>
               </div>
             </div>
             <div className={styles.SectionOfferingAttachment}></div>
@@ -222,14 +280,28 @@ export default function Home() {
             <div className={styles.OfferingHeading}>
               <div>Marketplace</div>
               <div className={styles.OfferingSubHeading}>
-                TBA
+                <ul>
+                  <li>
+                    Browse and search designs made by any Silic community
+                    member.
+                  </li>
+                  <li>
+                    We&rsquo;ll soon provide you with custom link to your own
+                    storefront, empowering you to sell the designs you create.
+                  </li>
+                </ul>
               </div>
             </div>
             <div className={styles.SectionOfferingAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageFAQSection}>
-          <div className={styles.OfferingHeading} style={{textAlign: "center"}}>FAQs</div>
+          <div
+            className={styles.OfferingHeading}
+            style={{ textAlign: "center" }}
+          >
+            FAQs
+          </div>
         </div>
       </main>
     </>
