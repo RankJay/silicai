@@ -18,6 +18,7 @@ const publicPages = [
   "/sign-up/[[...index]]",
   "/",
   "/gallery",
+  "/about",
 ];
 
 export default function App({ Component, pageProps }: AppProps) {

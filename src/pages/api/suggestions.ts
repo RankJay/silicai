@@ -31,11 +31,11 @@ export default function handler(
     { id: 18, text: "Stripes" },
     { id: 19, text: "Polka dots" },
     { id: 20, text: "Gingham" },
-    { id: 20, text: "Chevron" },
-    { id: 20, text: "Herringbone" },
-    { id: 20, text: "Foulard" },
-    { id: 20, text: "Ogee" },
-    { id: 21, text: "Trompe l'oeil" },
+    { id: 21, text: "Chevron" },
+    { id: 22, text: "Herringbone" },
+    { id: 23, text: "Foulard" },
+    { id: 24, text: "Ogee" },
+    { id: 25, text: "Trompe l'oeil" },
   ];
   res.status(200).json({ data: resp });
 }

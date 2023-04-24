@@ -8,7 +8,7 @@
   height: 50px;
   align-items: flex-end;
   justify-content: space-evenly;
-  background-color: #0069ff;
+  background-color: black;/* #0069ff; */
   border-radius: 0.5rem;
   position: fixed;
   z-index: 9;

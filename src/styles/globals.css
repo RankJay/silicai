@@ -81,8 +81,8 @@ form {
 }
 
 ul {
-  /* list-style-type: none; */
-  padding-left: 2rem;
+  list-style-type: none;
+  /* padding-left: 2rem; */
 }
 
 li {

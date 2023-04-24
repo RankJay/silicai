@@ -41,12 +41,12 @@ const PromptTab = () => {
           { id: 17, text: "Plaid" },
           { id: 18, text: "Stripes" },
           { id: 19, text: "Polka dots" },
-          { id: 20, text: "Gingham" },
-          { id: 20, text: "Chevron" },
-          { id: 20, text: "Herringbone" },
-          { id: 20, text: "Foulard" },
-          { id: 20, text: "Ogee" },
-          { id: 20, text: "Trompe l'oeil" },
+          // { id: 20, text: "Gingham" },
+          { id: 21, text: "Chevron" },
+          { id: 22, text: "Herringbone" },
+          { id: 23, text: "Foulard" },
+          { id: 24, text: "Ogee" },
+          { id: 25, text: "Trompe l'oeil" },
         ]);
         setLoading(false);
       };
@@ -236,10 +236,11 @@ const PromptTab = () => {
                     width: "100%",
                   }}
                   name="prompt"
-                  placeholder="What kind of cotour you like?"
+                  placeholder="Coming Soon..."
+                  disabled={true}
                   required
                 />
-                <label>API Key</label>
+                <label>OpenAI API Key</label>
                 <input
                   id="prompt"
                   type="text"
@@ -249,16 +250,18 @@ const PromptTab = () => {
                     width: "100%",
                   }}
                   name="prompt"
-                  placeholder="OpenAI Secret Key"
+                  placeholder="Coming Soon..."
+                  disabled={true}
                   required
                 />
                 {/* </div> */}
-                {/* <div className={styles.autoGPTFooter}>
-                Have AI design you next cotour.
+                <div className={styles.autoGPTFooter} style={{marginTop: "20px", justifyContent: "flex-end"}}>
+                {/* Have AI design you next cotour. */}
                 <button
                   type="submit"
                   // onSubmit={handleSuggestionClick}
                   className={styles.signUpButton}
+                  disabled={true}
                   id="signUpButton"
                   style={{
                     fontFamily: "HelveticcaRegular",
@@ -268,7 +271,7 @@ const PromptTab = () => {
                 >
                   Launch Agent
                 </button>
-              </div> */}
+              </div>
               </form>
             </div>
           )}

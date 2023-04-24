@@ -7,6 +7,21 @@ export default function Home() {
   const router = useRouter();
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
+    useEffect(() => {
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        (document.getElementById("headerContainer") as HTMLElement).style.top =
+          "0";
+      } else {
+        (document.getElementById("headerContainer") as HTMLElement).style.top =
+          "-1rem";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+  });
+
   useEffect(() => {
     setTimeout(() => {
       const video = videoRef.current;
@@ -104,11 +119,7 @@ export default function Home() {
           {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
           <div className={styles.indexPageHeading}>SILIC</div>
           <div className={styles.indexPageSubHeading}>
-            Self-Generating Fashion Agent
-          </div>
-          <div className={styles.indexPageSubHeading}>+</div>
-          <div className={styles.indexPageSubHeading}>
-            Manufactured on-demand
+            Self-Generative Fashion Agent
           </div>
           <button
             type="submit"
@@ -198,6 +209,20 @@ export default function Home() {
                 Designs you&#39;re likely to desire will be suggested to you in
                 the future. Soon you can deploy your own AutoGPT designer that
                 can automate your creations and suggest them to customers.
+              </div>
+            </div>
+            <div className={styles.SectionOfferingAttachment}></div>
+          </div>
+        </div>
+        <div className={styles.indexPageOfferingSection}>
+          <div
+            className={styles.Offering}
+            style={{ flexDirection: "row-reverse" }}
+          >
+            <div className={styles.OfferingHeading}>
+              <div>Marketplace</div>
+              <div className={styles.OfferingSubHeading}>
+                TBA
               </div>
             </div>
             <div className={styles.SectionOfferingAttachment}></div>
