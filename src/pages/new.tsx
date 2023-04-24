@@ -5,11 +5,32 @@ import PromptTab from "./components/promptMenu/PromptTab";
 import LikeButton from "./components/promptMenu/like.button";
 import Head from "next/head";
 import BuyButton from "./components/promptMenu/buy.button";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export default function New() {
+  const router = useRouter();
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [transactionStatus, setTransactionStatus] = useState<string | null>(null);
+
+  useEffect(() => {
+    const { status } = router.query;
+    if (status === "success") {
+      setShowSuccessModal(true);
+      setTransactionStatus("success");
+    } else if (status === "cancel") {
+      setShowSuccessModal(true);
+      setTransactionStatus("failure");
+    }
+    setTimeout(() => {
+      setShowSuccessModal(false);
+      setTransactionStatus(null);
+    }, 2500);
+  }, [router.query]);
+
   return (
     <>
-    <Head>
+      <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -80,6 +101,23 @@ export default function New() {
       </div>
       {/* <Suggestions /> */}
       <PromptTab />
+      {showSuccessModal && (
+        <div className={styles.successModal}>
+          <div className={styles.successModalContent}>
+            <div
+              className={styles.close}
+              onClick={() => setShowSuccessModal(false)}
+            >
+              &times;
+            </div>
+            <div>
+              {transactionStatus === "success"
+                ? "Transaction successful!"
+                : "Transaction unsuccessful."}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
