@@ -92,7 +92,7 @@ export default function Home() {
 
         <meta name="robots" content="index,follow" />
 
-        <link rel="shortcut icon" href="../favicon.ico" />
+        <link rel="shortcut icon" href="../f2.ico" />
         {/* <link rel="icon" href="" type="image/svg+xml" /> */}
         <meta name="mobile-web-app-capable" content="yes" />
         <link rel="manifest" href="" />
