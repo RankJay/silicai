@@ -178,9 +178,9 @@ export default function Home() {
         <div className={styles.indexPageOfferingSection}>
           <div className={styles.Offering}>
             <div className={styles.OfferingHeading}>
-              On-demand Manufacturing
+              Manufacturing On-Demand
             </div>
-            <div className={styles.SectionOfferingAttachment}></div>
+            <div id={styles.printer} className={styles.SectionOfferingAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageOfferingSection}>
@@ -197,7 +197,7 @@ export default function Home() {
                 fit and feel to the fabric.
               </div>
             </div>
-            <div className={styles.SectionOfferingAttachment}></div>
+            <div id={styles.fabric} className={styles.SectionOfferingAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageOfferingSection}>

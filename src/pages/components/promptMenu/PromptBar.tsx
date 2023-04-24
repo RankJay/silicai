@@ -63,15 +63,23 @@ export default function PromptBar() {
     // const delay = 500; // 2 seconds
     // let j = 1;
 
-    // for (let i = 0; i < 8; i++) {
+    // for (let i = 0; i < 50; i++) {
     //   // Use an Immediately Invoked Function Expression (IIFE) to create a closure
     //   (function (iteration) {
     //     setTimeout(function () {
     //       console.log(`Iteration: ${j}`);
     //       store.imageURI = `/assets/test/${j}.png`
     //       j++;
+
+    //       if (j === 8) {
+    //         j = 1;
+    //       }
     //     }, delay * iteration);
     //   })(i);
+
+    //   if (j === 8) {
+    //     i = 0;
+    //   }
     // }
 
     const render = await axios.post(

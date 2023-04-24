@@ -20,18 +20,19 @@
   /* border-radius: 50px; */
   /* background-color: rgb(255, 0, 0); */
   /* backdrop-filter: blur(10px); */
-  height: 50vh;
+  height: 100vh;
 }
 
 .OfferingHeading {
   width: 50%;
-  height: 75%;
+  height: 50%;
   font-family: HelveticcaRegular;
   font-size: 2.5vw;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   text-align: start;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   /* letter-spacing: -0.1rem; */
 }
 
@@ -44,11 +45,26 @@
   /* letter-spacing: -0.1rem; */
 }
 
+#printer {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsla(230, 3%, 38%, 0.1);
+  background-size: 75%;
+  background-image: url(../../public/assets/printer.png);
+}
+
+#fabric {
+  background-position: center;
+  background-size: cover;
+  background-image: url(../../public/assets/fabric.jpeg);
+}
+
 .Offering {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 75%;
+  width: 100%;
   height: 100%;
   /* background-color: rgba(139, 139, 139, 0.31); */
   border-radius: 2.5rem;
@@ -91,7 +107,7 @@
   align-items: flex-start;
   justify-content: center;
   min-width: 200px;
-  width: 40%;
+  width: 50%;
   background-color: black;
   border-radius: 2rem;
   height: 100%;
@@ -292,6 +308,7 @@
   .Offering {
     width: 100%;
     height: 100%;
+    padding: 0rem;
   }
 
   .SectionAttachment {
@@ -300,7 +317,7 @@
 
   .SectionOfferingAttachment {
     width: 100%;
-    height: 75%;
+    height: 60%;
     align-self: flex-end;
   }
 }

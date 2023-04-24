@@ -34,7 +34,7 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
     const fetchImageData = async (imageId: string) => {
       const response = await supabaseStore.storage
         .from("silicai-bucket")
-        .download(`${process.env.DATABASEENVIRONMENT}/${imageId}.png`);
+        .download(`production/${imageId}.png`);
       console.log(imageId, response);
       const blob = response.data as Blob;
       const dataUrl = await new Promise<string>((resolve) => {
