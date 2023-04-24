@@ -35,7 +35,7 @@ const BuyButton = () => {
         description: "AI-generated t-shirt texture",
         image: snap.checkoutURL,
         quantity: 1,
-        price: 1,
+        price: 5,
       },
     });
     const result = await stripe.redirectToCheckout({
