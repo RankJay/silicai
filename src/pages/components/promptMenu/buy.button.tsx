@@ -6,7 +6,7 @@ import axios from "axios";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 const stripePromise = loadStripe(
-  "pk_test_51MyTmmJr18hT8NbDYGfsuabekj4ZonCii93aKw3leWi7LuUJeYhtcNXAWK0mD9IqVfTSou2BPlNHGfYY4i2Vj6Rn006N3oBuzj"
+  "pk_live_51MyTmmJr18hT8NbDwyQ6XvlIOx7HHWjvh6rIQKLxNBEGTSCY2CFT06ntzkJvgma26i2JDIT9Rxytap396YiclEsW00IpxqY6HK"
 );
 
 const BuyButton = () => {
@@ -35,7 +35,7 @@ const BuyButton = () => {
         description: "AI-generated t-shirt texture",
         image: snap.checkoutURL,
         quantity: 1,
-        price: 50,
+        price: 1,
       },
     });
     const result = await stripe.redirectToCheckout({

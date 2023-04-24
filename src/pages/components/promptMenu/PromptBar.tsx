@@ -60,6 +60,20 @@ export default function PromptBar() {
     store.isAutoGPTModalOpen = false;
     store.isModalOpen = false;
 
+    // const delay = 500; // 2 seconds
+    // let j = 1;
+
+    // for (let i = 0; i < 8; i++) {
+    //   // Use an Immediately Invoked Function Expression (IIFE) to create a closure
+    //   (function (iteration) {
+    //     setTimeout(function () {
+    //       console.log(`Iteration: ${j}`);
+    //       store.imageURI = `/assets/test/${j}.png`
+    //       j++;
+    //     }, delay * iteration);
+    //   })(i);
+    // }
+
     const render = await axios.post(
       `/api/generate`,
       { prompt: promptValue, clerk_id: user?.id }
