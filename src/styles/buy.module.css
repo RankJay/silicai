@@ -110,12 +110,18 @@
 
   .modalContainer {
     width: 75vw;
-    height: 55vh;
+    height: 50vh;
+    margin-top: -5rem;
     border-radius: 1.5rem;
   }
 
+  .sizeChart {
+    margin-top: 0.25rem;
+    height: 45%;
+  }
+
   .modalHeading {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .modalFooter {
