@@ -8,7 +8,7 @@
   height: 50px;
   align-items: flex-end;
   justify-content: space-evenly;
-  background-color: black;/* #0069ff; */
+  background-color: black; /* #0069ff; */
   border-radius: 0.5rem;
   position: fixed;
   z-index: 9;
@@ -28,11 +28,97 @@
   border-color: #fff;
 }
 
+.checkoutModal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.595);
+  z-index: 12;
+}
+
+.modalContainer {
+  width: 25rem;
+  height: 28rem;
+  background-color: #fff;
+  border-radius: 2.5rem;
+  padding: 2rem;
+}
+
+.modalHeading {
+  font-family: "HelveticcaBold";
+  letter-spacing: -0.05rem;
+  font-size: 1.5rem;
+}
+
+.size {
+  height: min-content;
+  width: 50px;
+  border: none;
+}
+
+#checkoutForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  padding: 1rem;
+  /* background-color: aqua; */
+}
+
+.sizeChart {
+  height: 50%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(154, 154, 154);
+}
+
+.checkoutToStripeButton {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.modalFooter {
+  font-family: "HelveticcaBold";
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .container {
     bottom: 35%;
     right: 2%;
     /* padding-right: 1rem; */
+  }
+
+  .modalContainer {
+    width: 75vw;
+    height: 55vh;
+    border-radius: 1.5rem;
+  }
+
+  .modalHeading {
+    font-size: 1.2rem;
+  }
+
+  .modalFooter {
+    font-size: 0.5rem;
   }
 }

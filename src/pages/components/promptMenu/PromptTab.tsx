@@ -82,6 +82,7 @@ const PromptTab = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    store.isFileUploadModalOpen = false;
     setImageSrc(null);
   };
 
@@ -90,6 +91,7 @@ const PromptTab = () => {
     store.imageURI = imageSrc as string;
     setFormSubmitted(true);
     store.isModalOpen = false;
+    store.isFileUploadModalOpen = false;
     handleCloseModal();
   };
 

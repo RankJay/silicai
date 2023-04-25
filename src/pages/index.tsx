@@ -241,10 +241,11 @@ export default function Home() {
           justifyContent: "flex-start",
           color: "#555",
           fontFamily: "HelveticcaBold",
-          height: "2rem",
+          height: "5rem",
           width: "100%",
           textAlign: "center",
         }}>
+          <p>Ⓒ Copyrights since 2023. All Rights Reserved.</p>
           <Link href={"/terms"}><u>Terms of Service</u></Link>
         </div>
       </main>
