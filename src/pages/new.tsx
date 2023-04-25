@@ -112,7 +112,7 @@ export default function New() {
             </div>
             <div>
               {transactionStatus === "success"
-                ? "Transaction successful!"
+                ? "Thank you for your pre-order! Please check your email for confirmation."
                 : "Transaction unsuccessful."}
             </div>
           </div>

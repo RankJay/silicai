@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "@/styles/index.module.css";
 import { useRouter } from "next/router";
 import { useRef, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -139,26 +140,17 @@ export default function Home() {
             fontFamily: "HelveticcaRegular"
           }}>Visit Gallery</Link> */}
         </div>
-        <div className={styles.indexPageHowSection}>
-          <div className={styles.HowSection}>
-            <div className={styles.HowHeading}>Prompt-Driven Design.</div>
-            <ul>
-              <li>Begin with a prompt, infinite design possibilies await.</li>
-              <li>
-                Our suggestioned guide you to produce beautiful generative
-                textile designs.{" "}
-              </li>
-              <li>Unlock your creative potential.</li>
-              <li>
-                {" "}
-                Each design is saved in your closet for you to view later.
-              </li>
-              {/* <li>Earn Rewards & Royalties</li>
-              <li>On-demand Manufacturing & Shipping</li>
-              <li>Quality of clothing/fabric</li> */}
-            </ul>
+        <div className={styles.indexPageSection}>
+          <div className={styles.SectionHeading}>Prompt-Driven Design.</div>
+          <div className={styles.Section}>
+            <div className={styles.SectionData}>
+              Begin with a prompt, infinite design possibilies await. Our
+              suggestioned guide you to produce beautiful generative textile
+              designs. Unlock your creative potential. Each design is saved in
+              your closet for you to view later.
+            </div>
+            <div className={styles.SectionAttachment}></div>
           </div>
-          <div className={styles.SectionAttachment}></div>
         </div>
         {/* <div className={styles.indexPageOfferingSection}>
           <div className={styles.Offering}>
@@ -166,133 +158,73 @@ export default function Home() {
             <div className={styles.SectionOfferingAttachment}></div>
           </div>
         </div> */}
-        <div className={styles.indexPageOfferingSection}>
+        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+          <div className={styles.SectionHeading}>Earn Instant Royalties.</div>
           <div
-            className={styles.Offering}
+            className={styles.Section}
             style={{ flexDirection: "row-reverse" }}
           >
-            <div className={styles.OfferingHeading}>
-              <div>Earn Rewards & Royalties</div>
-              <div className={styles.OfferingSubHeading}>
-                <ul>
-                  <li>
-                    Create a design, and earn up to 50% profit share when other
-                    users purchase it.
-                  </li>
-                  <li>
-                    When you create a design, it is showcased in our public
-                    marketplace allowing it to be discoved and ordered.
-                  </li>
-                  <li>
-                    Each design you create is unquiely labled as your creation.
-                  </li>
-                </ul>
-              </div>
+            <div className={styles.SectionData}>
+              Create a design, and earn up to 50% profit share when other users
+              purchase it. When you create a design, it is showcased in our
+              public marketplace allowing it to be discoved and ordered. Each
+              design you create is unquiely labled as your creation.
             </div>
-            <div className={styles.SectionOfferingAttachment}></div>
+            <div className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageOfferingSection}>
-          <div className={styles.Offering}>
-            <div className={styles.OfferingHeading}>
-              <div>Manufacturing On-Demand</div>
-              <div className={styles.OfferingSubHeading}>
-                <ul>
-                  <li>
-                    Each garment is made-to-order, tailored to fit every
-                    customer comfortably.
-                  </li>
-                  <li>
-                    Using state of the are digital printing infastrucutre we
-                    ensure designer grade quality in every garment.
-                  </li>
-                  <li>
-                    Experience true mass customization and with the highest
-                    degree of craftsmanship.
-                  </li>
-                </ul>
-              </div>
+        <div className={styles.indexPageSection}>
+          <div className={styles.SectionHeading}>Manufacturing On-Demand.</div>
+          <div className={styles.Section}>
+            <div className={styles.SectionData}>
+              Each garment is made-to-order, tailored to fit every customer
+              comfortably. Using state of the are digital printing infastrucutre
+              we ensure designer grade quality in every garment. Experience true
+              mass customization and with the highest degree of craftsmanship.
             </div>
-            <div
-              id={styles.printer}
-              className={styles.SectionOfferingAttachment}
-            ></div>
+            <div id={styles.printer} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageOfferingSection}>
+        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+          <div className={styles.SectionHeading}>Novel Silic Garments.</div>
           <div
-            className={styles.Offering}
+            className={styles.Section}
             style={{ flexDirection: "row-reverse" }}
           >
-            <div className={styles.OfferingHeading}>
-              <div>Silic Garments</div>
-              <div className={styles.OfferingSubHeading}>
-                <ul>
-                  <li>
-                    This is not mass-produced merch; we mill our own high-end
-                    fabric, avoiding stock or blanks.
-                  </li>
-                  <li>
-                    {" "}
-                    Our garments are produced with the same attention to detail
-                    as top-tier fashion designers, ensuring luxurious textiles
-                    and lasting quality for discerning clients.
-                  </li>
-                  <li>Embrace the artistry of superior fashion design.</li>
-                </ul>
-              </div>
+            <div className={styles.SectionData}>
+              This is not mass-produced merch; we mill our own high-end fabric,
+              avoiding stock or blanks. Our garments are produced with the same
+              attention to detail as top-tier fashion designers, ensuring
+              luxurious textiles and lasting quality for discerning clients.
+              Embrace the artistry of superior fashion design.
             </div>
-            <div
-              id={styles.fabric}
-              className={styles.SectionOfferingAttachment}
-            ></div>
+            <div id={styles.fabric} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageOfferingSection}>
-          <div className={styles.Offering}>
-            <div className={styles.OfferingHeading}>
-              <div>Intelligence</div>
-              <div className={styles.OfferingSubHeading}>
-                <ul>
-                  <li>
-                    The more you use SILIC the better our Ai will understand
-                    you.
-                  </li>
-                  <li>
-                    Designs you&#39;re likely to desire will be suggested to you
-                    in the future.
-                  </li>
-                  <li>
-                    Soon you can deploy your own AutoGPT designer that can
-                    automate your creations and suggest them to customers.
-                  </li>
-                </ul>
-              </div>
+        <div className={styles.indexPageSection}>
+          <div className={styles.SectionHeading}>Sentient Intelligence.</div>
+          <div className={styles.Section}>
+            <div className={styles.SectionData}>
+              The more you use SILIC the better our Ai will understand you.
+              Designs you&#39;re likely to desire will be suggested to you in
+              the future. Soon you can deploy your own AutoGPT designer that can
+              automate your creations and suggest them to customers.
             </div>
-            <div className={styles.SectionOfferingAttachment}></div>
+            <div className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageOfferingSection}>
+        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+          <div className={styles.SectionHeading}>A Global Marketplace.</div>
           <div
-            className={styles.Offering}
+            className={styles.Section}
             style={{ flexDirection: "row-reverse" }}
           >
-            <div className={styles.OfferingHeading}>
-              <div>Marketplace</div>
-              <div className={styles.OfferingSubHeading}>
-                <ul>
-                  <li>
-                    Browse and search designs made by any Silic community
-                    member.
-                  </li>
-                  <li>
-                    We&rsquo;ll soon provide you with custom link to your own
-                    storefront, empowering you to sell the designs you create.
-                  </li>
-                </ul>
-              </div>
+            <div className={styles.SectionData}>
+              Browse and search designs made by any Silic community member.
+              We&rsquo;ll soon provide you with custom link to your own
+              storefront, empowering you to sell the designs you create.
             </div>
-            <div className={styles.SectionOfferingAttachment}></div>
+            <div className={styles.SectionAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageFAQSection}>
@@ -302,6 +234,18 @@ export default function Home() {
           >
             FAQs
           </div>
+        </div>
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          color: "#555",
+          fontFamily: "HelveticcaBold",
+          height: "2rem",
+          width: "100%",
+          textAlign: "center",
+        }}>
+          <Link href={"/terms"}><u>Terms of Service</u></Link>
         </div>
       </main>
     </>

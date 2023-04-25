@@ -76,6 +76,47 @@
   /* flex-wrap: wrap; */
 }
 
+.indexPageSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  /* border-radius: 50px; */
+  /* background-color: rgb(255, 0, 0); */
+  /* backdrop-filter: blur(10px); */
+  height: 100vh;
+}
+
+.SectionData {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  font-size: 2.25rem;
+  text-align: left;
+}
+
+.SectionHeading {
+  font-family: HelveticcaBold;
+  font-size: 5rem;
+  width: 100%;
+  height: 10%;
+  align-items: center;
+  /* text-align: center; */
+  letter-spacing: -0.3rem;
+}
+
+.Section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  min-width: 200px;
+  width: 100%;
+  height: 90%;
+}
 
 .indexPageHowSection {
   display: flex;
@@ -116,10 +157,10 @@
 .SectionAttachment {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: center;
   min-width: 200px;
-  width: 50%;
+  width: 35%;
   background-color: black;
   border-radius: 2rem;
   height: 65%;
@@ -274,13 +315,27 @@
     font-size: 0.85rem;
   }
 
-  .OfferingHeading {
-    font-size: 3.5rem;
-    height: 40%;
+  .Section {
+    height: 80%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
-  .OfferingSubHeading {
-    font-size: 3vw;
+  .indexPageSection {
+    height: 100vh;
+    justify-content: flex-start;
+  }
+
+  .OfferingHeading, .SectionHeading {
+    font-size: 3rem;
+    letter-spacing: -0.15rem;
+    text-align: left;
+    height: 20%;
+  }
+
+  .OfferingSubHeading, .SectionData {
+    font-size: 1.25rem;
+    width: 100%;
   }
 
   .HowHeading {
@@ -354,6 +409,15 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .modelcanvas {
     top: -12%;
+  }
+
+  .SectionData {
+    font-size: 1.25rem;
+  }
+
+  .SectionAttachment {
+    width: 40%;
+    height: 50%;
   }
 }
 
