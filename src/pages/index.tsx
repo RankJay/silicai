@@ -8,20 +8,20 @@ export default function Home() {
   const router = useRouter();
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  useEffect(() => {
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function () {
-      var currentScrollPos = window.pageYOffset;
-      if (prevScrollpos > currentScrollPos) {
-        (document.getElementById("headerContainer") as HTMLElement).style.top =
-          "0";
-      } else {
-        (document.getElementById("headerContainer") as HTMLElement).style.top =
-          "-1rem";
-      }
-      prevScrollpos = currentScrollPos;
-    };
-  });
+  // useEffect(() => {
+  //   var prevScrollpos = window.pageYOffset;
+  //   window.onscroll = function () {
+  //     var currentScrollPos = window.pageYOffset;
+  //     if (prevScrollpos > currentScrollPos) {
+  //       (document.getElementById("headerContainer") as HTMLElement).style.top =
+  //         "0";
+  //     } else {
+  //       (document.getElementById("headerContainer") as HTMLElement).style.top =
+  //         "-1rem";
+  //     }
+  //     prevScrollpos = currentScrollPos;
+  //   };
+  // });
 
   useEffect(() => {
     setTimeout(() => {
@@ -140,7 +140,7 @@ export default function Home() {
             fontFamily: "HelveticcaRegular"
           }}>Visit Gallery</Link> */}
         </div>
-        <div className={styles.indexPageSection}>
+        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
           <div className={styles.SectionHeading}>Prompt-Driven Design.</div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
@@ -158,7 +158,7 @@ export default function Home() {
             <div className={styles.SectionOfferingAttachment}></div>
           </div>
         </div> */}
-        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+        <div className={styles.indexPageSection}>
           <div className={styles.SectionHeading}>Earn Instant Royalties.</div>
           <div
             className={styles.Section}
@@ -173,7 +173,7 @@ export default function Home() {
             <div className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageSection}>
+        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
           <div className={styles.SectionHeading}>Manufacturing On-Demand.</div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
@@ -185,7 +185,7 @@ export default function Home() {
             <div id={styles.printer} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+        <div className={styles.indexPageSection}>
           <div className={styles.SectionHeading}>Novel Silic Garments.</div>
           <div
             className={styles.Section}
@@ -201,7 +201,7 @@ export default function Home() {
             <div id={styles.fabric} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageSection}>
+        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
           <div className={styles.SectionHeading}>Sentient Intelligence.</div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
@@ -213,7 +213,7 @@ export default function Home() {
             <div className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+        <div className={styles.indexPageSection}>
           <div className={styles.SectionHeading}>A Global Marketplace.</div>
           <div
             className={styles.Section}

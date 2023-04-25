@@ -1,18 +1,19 @@
 import axios from "axios";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { Request, Response } from "express";
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: Request, res: Response) {
   const { prompt, clerk_id } = req.body;
 
-  const { data } = await axios.post(
+  axios.post(
     "https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/generate",
     {
       clerk_id,
       prompt,
     }
-  );
-  return res.json({ image: data.image.image });
+  ).then((resp)=> {
+    return res.status(200).json({ image: resp.data.image.image });
+  }).catch((err) => {
+    console.log(err.response.data.message);
+    return res.status(400).json({ error: err.response.data.message });
+  });
 }

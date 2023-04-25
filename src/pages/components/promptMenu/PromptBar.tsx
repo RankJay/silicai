@@ -83,29 +83,33 @@ export default function PromptBar() {
     //   }
     // }
 
-    const render = await axios.post(
-      `/api/generate`,
-      { prompt: promptValue, clerk_id: user?.id }
-    );
+    await axios
+      .post(`/api/generate`, { prompt: promptValue, clerk_id: user?.id })
+      .then(async (render) => {
+        const resp = (await render.data) as any;
+        const imageURl = await resp.image;
+        store.checkoutURL = imageURl;
+        const response: {
+          data:
+            | WithImplicitCoercion<string>
+            | { [Symbol.toPrimitive](hint: "string"): string };
+        } = await axios.get(imageURl, { responseType: "arraybuffer" });
 
-    const resp = await render.data;
-    const imageURl = await resp.image;
-    store.checkoutURL = imageURl;
-    const response: {
-      data:
-        | WithImplicitCoercion<string>
-        | { [Symbol.toPrimitive](hint: "string"): string };
-    } = await axios.get(imageURl, { responseType: "arraybuffer" });
-
-    const imageData = Buffer.from(response.data, "binary");
-    store.imageURI = `data:image/png;base64,${imageData.toString("base64")}`; // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
+        const imageData = Buffer.from(response.data, "binary");
+        store.imageURI = `data:image/png;base64,${imageData.toString(
+          "base64"
+        )}`; // 'http://localhost:3000//assets/bf4a9099-42dc-4df6-806e-8537f0ae3636.png' // `http://localhost:3000//assets/${resp.id}.png`
+      })
+      .catch((err) => {
+        window.alert(err.response.data.error);
+      });
     store.isGenerating = false;
     questionInput.value = "";
     questionInput.style.height = "initial";
   };
   return (
     <div className={styles.signUp} id="signup1">
-      <form onSubmit={handleChatSubmit} style={{alignItems: "flex-end"}}>
+      <form onSubmit={handleChatSubmit} style={{ alignItems: "flex-end" }}>
         <textarea
           id="prompt"
           // type="text"
