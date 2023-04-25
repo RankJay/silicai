@@ -8,14 +8,14 @@ export default async function handler(
   try {
     const { prompt, clerk_id } = req.body;
 
-    const respo = await axios.post(
+    const { data } = await axios.post(
       "https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/generate",
       {
         clerk_id,
         prompt,
       }
     );
-    console.log(respo);
+    return { image: await data.image.image }
   } catch (err) {
     console.log(err);
   }

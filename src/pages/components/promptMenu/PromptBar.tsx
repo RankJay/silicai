@@ -63,15 +63,16 @@ export default function PromptBar() {
     // const delay = 500; // 2 seconds
     // let j = 1;
 
-    // for (let i = 0; i < 50; i++) {
+    // for (let i = 0; i < 122; i++) {
     //   // Use an Immediately Invoked Function Expression (IIFE) to create a closure
     //   (function (iteration) {
     //     setTimeout(function () {
     //       console.log(`Iteration: ${j}`);
-    //       store.imageURI = `/assets/test/${j}.png`
+    //       store.imageURI = `/assets/animation/${j}.png`
+    //       questionInput.value = `${j}`;
     //       j++;
 
-    //       if (j === 8) {
+    //       if (j === 61) {
     //         j = 1;
     //       }
     //     }, delay * iteration);
