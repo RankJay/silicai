@@ -61,13 +61,16 @@
 .size {
   height: min-content;
   width: 50px;
+  background-color: transparent;
+  padding: 0.25rem;
+  border-radius: 1rem;
   border: none;
 }
 
 #checkoutForm {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: fit-content;

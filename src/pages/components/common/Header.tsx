@@ -32,19 +32,19 @@ const Header: NextPage = () => {
         className={styles.dropdownItem}
         onClick={() => handleDropdownItemClick(`/closet/${userId}`)}
       >
-        Digital Closet / My Store
+        Digital Closet / My Store <div className={styles.bubble}>Coming Soon</div>
       </div>
       <div
         className={styles.dropdownItem}
         onClick={() => handleDropdownItemClick(`/marketplace`)}
       >
-        Marketplace
+        Marketplace <div className={styles.bubble}>Coming Soon</div>
       </div>
       <div
         className={styles.dropdownItem}
         onClick={() => handleDropdownItemClick(`/payment/${userId}`)}
       >
-        Payments
+        Payments <div className={styles.bubble}>Coming Soon</div>
       </div>
     </div>
   );

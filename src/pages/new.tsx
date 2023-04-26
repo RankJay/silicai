@@ -18,9 +18,6 @@ export default function New() {
     if (status === "success") {
       setShowSuccessModal(true);
       setTransactionStatus("success");
-    } else if (status === "cancel") {
-      setShowSuccessModal(true);
-      setTransactionStatus("failure");
     }
     setTimeout(() => {
       setShowSuccessModal(false);

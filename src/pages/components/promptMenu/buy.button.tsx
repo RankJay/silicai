@@ -29,7 +29,8 @@ const BuyButton = () => {
 
   const createCheckOutSession = async () => {
     const stripe = (await stripePromise) as Stripe;
-    var event = document.getElementById("size") as HTMLSelectElement;
+    var event1 = document.getElementById("size") as HTMLSelectElement;
+    var event2 = document.getElementById("style") as HTMLSelectElement;
     // setItem({
     //   name: "T-shirt Design",
     //   description: "AI-generated t-shirt texture",
@@ -37,15 +38,18 @@ const BuyButton = () => {
     //   quantity: 1,
     //   price: 50,
     // });
+    console.log(event1.value, event2.value)
     const checkoutSession = await axios.post("/api/session", {
       item: {
         name: "T-shirt Design",
         description: "AI-generated t-shirt texture",
         image: snap.checkoutURL,
+        imageId: 'TBA',
         quantity: 1,
-        price: 5,
+        price: 1,
         metadata: {
-          size: event.value
+          size: event1.value,
+          style: event2.value,
         }
       },
     });
@@ -87,6 +91,22 @@ const BuyButton = () => {
             <option value="L">L</option>
             <option value="XL">XL</option>
             <option value="XXL">XXL</option>
+          </select>
+          <label
+            htmlFor="style"
+            style={{
+              color: "black",
+              fontFamily: "HelveticcaBold",
+              margin: "0px",
+              marginRight: "1rem",
+            }}
+          >
+            Style:
+          </label>
+          <select id="style" className={styles.size} name="style">
+            <option value="MEN">MEN</option>
+            <option value="WOMEN">WOMEN</option>
+            <option value="UNISEX">UNISEX</option>
           </select>
         </form>
         <div className={styles.sizeChart}></div>

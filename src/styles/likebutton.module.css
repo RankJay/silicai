@@ -11,7 +11,7 @@
   background-color: black;
   border-radius: 0.5rem;
   position: fixed;
-  z-index: 9;
+  z-index: 8;
   right: calc(100vw/2 - 350px);
   bottom: 25%;
   /* padding-left: 5rem; */

@@ -63,7 +63,7 @@
 
 .dropdownContent {
   min-width: 300px;
-  width: 50vw;
+  width: 85vw;
   max-width: 500px;
   height: 20vh;
   top: 3.5rem;
@@ -81,9 +81,23 @@
 .dropdownItem {
   font-family: "HelveticcaRegular";
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   height: 33%;
+}
+
+.bubble {
+  display: flex;
+  background-color: rgb(235, 235, 235);
+  color: rgb(67, 67, 67);
+  font-family: "HelveticcaBold";
+  font-size: x-small;
+  padding: 0.35rem;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 2rem;
 }
 
 /* ----------------------------------------------
