@@ -149,7 +149,19 @@ export default function Home() {
               designs. Unlock your creative potential. Each design is saved in
               your closet for you to view later.
             </div>
-            <div className={styles.SectionAttachment}></div>
+            <div className={styles.SectionAttachment}>
+            <video
+          ref={videoRef}
+          src="assets/fd1.mov"
+          loop
+          muted
+          className={styles.SectionAttachment}
+          style={{
+            width: "100%",
+            height: "100%"
+          }}
+        ></video>
+            </div>
           </div>
         </div>
         {/* <div className={styles.indexPageOfferingSection}>
@@ -170,7 +182,7 @@ export default function Home() {
               public marketplace allowing it to be discoved and ordered. Each
               design you create is unquiely labled as your creation.
             </div>
-            <div className={styles.SectionAttachment}></div>
+            <div id={styles.pp2} className={styles.SectionAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
@@ -210,7 +222,7 @@ export default function Home() {
               the future. Soon you can deploy your own AutoGPT designer that can
               automate your creations and suggest them to customers.
             </div>
-            <div className={styles.SectionAttachment}></div>
+            <div id={styles.pp3} className={styles.SectionAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageSection}>
@@ -224,7 +236,7 @@ export default function Home() {
               We&rsquo;ll soon provide you with custom link to your own
               storefront, empowering you to sell the designs you create.
             </div>
-            <div className={styles.SectionAttachment}></div>
+            <div id={styles.pp4} className={styles.SectionAttachment}></div>
           </div>
         </div>
         <div className={styles.indexPageFAQSection}>

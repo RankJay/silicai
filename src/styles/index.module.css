@@ -45,6 +45,44 @@
   /* letter-spacing: -0.1rem; */
 }
 
+#pp0 {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#pp1 {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: hsla(230, 3%, 38%, 0.1); */
+  /* background-image: url(../../public/assets/pp1.jpeg); */
+}
+
+#pp2 {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-color: hsla(230, 3%, 38%, 0.1); */
+  /* background-image: url(../../public/assets/pp2.jpeg); */
+}
+
+#pp3 {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsla(230, 3%, 38%, 0.1);
+  background-image: url(../../public/assets/pp3.jpeg);
+}
+
+#pp4 {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: hsla(230, 3%, 38%, 0.1);
+  background-image: url(../../public/assets/pp1.jpeg);
+}
+
 #printer {
   background-position: center;
   background-size: cover;
