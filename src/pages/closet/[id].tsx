@@ -26,18 +26,18 @@ interface InventoryObjects {
   replicate_url: string;
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(
-    `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/`
-  );
-  const data: UserObjects[] = await res.json();
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const res = await fetch(
+//     `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/`
+//   );
+//   const data: UserObjects[] = await res.json();
 
-  const paths = data.map((imageData) => ({
-    params: { id: imageData.clerk_id },
-  }));
+//   const paths = data.map((imageData) => ({
+//     params: { id: imageData.clerk_id },
+//   }));
 
-  return { paths, fallback: "blocking" };
-};
+//   return { paths, fallback: "blocking" };
+// };
 
 export const getServerSideProps = async ({ params }: { params: any }) => {
   const res = await axios.post(
