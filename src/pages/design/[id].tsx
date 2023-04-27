@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
 import store from "@/store";
+import BuyButton from "../components/promptMenu/buy.button";
+import LikeButton from "../components/promptMenu/like.button";
 
 interface InventoryObjects {
   image_id: string;
@@ -48,6 +50,7 @@ export default function Generated({ image_id }: { image_id: string }) {
       const response = render.data;
       if (!response.image) {
         setValidImage(false);
+        setNeedData(false);
         return;
       }
       store.imageURI = `data:image/png;base64,${response.image}`;
@@ -72,6 +75,8 @@ export default function Generated({ image_id }: { image_id: string }) {
       )}
       {!needData && isValidImage && (
         <div className={styles.designPageLandingSection}>
+          <BuyButton />
+          <LikeButton />
           <ShirtModel />
         </div>
       )}

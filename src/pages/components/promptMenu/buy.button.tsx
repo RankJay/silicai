@@ -38,11 +38,10 @@ const BuyButton = () => {
     //   quantity: 1,
     //   price: 50,
     // });
-    console.log(event1.value, event2.value)
     const checkoutSession = await axios.post("/api/session", {
       item: {
-        name: "T-shirt Design",
-        description: "AI-generated t-shirt texture",
+        name: "Silic T-Shirts",
+        description: "AI-generated T-Shirt",
         image: snap.checkoutURL,
         imageId: 'TBA',
         quantity: 1,

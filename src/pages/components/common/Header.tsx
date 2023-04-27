@@ -32,7 +32,7 @@ const Header: NextPage = () => {
         className={styles.dropdownItem}
         onClick={() => handleDropdownItemClick(`/closet/${userId}`)}
       >
-        Digital Closet / My Store <div className={styles.bubble}>Coming Soon</div>
+        Digital Closet / My Store { /*<div className={styles.bubble}>Coming Soon</div>*/}
       </div>
       <div
         className={styles.dropdownItem}
