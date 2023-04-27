@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: "blocking" };
 };
 
-export const getStaticProps = async ({ params }: { params: any }) => {
+export const getServerSideProps = async ({ params }: { params: any }) => {
   const res = await axios.post(
     `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/get`,
     {
