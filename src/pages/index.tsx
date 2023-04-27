@@ -100,7 +100,7 @@ export default function Home() {
         <link rel="apple-touch-icon" href="" />
       </Head>
       <main>
-        <video
+        {/* <video
           ref={videoRef}
           src="valo.mp4"
           width="250"
@@ -115,7 +115,7 @@ export default function Home() {
             objectFit: "cover",
             zIndex: "-10",
           }}
-        ></video>
+        ></video> */}
         <div className={styles.indePageLandingSection}>
           {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
           <div className={styles.indexPageHeading}>SILIC</div>
@@ -150,7 +150,7 @@ export default function Home() {
               your closet for you to view later.
             </div>
             <div className={styles.SectionAttachment}>
-            <video
+            {/* <video
           ref={videoRef}
           src="assets/fd1.mp4"
           loop
@@ -160,7 +160,7 @@ export default function Home() {
             width: "100%",
             height: "100%"
           }}
-        ></video>
+        ></video> */}
             </div>
           </div>
         </div>
