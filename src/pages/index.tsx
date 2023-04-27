@@ -150,17 +150,17 @@ export default function Home() {
               your closet for you to view later.
             </div>
             <div className={styles.SectionAttachment}>
-            {/* <video
-          ref={videoRef}
-          src="assets/fd1.mp4"
-          loop
-          muted
-          className={styles.SectionAttachment}
-          style={{
-            width: "100%",
-            height: "100%"
-          }}
-        ></video> */}
+            <video
+                ref={videoRef}
+                src="assets/fd1.mp4"
+                loop
+                muted
+                className={styles.SectionAttachment}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                }}
+              ></video>
             </div>
           </div>
         </div>
