@@ -26,33 +26,33 @@ interface InventoryObjects {
   replicate_url: string;
 }
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const res = await fetch(
-//     `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/`
-//   );
-//   const data: UserObjects[] = await res.json();
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await fetch(
+    `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/`
+  );
+  const data: UserObjects[] = await res.json();
 
-//   const paths = data.map((imageData) => ({
-//     params: { id: imageData.clerk_id },
-//   }));
+  const paths = data.map((imageData) => ({
+    params: { id: imageData.clerk_id },
+  }));
 
-//   return { paths, fallback: "blocking" };
-// };
+  return { paths, fallback: "blocking" };
+};
 
-export const getServerSideProps = async ({ params }: { params: any }) => {
+export const getStaticProps = async ({ params }: { params: any }) => {
   const res = await axios.post(
-    `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/get`,
+    `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/get`,
     {
       clerk_id: params.id,
     }
   );
-  const data: InventoryObjects[] = res.data;
-  return { props: { images: data } };
+  const userResponse: UserObjects[] = await res.data;
+  return { props: { user: userResponse[0] } };
 };
 
-export default function Generated({ images }: { images: InventoryObjects[] }) {
-
+export default function Generated({ user }: { user: UserObjects }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [images, setImages] = useState<InventoryObjects[]>([]);
   const [imageData, setImageData] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
@@ -71,6 +71,15 @@ export default function Generated({ images }: { images: InventoryObjects[] }) {
     };
 
     const fetchAllImageData = async () => {
+      const res = await axios.post(
+        `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/get`,
+        {
+          clerk_id: user.clerk_id,
+        }
+      );
+      const imagesResponse: InventoryObjects[] = await res.data;
+      setImages(imagesResponse);
+      console.log(images);
       for (const image of images) {
         fetchImageData(image.image_id);
       }
@@ -78,7 +87,7 @@ export default function Generated({ images }: { images: InventoryObjects[] }) {
     };
 
     fetchAllImageData();
-  }, [images]);
+  }, [images, user.clerk_id]);
 
   return (
     <>
@@ -88,7 +97,7 @@ export default function Generated({ images }: { images: InventoryObjects[] }) {
         </div>
       )}
       <div className={styles.container}>
-      <div className={styles.grid}>
+        <div className={styles.grid}>
           {isLoading ? (
             <Loader />
           ) : (
@@ -104,7 +113,15 @@ export default function Generated({ images }: { images: InventoryObjects[] }) {
                         alt={""}
                       />
                     ) : (
-                      <div className={styles.card} style={{backgroundColor: "#aaa", width: "285px", padding: "0.5rem", height:"300px"}}></div>
+                      <div
+                        className={styles.card}
+                        style={{
+                          backgroundColor: "#aaa",
+                          width: "285px",
+                          padding: "0.5rem",
+                          height: "300px",
+                        }}
+                      ></div>
                     )}
                   </Link>
                   {/* <h3>{image.prompt}</h3> */}
