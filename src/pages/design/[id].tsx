@@ -2,11 +2,15 @@ import ShirtModel from "@/pages/components/model/ShirtModel";
 import styles from "@/styles/design.module.css";
 import { GetStaticPaths } from "next";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import axios from "axios";
+import store from "@/store";
 
 interface InventoryObjects {
   image_id: string;
-  created_at: string;
-  user_id: string;
+  created_at: Date;
+  prompt: string;
+  clerk_id: string;
 }
 
 interface Designs {
@@ -14,7 +18,9 @@ interface Designs {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/`);
+  const res = await fetch(
+    `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/`
+  );
   const data: InventoryObjects[] = await res.json();
 
   // Get the paths we want to pre-render based on posts
@@ -29,67 +35,42 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: { params: any }) => {
-  // const render = await fetch(`https://silicai-server-52dq.zeet-silicai.zeet.app/api/user/inventory/get`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
-  //       "Access-Control-Allow-Headers": "Content-Type,Authorization",
-  //       "Content-type": "application/json; charset=UTF-8",
-  //       "Access-Control-Allow-Origin": "*",
-  //     },
-  //     mode: "cors",
-  //     body: JSON.stringify({image_id: params.id })
-  //   })
-
-  // const image = await render.json();
-
-  // return { props: {image: `data:image/png;base64,${image.image}`} }
-
   return { props: { image_id: params.id } };
 };
 
 export default function Generated({ image_id }: { image_id: string }) {
-  let getData: boolean = true;
-  const [data, setData] = useState<{
-    isLoading: boolean;
-    item: string | null;
-  }>({
-    isLoading: true,
-    item: null,
-  });
+  const [needData, setNeedData] = useState<boolean>(true);
+  const [isValidImage, setValidImage] = useState<boolean>(true);
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (getData) {
-        const render = await fetch(
-          `http://127.0.0.1:3000/api/user/inventory/get`,
-          {
-            method: "POST",
-            headers: {
-              "Access-Control-Allow-Methods":
-                "HEAD, GET, POST, PUT, PATCH, DELETE",
-              "Access-Control-Allow-Headers": "Content-Type,Authorization",
-              "Content-type": "application/json; charset=UTF-8",
-              "Access-Control-Allow-Origin": "*",
-            },
-            mode: "cors",
-            body: JSON.stringify({ image_id }),
-          }
-        );
-
-        const image = await render.arrayBuffer();
-        const buffer = new Uint8Array(image).buffer;
-        const blob = new Blob([image]);
-        const ff  = new Buffer(buffer);
-        console.log(ff.toString('base64'));
+    const fetchImage = async () => {
+      const render = await axios.post(`/api/design`, { image_id });
+      const response = render.data;
+      if (!response.image) {
+        setValidImage(false);
+        return;
       }
+      store.imageURI = `data:image/png;base64,${response.image}`;
+      setNeedData(false);
     };
+    if (needData) {
+      fetchImage();
+    }
+  }, [image_id, needData]);
 
-    fetchData();
-  });
   return (
     <>
-      {!data.isLoading && !data.item && (
+      {needData && (
+        <div className={styles.designPageLandingSection}>
+          <div className={styles.notFoundBanner}>Loading...</div>
+        </div>
+      )}
+      {!isValidImage && (
+        <div className={styles.designPageLandingSection}>
+          <div className={styles.notFoundBanner}>Image Not Found!</div>
+        </div>
+      )}
+      {!needData && isValidImage && (
         <div className={styles.designPageLandingSection}>
           <ShirtModel />
         </div>

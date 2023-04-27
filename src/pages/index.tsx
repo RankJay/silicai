@@ -152,7 +152,7 @@ export default function Home() {
             <div className={styles.SectionAttachment}>
             <video
           ref={videoRef}
-          src="assets/fd1.mov"
+          src="assets/fd1.mp4"
           loop
           muted
           className={styles.SectionAttachment}
