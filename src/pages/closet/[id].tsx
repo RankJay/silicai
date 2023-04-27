@@ -23,6 +23,7 @@ interface InventoryObjects {
   created_at: Date;
   prompt: string;
   clerk_id: string;
+  replicate_url: string;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

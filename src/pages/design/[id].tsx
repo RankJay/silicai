@@ -13,6 +13,7 @@ interface InventoryObjects {
   created_at: Date;
   prompt: string;
   clerk_id: string;
+  replicate_url: string;
 }
 
 interface Designs {
@@ -37,29 +38,36 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: { params: any }) => {
-  return { props: { image_id: params.id } };
+  const res = await axios.post(
+    `https://silicai-server-0sdj.zeet-silicai.zeet.app/api/inventory/image`, {
+      image_id: params.id,
+    }
+  );
+  const data: InventoryObjects[] = await res.data;
+  return { props: { image_data: data[0] } };
 };
 
-export default function Generated({ image_id }: { image_id: string }) {
+export default function Generated({ image_data }: { image_data: InventoryObjects }) {
   const [needData, setNeedData] = useState<boolean>(true);
   const [isValidImage, setValidImage] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchImage = async () => {
-      const render = await axios.post(`/api/design`, { image_id });
+      const render = await axios.post(`/api/design`, { image_id: image_data.image_id });
       const response = render.data;
       if (!response.image) {
         setValidImage(false);
         setNeedData(false);
         return;
       }
+      store.checkoutURL = image_data.replicate_url;
       store.imageURI = `data:image/png;base64,${response.image}`;
       setNeedData(false);
     };
     if (needData) {
       fetchImage();
     }
-  }, [image_id, needData]);
+  }, [image_data, needData]);
 
   return (
     <>
