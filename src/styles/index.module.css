@@ -1,7 +1,7 @@
 .indePageLandingSection {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
   /* border-radius: 50px; */
@@ -61,10 +61,10 @@
 
 #pp2 {
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  /* background-color: hsla(230, 3%, 38%, 0.1); */
-  /* background-image: url(../../public/assets/pp2.jpeg); */
+  /* background-color: transparent; */
+  background-image: url(../../public/assets/royalties.png);
 }
 
 #pp3 {
@@ -369,6 +369,10 @@
     letter-spacing: -0.15rem;
     text-align: left;
     height: 20%;
+  }
+
+  #softest {
+    font-size: 2.55rem;
   }
 
   .OfferingSubHeading, .SectionData {

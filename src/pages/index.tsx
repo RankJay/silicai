@@ -118,49 +118,65 @@ export default function Home() {
         ></video> */}
         <div className={styles.indePageLandingSection}>
           {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
-          <div className={styles.indexPageHeading}>SILIC</div>
-          <div className={styles.indexPageSubHeading}>
-            Self-Generative Fashion Agent
+          <div>
+            <div className={styles.indexPageHeading}>SILIC</div>
           </div>
-          <button
-            type="submit"
-            className={styles.signUpButton}
-            id="signUpButton"
-            onClick={handleImagineClick}
+          <div
             style={{
-              height: "50px",
-              marginTop: "2rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "100%",
             }}
           >
-            Get Started
-          </button>
+            <div className={styles.indexPageSubHeading}>
+              Self-Generative Fashion Agent
+            </div>
+            <button
+              type="submit"
+              className={styles.signUpButton}
+              id="signUpButton"
+              onClick={handleImagineClick}
+              style={{
+                height: "50px",
+                marginTop: "2rem",
+              }}
+            >
+              Get Started
+            </button>
+          </div>
           {/* <Link href="/gallery" style={{
             padding: "1rem",
             fontSize: "1rem",
             fontFamily: "HelveticcaRegular"
           }}>Visit Gallery</Link> */}
         </div>
-        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
-          <div className={styles.SectionHeading}>Prompt-Driven Design.</div>
+        <div
+          className={styles.indexPageSection}
+          style={{ backgroundColor: "hsla(230, 3%, 38%, 0.25)" }}
+        >
+          <div className={styles.SectionHeading}>Get Paid To Prompt.</div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
-              Begin with a prompt, infinite design possibilies await. Our
-              suggestioned guide you to produce beautiful generative textile
-              designs. Unlock your creative potential. Each design is saved in
-              your closet for you to view later.
+              Earn $.001 per design you generate. Our suggestions will guide you
+              to produce beautiful textile designs. Each design is saved in your
+              closet for you to view later. Infinite design possibilities await,
+              unlock your creative potential.
             </div>
             <div className={styles.SectionAttachment}>
-            <video
-                ref={videoRef}
-                src="assets/fd1.mp4"
+              <video
+                // src="assets/fd1.mp4"
                 loop
+                autoPlay
                 muted
                 className={styles.SectionAttachment}
                 style={{
                   width: "100%",
                   height: "100%",
                 }}
-              ></video>
+              >
+                <source src="assets/fd1.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -177,15 +193,19 @@ export default function Home() {
             style={{ flexDirection: "row-reverse" }}
           >
             <div className={styles.SectionData}>
-              Create a design, and earn up to 50% profit share when other users
-              purchase it. When you create a design, it is showcased in our
-              public marketplace allowing it to be discoved and ordered. Each
-              design you create is unquiely labled as your creation.
+              When you create a design, it will be listed in our public
+              marketplace and your own store front. If another user buys your
+              design, you can earn up to 50% of the profit of the fulfilled
+              garment. Our royalty system is just in its infancy. Many paradigm
+              shifting updates await.
             </div>
             <div id={styles.pp2} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+        <div
+          className={styles.indexPageSection}
+          style={{ backgroundColor: "hsla(230, 3%, 38%, 0.25)" }}
+        >
           <div className={styles.SectionHeading}>Manufacturing On-Demand.</div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
@@ -198,29 +218,35 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.indexPageSection}>
-          <div className={styles.SectionHeading}>Novel Silic Garments.</div>
+          <div id={styles.softest} className={styles.SectionHeading}>
+            The Softest Shirt You&rsquo;ll Ever Own.
+          </div>
           <div
             className={styles.Section}
             style={{ flexDirection: "row-reverse" }}
           >
             <div className={styles.SectionData}>
-              This is not mass-produced merch; we mill our own high-end fabric,
-              avoiding stock or blanks. Our garments are produced with the same
-              attention to detail as top-tier fashion designers, ensuring
-              luxurious textiles and lasting quality for discerning clients.
-              Embrace the artistry of superior fashion design.
+              This is not cheap merch. Unlike other on demand printing services,
+              we don&rsquo;t use low quality stock fabric or blank shirts to
+              print on. The SILIC garment will be the softest fabric
+              you&rsquo;ve ever owned. We mill our own textiles from highest
+              grade natural fibers and yarn with state of the art knitting
+              machines. Embrace designer fashion at affordable prices.
             </div>
             <div id={styles.fabric} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageSection} style={{backgroundColor: "hsla(230, 3%, 38%, 0.25)"}}>
+        <div
+          className={styles.indexPageSection}
+          style={{ backgroundColor: "hsla(230, 3%, 38%, 0.25)" }}
+        >
           <div className={styles.SectionHeading}>Sentient Intelligence.</div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
-              The more you use SILIC the better our Ai will understand you.
-              Designs you&#39;re likely to desire will be suggested to you in
-              the future. Soon you can deploy your own AutoGPT designer that can
-              automate your creations and suggest them to customers.
+              Silic stands for: Self-driven Intelligence for Limitless
+              Innovation in Composite-materials. We&rsquo;re working on our own
+              ai model that we believe will change the trajectory many
+              industries. Read our white paper to learn more.
             </div>
             <div id={styles.pp3} className={styles.SectionAttachment}></div>
           </div>
@@ -247,18 +273,22 @@ export default function Home() {
             FAQs
           </div>
         </div>
-        <div style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          color: "#555",
-          fontFamily: "HelveticcaBold",
-          height: "5rem",
-          width: "100%",
-          textAlign: "center",
-        }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            color: "#555",
+            fontFamily: "HelveticcaBold",
+            height: "5rem",
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
           <p>Ⓒ Copyrights since 2023. All Rights Reserved.</p>
-          <Link href={"/terms"}><u>Terms of Service</u></Link>
+          <Link href={"/terms"}>
+            <u>Terms of Service</u>
+          </Link>
         </div>
       </main>
     </>
