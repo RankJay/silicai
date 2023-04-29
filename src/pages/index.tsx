@@ -100,12 +100,11 @@ export default function Home() {
         <link rel="apple-touch-icon" href="" />
       </Head>
       <main>
-        {/* <video
-          ref={videoRef}
-          src="valo.mp4"
-          width="250"
-          loop
-          muted
+        <video
+          loop={true}
+          autoPlay={true}
+          playsInline={true}
+          muted={true}
           style={{
             position: "absolute",
             top: 0,
@@ -115,7 +114,9 @@ export default function Home() {
             objectFit: "cover",
             zIndex: "-10",
           }}
-        ></video> */}
+        >
+          <source src="assets/fd1.mp4" type="video/mp4" />
+        </video>
         <div className={styles.indePageLandingSection}>
           {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
           <div>
@@ -166,10 +167,10 @@ export default function Home() {
             <div className={styles.SectionAttachment}>
               <video
                 // src="assets/fd1.mp4"
-                loop = {true}
-                autoPlay = {true}
-                playsInline = {true}
-                muted = {true}
+                loop={true}
+                autoPlay={true}
+                playsInline={true}
+                muted={true}
                 className={styles.SectionAttachment}
                 style={{
                   width: "100%",
