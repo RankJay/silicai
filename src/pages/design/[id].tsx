@@ -1,4 +1,4 @@
-import ShirtModel from "@/pages/components/model/ShirtModel";
+import BetterShirtModel from "@/pages/components/model/BetterShirtModel";
 import styles from "@/styles/design.module.css";
 import { GetStaticPaths } from "next";
 import { useEffect, useState } from "react";
@@ -85,7 +85,7 @@ export default function Generated({ image_data }: { image_data: InventoryObjects
         <div className={styles.designPageLandingSection}>
           <BuyButton />
           <LikeButton />
-          <ShirtModel />
+          <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
         </div>
       )}
     </>

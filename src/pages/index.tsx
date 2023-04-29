@@ -189,7 +189,7 @@ export default function Home() {
           </div>
         </div> */}
         <div className={styles.indexPageSection}>
-          <div className={styles.SectionHeading}>Earn Instant Royalties.</div>
+          <div className={styles.SectionHeading}>Earn Royalties.</div>
           <div
             className={styles.Section}
             style={{ flexDirection: "row-reverse" }}

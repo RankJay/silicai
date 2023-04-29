@@ -2,6 +2,7 @@ import store from "@/store";
 import styles from "@/styles/buy.module.css";
 import { useSnapshot } from "valtio";
 import { Stripe, loadStripe } from "@stripe/stripe-js";
+import Image from "next/image";
 import axios from "axios";
 import { useState } from "react";
 
@@ -11,12 +12,12 @@ const stripePromise = loadStripe(
 );
 
 const BuyButton = () => {
-  window.onclick = function(event) {
-    var modal = document.getElementById('id01');
+  window.onclick = function (event) {
+    var modal = document.getElementById("id01");
     if (event.target == modal) {
       setIsCheckoutModalOpen(false);
     }
-  }
+  };
   const snap = useSnapshot(store);
   const [isCheckoutModalOpen, setIsCheckoutModalOpen] = useState(false);
   // const [item, setItem] = useState({
@@ -43,13 +44,13 @@ const BuyButton = () => {
         name: "Silic T-Shirts",
         description: "AI-generated T-Shirt",
         image: snap.checkoutURL,
-        imageId: 'TBA',
+        imageId: "TBA",
         quantity: 1,
         price: 1,
         metadata: {
           size: event1.value,
           style: event2.value,
-        }
+        },
       },
     });
     const result = await stripe.redirectToCheckout({
@@ -68,9 +69,7 @@ const BuyButton = () => {
   const checkoutModalContent = (
     <div className={styles.checkoutModal} id="id01">
       <div className={styles.modalContainer}>
-        <div className={styles.modalHeading}>
-          Choose Your General Size
-        </div>
+        <div className={styles.modalHeading}>Choose Your General Size</div>
         <form id={styles.checkoutForm}>
           <label
             htmlFor="size"
@@ -108,15 +107,18 @@ const BuyButton = () => {
             <option value="UNISEX">UNISEX</option>
           </select>
         </form>
-        <div className={styles.sizeChart}></div>
+        <div
+          className={styles.sizeChart}
+          style={{ backgroundSize: "cover", backgroundImage: `url('${store.checkoutURL}')` }}
+        >
+        </div>
         <div
           className={styles.checkoutToStripeButton}
           onClick={createCheckOutSession}
         >
           Checkout
         </div>
-        <div className={styles.modalFooter}
-        >
+        <div className={styles.modalFooter}>
           Silic Garments are meant to fit eveybody. We will check back later on
           you for your sizing before shipping.
         </div>
