@@ -166,9 +166,10 @@ export default function Home() {
             <div className={styles.SectionAttachment}>
               <video
                 // src="assets/fd1.mp4"
-                loop
-                autoPlay
-                muted
+                loop = {true}
+                autoPlay = {true}
+                playsInline = {true}
+                muted = {true}
                 className={styles.SectionAttachment}
                 style={{
                   width: "100%",
