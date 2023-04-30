@@ -6,7 +6,7 @@ import { GetStaticPaths } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useAuth } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 
 interface UserObjects {
   user_id: string;
@@ -55,7 +55,7 @@ export default function Generated({ user }: { user: UserObjects }) {
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState<InventoryObjects[]>([]);
   const [imageData, setImageData] = useState<{ [key: string]: string }>({});
-  const clerkObj = useAuth();
+  const clerkObj = useUser();
 
   useEffect(() => {
     const fetchImageData = async (imageId: string) => {
@@ -95,7 +95,39 @@ export default function Generated({ user }: { user: UserObjects }) {
     <>
       {!isLoading && (
         <div className={styles.closetPageLandingSection}>
-          <div className={styles.closetPageBanner}>User Card Details</div>
+          <div className={styles.closetPageCard}>
+            <div className={styles.closetPagePFP}>
+              <Image
+                src={clerkObj.user?.profileImageUrl as string}
+                alt={""}
+                width={50}
+                height={50}
+                style={{
+                  width: "80%",
+                  height: "80%",
+                  borderRadius: "1rem",
+                }}
+              />
+            </div>
+            <div className={styles.closetPageDetails}>
+              <div style={{
+                display: 'flex',
+                flexDirection: "column",
+                alignItems: "flex-start"
+              }}>
+                <div className={styles.closetPageDetailsKey}>username</div>
+                <div className={styles.closetPageDetailsValue}>{clerkObj.user?.username}</div>
+              </div>
+              <div style={{
+                display: 'flex',
+                flexDirection: "column",
+                alignItems: "flex-start"
+              }}>
+                <div className={styles.closetPageDetailsKey}>email</div>
+                <div className={styles.closetPageDetailsValue}>{clerkObj.user?.emailAddresses[0].emailAddress}</div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
       <div className={styles.container}>
