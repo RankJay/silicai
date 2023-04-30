@@ -277,4 +277,12 @@
     bottom: 0%;
     border-radius: 0%;
   }
+
+  #launchagent {
+    font-size: 1rem;
+  }
+
+  .signUpButton {
+    width: 60%;
+  }
 }

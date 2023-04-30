@@ -264,7 +264,7 @@ const PromptTab = () => {
                   // onSubmit={handleSuggestionClick}
                   className={styles.signUpButton}
                   disabled={true}
-                  id="signUpButton"
+                  id={styles.launchagent}
                   style={{
                     fontFamily: "HelveticcaRegular",
                     backgroundColor: "white",

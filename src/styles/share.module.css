@@ -28,12 +28,31 @@
   border-color: #fff;
 }
 
+#tooltip {
+  display: none;
+}
+
+.tooltip {
+  position: fixed;
+  bottom: 53%;
+  right: calc(100vw / 2 - 290px);
+  background: white;
+  color: black;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+
 /* Mobile */
 @media (max-width: 700px) {
   .container {
     bottom: 43%;
     right: 2%;
     /* padding-right: 1rem; */
+  }
+  .tooltip {
+    right: 2%;
+    bottom: 52%;
   }
 }
 

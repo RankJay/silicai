@@ -7,6 +7,7 @@ import axios from "axios";
 import store from "@/store";
 import BuyButton from "../components/promptMenu/buy.button";
 import LikeButton from "../components/promptMenu/like.button";
+import ShareButton from "../components/promptMenu/share.button";
 
 interface InventoryObjects {
   image_id: string;
@@ -84,6 +85,7 @@ export default function Generated({ image_data }: { image_data: InventoryObjects
       {!needData && isValidImage && (
         <div className={styles.designPageLandingSection}>
           <BuyButton />
+          <ShareButton />
           <LikeButton />
           <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
         </div>

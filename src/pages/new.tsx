@@ -7,7 +7,6 @@ import Head from "next/head";
 import BuyButton from "./components/promptMenu/buy.button";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import ShareButton from "./components/promptMenu/share.button";
 
 export default function New() {
   const router = useRouter();
@@ -92,7 +91,6 @@ export default function New() {
       </Head>
       <div className={styles.newPageLandingSection}>
         {/* <UserButton /> */}
-        <ShareButton />
         <BuyButton />
         <LikeButton />
         <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
