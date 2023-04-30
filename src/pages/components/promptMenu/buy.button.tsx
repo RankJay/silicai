@@ -32,6 +32,10 @@ const BuyButton = () => {
     const stripe = (await stripePromise) as Stripe;
     var event1 = document.getElementById("size") as HTMLSelectElement;
     var event2 = document.getElementById("style") as HTMLSelectElement;
+    var butt = document.getElementById("checkoutstripe") as HTMLDivElement;
+    butt.style.pointerEvents = 'none';
+    butt.innerText = "Loading..."
+    butt.style.color = "#888888"
     // setItem({
     //   name: "T-shirt Design",
     //   description: "AI-generated t-shirt texture",
@@ -59,6 +63,7 @@ const BuyButton = () => {
     if (result.error) {
       window.alert(result.error.message);
     }
+    butt.style.pointerEvents = 'all';
     setIsCheckoutModalOpen(false);
   };
 
@@ -109,10 +114,11 @@ const BuyButton = () => {
         </form>
         <div
           className={styles.sizeChart}
-          style={{ backgroundSize: "cover", backgroundImage: `url('${store.checkoutURL}')` }}
+          style={{ backgroundSize: "cover", backgroundImage: `url('${store.imageURI}')` }}
         >
         </div>
         <div
+          id="checkoutstripe"
           className={styles.checkoutToStripeButton}
           onClick={createCheckOutSession}
         >
