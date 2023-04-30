@@ -106,7 +106,7 @@
 /* Mobile */
 @media (max-width: 700px) {
   .container {
-    bottom: 35%;
+    bottom: 40%;
     right: 2%;
     /* padding-right: 1rem; */
   }

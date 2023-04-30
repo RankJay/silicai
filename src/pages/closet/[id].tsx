@@ -6,6 +6,7 @@ import { GetStaticPaths } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useAuth } from "@clerk/nextjs";
 
 interface UserObjects {
   user_id: string;
@@ -54,6 +55,7 @@ export default function Generated({ user }: { user: UserObjects }) {
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState<InventoryObjects[]>([]);
   const [imageData, setImageData] = useState<{ [key: string]: string }>({});
+  const clerkObj = useAuth();
 
   useEffect(() => {
     const fetchImageData = async (imageId: string) => {
