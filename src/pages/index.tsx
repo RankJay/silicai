@@ -49,7 +49,7 @@ export default function Home() {
         <title>Silic AI</title>
         <meta
           name="description"
-          content="Generativ AI Fashion Agent"
+          content="Generative AI Fashion Agent"
         />
         <meta name="author" content="Jay Rank" />
 
@@ -57,7 +57,7 @@ export default function Home() {
         <meta itemProp="name" content="Silic AI" />
         <meta
           itemProp="description"
-          content="Generativ AI Fashion Agent"
+          content="Generative AI Fashion Agent"
         />
         <meta
           itemProp="image"
@@ -70,7 +70,7 @@ export default function Home() {
         <meta property="og:url" content="https://rankjay.vercel.app/" />
         <meta
           property="og:description"
-          content="Generativ AI Fashion Agent"
+          content="Generative AI Fashion Agent"
         />
         <meta
           property="og:image"
@@ -83,7 +83,7 @@ export default function Home() {
         <meta name="twitter:title" content="Silic AI" />
         <meta
           name="twitter:description"
-          content="Generativ AI Fashion Agent"
+          content="Generative AI Fashion Agent"
         />
         <meta
           name="twitter:image"
