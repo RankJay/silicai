@@ -96,7 +96,7 @@ export default function Generated({ user }: { user: UserObjects }) {
       {!isLoading && (
         <div className={styles.closetPageLandingSection}>
           <div className={styles.closetPageCard}>
-            <div className={styles.closetPagePFP}>
+            {/* <div className={styles.closetPagePFP}>
               <Image
                 src={clerkObj.user?.profileImageUrl as string}
                 alt={""}
@@ -108,39 +108,41 @@ export default function Generated({ user }: { user: UserObjects }) {
                   borderRadius: "1rem",
                 }}
               />
-            </div>
+            </div> */}
             <div className={styles.closetPageDetails}>
-              <div
+              {/* <div
                 style={{
                   display: "flex",
                   flexDirection: "row",
                   alignItems: "flex-start",
                 }}
-              >
-                <div className={styles.closetPageDetailsKey}>Username:</div>
-                <div
+              > */}
+                <div className={styles.closetPageDetailsValue}>Welcome to your digital closet.</div>
+                {/* <div
                   className={styles.closetPageDetailsValue}
                   style={{ paddingLeft: "1rem" }}
                 >
                   {clerkObj.user?.username}
-                </div>
-              </div>
-              <div
+                </div> */}
+              {/* </div> */}
+              <div className={styles.closetPageDetailsValue}>Images may take a moment to load.</div>
+              {/* <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "flex-start",
                 }}
-              >
-                <div className={styles.closetPageDetailsKey}></div>
+              > */}
+                {/* <div className={styles.closetPageDetailsKey}></div> */}
                 <div
                   className={styles.closetPageDetailsValue}
                   style={{ textAlign: "start" }}
                 >
-                  Designs may take a<br />
-                  few moments to load
+                  Click on any of your designs to
+                  preview in 3D. Order any of your creations
+                  today. Share with friends via a link.
                 </div>
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>

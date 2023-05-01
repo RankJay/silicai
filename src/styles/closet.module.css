@@ -11,8 +11,9 @@
 .closetPageCard {
   display: flex;
   flex-direction: row;
-  min-width: 400px;
+  /* min-width: 400px; */
   width: auto;
+  max-width: 500px;
   padding: 2rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -34,8 +35,9 @@
 .closetPageDetails {
   min-width: 50%;
   width: fit-content;
-  height: 10rem;
-  display: flex;
+  /* height: 10rem; */
+  /* display: flex; */
+  text-align: start;
   flex-direction: column;
   color: white;
   justify-content: space-evenly;
@@ -50,7 +52,8 @@
 
 .closetPageDetailsValue {
   font-family: "HelveticcaRegular";
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  padding-bottom: 1rem;
 }
 
 .container {
