@@ -28,6 +28,10 @@ const BuyButton = () => {
   //   price: 50,
   // });
 
+  function getClientReferenceId (): string {
+    return window.Rewardful && window.Rewardful.referral || ('checkout_'+(new Date).getTime());
+  }
+
   const createCheckOutSession = async () => {
     const stripe = (await stripePromise) as Stripe;
     var event1 = document.getElementById("size") as HTMLSelectElement;
@@ -43,6 +47,7 @@ const BuyButton = () => {
     //   quantity: 1,
     //   price: 50,
     // });
+    console.log(getClientReferenceId());
     const checkoutSession = await axios.post("/api/session", {
       item: {
         name: "Silic T-Shirts",
@@ -55,6 +60,7 @@ const BuyButton = () => {
           size: event1.value,
           style: event2.value,
         },
+        referral: getClientReferenceId(),
       },
     });
     const result = await stripe.redirectToCheckout({
