@@ -110,21 +110,36 @@ export default function Generated({ user }: { user: UserObjects }) {
               />
             </div>
             <div className={styles.closetPageDetails}>
-              <div style={{
-                display: 'flex',
-                flexDirection: "column",
-                alignItems: "flex-start"
-              }}>
-                <div className={styles.closetPageDetailsKey}>username</div>
-                <div className={styles.closetPageDetailsValue}>{clerkObj.user?.username}</div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div className={styles.closetPageDetailsKey}>Username:</div>
+                <div
+                  className={styles.closetPageDetailsValue}
+                  style={{ paddingLeft: "1rem" }}
+                >
+                  {clerkObj.user?.username}
+                </div>
               </div>
-              <div style={{
-                display: 'flex',
-                flexDirection: "column",
-                alignItems: "flex-start"
-              }}>
-                <div className={styles.closetPageDetailsKey}>email</div>
-                <div className={styles.closetPageDetailsValue}>{clerkObj.user?.emailAddresses[0].emailAddress}</div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                }}
+              >
+                <div className={styles.closetPageDetailsKey}></div>
+                <div
+                  className={styles.closetPageDetailsValue}
+                  style={{ textAlign: "start" }}
+                >
+                  Designs may take a<br />
+                  few moments to load
+                </div>
               </div>
             </div>
           </div>

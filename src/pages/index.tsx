@@ -115,7 +115,7 @@ export default function Home() {
             zIndex: "-10",
           }}
         >
-          <source src="assets/fd1.mp4" type="video/mp4" />
+          <source src="assets/fd2.mp4" type="video/mp4" />
         </video>
         <div className={styles.indePageLandingSection}>
           {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
@@ -156,7 +156,7 @@ export default function Home() {
           className={styles.indexPageSection}
           style={{ backgroundColor: "hsla(230, 3%, 38%, 0.25)" }}
         >
-          <div className={styles.SectionHeading}>Get Paid To Prompt.</div>
+          <div id={styles.softest} className={styles.SectionHeading}>Get Paid To Prompt Design.</div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
               Earn $.001 per design you generate. Our suggestions will guide you
@@ -189,7 +189,7 @@ export default function Home() {
           </div>
         </div> */}
         <div className={styles.indexPageSection}>
-          <div className={styles.SectionHeading}>Earn Royalties.</div>
+          <div className={styles.SectionHeading}>Earn Royalties $</div>
           <div
             className={styles.Section}
             style={{ flexDirection: "row-reverse" }}
