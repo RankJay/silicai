@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding-top: 3rem;
+  padding-top: 5rem;
   padding-bottom: 3rem;
   /* border-radius: 50px; */
   /* background-color: rgba(0, 0, 0, 0.685); */
@@ -230,7 +230,7 @@
 
 .indexPageHeading {
   font-family: HelveticcaRegular;
-  font-size: 10vw;
+  font-size: 8vw;
 }
 
 .indexPageSubHeading {
@@ -459,7 +459,7 @@
 @media (min-width: 701px) and (max-width: 1120px) {
 
   .indePageLandingSection {
-    padding-top: 4rem;
+    padding-top: 5.5rem;
     padding-bottom: 4rem;
   }
 
