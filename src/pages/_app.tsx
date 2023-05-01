@@ -12,6 +12,7 @@ import { SessionContextProvider } from "@supabase/auth-helpers-react";
 import { useEffect, useState } from "react";
 import Header from "./components/common/Header";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const publicPages = [
   "/sign-in/[[...index]]",
@@ -45,6 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider {...pageProps}>
       <Header />
+      <Script async src="https://r.wdfl.co/rw.js" data-rewardful='e7e3e6' />
       {isPublicPage ? (
         <Component {...pageProps} />
       ) : (
