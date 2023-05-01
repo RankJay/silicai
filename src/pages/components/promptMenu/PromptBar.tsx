@@ -119,7 +119,7 @@ export default function PromptBar() {
             width: "100%",
           }}
           name="prompt"
-          placeholder="Search..."
+          placeholder="Prompt..."
           required
         />
         <button
