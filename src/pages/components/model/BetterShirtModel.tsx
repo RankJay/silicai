@@ -78,7 +78,7 @@ function Shirt(props: ShirtProps): JSX.Element {
   texture.wrapS = THREE.MirroredRepeatWrapping;
   texture.wrapT = THREE.MirroredRepeatWrapping;
   texture.magFilter = THREE.NearestFilter;
-  // texture.repeat.set(2, 2);
+  texture.repeat.set(2, 2);
   texture.flipY = false;
   // texture.offset.set(-0.5, -0.5);
   const { nodes, materials } = useLoader(GLTFLoader, "/assets/shirt.glb");
