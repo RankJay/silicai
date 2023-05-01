@@ -61,7 +61,7 @@ export default function Home() {
         />
         <meta
           itemProp="image"
-          content="https://user-images.githubusercontent.com/53647573/235447800-8d88e24f-fd67-4d31-8e85-a88c80067c81.png"
+          content="https://user-images.githubusercontent.com/53647573/235449155-661c2a93-9486-46ce-ad27-e2498aae68a0.png"
         />
 
         {/* Facebook Meta Tags */}
@@ -74,7 +74,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://user-images.githubusercontent.com/53647573/235447800-8d88e24f-fd67-4d31-8e85-a88c80067c81.png"
+          content="https://user-images.githubusercontent.com/53647573/235449155-661c2a93-9486-46ce-ad27-e2498aae68a0.png"
         />
 
         {/* Twitter Meta Tags */}
@@ -87,7 +87,7 @@ export default function Home() {
         />
         <meta
           name="twitter:image"
-          content="https://user-images.githubusercontent.com/53647573/235447800-8d88e24f-fd67-4d31-8e85-a88c80067c81.png"
+          content="https://user-images.githubusercontent.com/53647573/235449155-661c2a93-9486-46ce-ad27-e2498aae68a0.png"
         />
         <meta name="twitter:creator" content="@RankJay1" />
 
