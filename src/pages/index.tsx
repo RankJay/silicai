@@ -131,7 +131,7 @@ export default function Home() {
             }}
           >
             <div className={styles.indexPageSubHeading}>
-              Self-Generative Fashion Agent
+              Generative Fashion For Real Clothing
             </div>
             <button
               type="submit"
