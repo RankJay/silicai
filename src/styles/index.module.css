@@ -233,7 +233,7 @@
 
 .indexPageSubHeading {
   font-family: HelveticcaRegular;
-  font-size: 1.75vw;
+  font-size: 1.85vw;
   max-width: 500px;
   color: rgb(112, 112, 112);
 }
@@ -337,7 +337,7 @@
   }
 
   .indexPageSubHeading {
-    font-size: 1rem;
+    font-size: 1.2rem;
     /* max-width: 200px; */
   }
 

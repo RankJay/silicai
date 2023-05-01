@@ -120,7 +120,7 @@ export default function Home() {
         <div className={styles.indePageLandingSection}>
           {/* <Banner inputText="First 1 Million Sign-ups, Lifetime Free Subscription!" /> */}
           <div>
-            <div className={styles.indexPageHeading}></div>
+            <div className={styles.indexPageHeading}>SILIC</div>
           </div>
           <div
             style={{
