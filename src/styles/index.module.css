@@ -1,9 +1,11 @@
 .indePageLandingSection {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   /* border-radius: 50px; */
   /* background-color: rgba(0, 0, 0, 0.685); */
   /* backdrop-filter: blur(10px); */
@@ -329,6 +331,12 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+
+  .indePageLandingSection {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
   .modelcanvas {
     top: -12%;
   }
@@ -449,6 +457,12 @@
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
+
+  .indePageLandingSection {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   .modelcanvas {
     top: -12%;
   }
