@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  height: 50vh;
+  height: 60vh;
 }
 
 .closetPageCard {
@@ -93,6 +93,13 @@
   box-shadow: rgba(0, 0, 0, 0.1);
 }
 
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .closetPageLandingSection {
+    height: 75vh;
+  }
+}
+
 /* Mobile */
 @media (max-width: 700px) {
 
@@ -105,7 +112,7 @@
     align-items: center;
     justify-content: center;
     width: fit-content;
-    min-width: auto;
+    max-width: 70%;
   }
 
   .closetPagePFP {
