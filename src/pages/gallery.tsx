@@ -75,7 +75,7 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         <meta name="author" content="Jay Rank" />
 
         {/* Google / Search Engine Tags */}
-        <meta itemProp="name" content="Silic AI : Gallery" />
+        <meta itemProp="name" content="Silic.AI: Generative Fashion For Real Clothing : Gallery" />
         <meta
           itemProp="description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"
@@ -86,7 +86,7 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         />
 
         {/* Facebook Meta Tags */}
-        <meta property="og:title" content="Silic AI : Gallery" />
+        <meta property="og:title" content="Silic.AI: Generative Fashion For Real Clothing : Gallery" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://silic.ai/" />
         <meta
@@ -101,7 +101,7 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="" />
-        <meta name="twitter:title" content="Silic AI : Gallery" />
+        <meta name="twitter:title" content="Silic.AI: Generative Fashion For Real Clothing : Gallery" />
         <meta
           name="twitter:description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"

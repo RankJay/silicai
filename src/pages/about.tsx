@@ -21,7 +21,7 @@ export default function About() {
         <meta name="author" content="Jay Rank" />
 
         {/* Google / Search Engine Tags */}
-        <meta itemProp="name" content="Silic AI : About" />
+        <meta itemProp="name" content="Silic.AI: Generative Fashion For Real Clothing : About" />
         <meta
           itemProp="description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"
@@ -32,7 +32,7 @@ export default function About() {
         />
 
         {/* Facebook Meta Tags */}
-        <meta property="og:title" content="Silic AI : About" />
+        <meta property="og:title" content="Silic.AI: Generative Fashion For Real Clothing : About" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://silic.ai/" />
         <meta
@@ -47,7 +47,7 @@ export default function About() {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="" />
-        <meta name="twitter:title" content="Silic AI : About" />
+        <meta name="twitter:title" content="Silic.AI: Generative Fashion For Real Clothing : About" />
         <meta
           name="twitter:description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"

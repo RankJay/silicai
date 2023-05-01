@@ -54,7 +54,7 @@ export default function Home() {
         <meta name="author" content="Jay Rank" />
 
         {/* Google / Search Engine Tags */}
-        <meta itemProp="name" content="Silic AI" />
+        <meta itemProp="name" content="Silic.AI: Generative Fashion For Real Clothing" />
         <meta
           itemProp="description"
           content="Generative AI Fashion Agent"
@@ -65,7 +65,7 @@ export default function Home() {
         />
 
         {/* Facebook Meta Tags */}
-        <meta property="og:title" content="Silic AI" />
+        <meta property="og:title" content="Silic.AI: Generative Fashion For Real Clothing" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://silic.ai/" />
         <meta
@@ -80,7 +80,7 @@ export default function Home() {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="" />
-        <meta name="twitter:title" content="Silic AI" />
+        <meta name="twitter:title" content="Silic.AI: Generative Fashion For Real Clothing" />
         <meta
           name="twitter:description"
           content="Generative AI Fashion Agent"
