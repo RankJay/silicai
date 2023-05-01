@@ -61,7 +61,7 @@ export default function Home() {
         />
         <meta
           itemProp="image"
-          content="https://user-images.githubusercontent.com/53647573/235407380-d229d5f6-2105-4418-b7eb-eb1657c8f717.png"
+          content="https://user-images.githubusercontent.com/53647573/235447800-8d88e24f-fd67-4d31-8e85-a88c80067c81.png"
         />
 
         {/* Facebook Meta Tags */}
@@ -74,7 +74,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://user-images.githubusercontent.com/53647573/235407380-d229d5f6-2105-4418-b7eb-eb1657c8f717.png"
+          content="https://user-images.githubusercontent.com/53647573/235447800-8d88e24f-fd67-4d31-8e85-a88c80067c81.png"
         />
 
         {/* Twitter Meta Tags */}
@@ -87,7 +87,7 @@ export default function Home() {
         />
         <meta
           name="twitter:image"
-          content="https://user-images.githubusercontent.com/53647573/235407380-d229d5f6-2105-4418-b7eb-eb1657c8f717.png"
+          content="https://user-images.githubusercontent.com/53647573/235447800-8d88e24f-fd67-4d31-8e85-a88c80067c81.png"
         />
         <meta name="twitter:creator" content="@RankJay1" />
 
@@ -143,7 +143,7 @@ export default function Home() {
                 marginTop: "2rem",
               }}
             >
-              Get Started
+              Design & Order
             </button>
           </div>
           {/* <Link href="/gallery" style={{
