@@ -67,7 +67,7 @@ export default function Home() {
         {/* Facebook Meta Tags */}
         <meta property="og:title" content="Silic AI" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rankjay.vercel.app/" />
+        <meta property="og:url" content="https://silic.ai/" />
         <meta
           property="og:description"
           content="Generative AI Fashion Agent"

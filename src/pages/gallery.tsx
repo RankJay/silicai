@@ -88,7 +88,7 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         {/* Facebook Meta Tags */}
         <meta property="og:title" content="Silic AI : Gallery" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rankjay.vercel.app/" />
+        <meta property="og:url" content="https://silic.ai/" />
         <meta
           property="og:description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"
