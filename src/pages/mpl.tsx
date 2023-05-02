@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Image from "next/image";
 import styles from "@/styles/gallery.module.css";
-import { supabaseStore } from "@/store";
+import store, { supabaseStore } from "@/store";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -35,6 +35,10 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
   const toggleModal = () => {
     setIsModalOpen((prevState) => !prevState);
   };
+
+  const loadImage = (imageId: string) => {
+    store.imageURI = imageData[imageId];
+  }
 
   useEffect(() => {
     const fetchImageData = async (imageId: string) => {
@@ -152,8 +156,8 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
             </div>
             <div className={styles.gridCarousel}>
             {data?.map((image) => (
-                <div key={image.image_id} className={styles.card}>
-                  <Link href={`/design/${image.image_id}`}>
+                <div key={image.image_id} className={styles.card} onClick={() => {loadImage(image.image_id)}}>
+                  {/* <Link href={`/design/${image.image_id}`}> */}
                     {imageData[image.image_id] ? (
                       <Image
                         src={imageData[image.image_id]}
@@ -162,9 +166,9 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
                         alt={image.image_id}
                       />
                     ) : (
-                      <div className={styles.card} style={{backgroundColor: "#aaa", width: "285px", padding: "0.5rem", height:"300px"}}></div>
+                      <div className={styles.card} style={{backgroundColor: "#aaa", width: "50px", padding: "0.5rem", height:"50px"}}></div>
                     )}
-                  </Link>
+                  {/* </Link> */}
                   {/* <h3>{image.title}</h3> */}
                 </div>
               ))}
