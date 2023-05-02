@@ -40,29 +40,27 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
     store.imageURI = imageData[imageId];
   };
 
-  const fetchImageData = useCallback(async (imageId: string) => {
-    const response = await supabaseStore.storage
-      .from("silicai-bucket")
-      .download(`production/${imageId}.png`);
-    console.log(imageId, response);
-    const blob = response.data as Blob;
-    const dataUrl = await new Promise<string>((resolve) => {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result as string);
-      reader.readAsDataURL(blob);
-    });
-
-    setImageData((prevState) => ({ ...prevState, [imageId]: dataUrl }));
-  }, []);
-
   useEffect(() => {
+    const fetchImageData = async (imageId: string) => {
+      const response = await supabaseStore.storage
+        .from("silicai-bucket")
+        .download(`production/${imageId}.png`);
+      const blob = response.data as Blob;
+      const dataUrl = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result as string);
+        reader.readAsDataURL(blob);
+      });
+  
+      setImageData((prevState) => ({ ...prevState, [imageId]: dataUrl }));
+    };
     const fetchAllImageData = async () => {
-      await Promise.all(data.map((image) => fetchImageData(image.image_id)));
+      Promise.all(data.map((image) => fetchImageData(image.image_id)));
       setIsLoading(false);
     };
 
     fetchAllImageData();
-  }, [data, fetchImageData]);
+  }, [data]);
 
   return (
     <>
@@ -153,10 +151,6 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
               <div className={styles.buyButton}>Buy Now</div>
             </div>
             <div className={styles.gridCarousel}>
-              {isLoading ? (
-                <Loader />
-              ) : (
-                <>
                   {data?.map((image) => (
                     <div
                       key={image.image_id}
@@ -188,8 +182,6 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
                       {/* <h3>{image.title}</h3> */}
                     </div>
                   ))}
-                </>
-              )}
             </div>
           </div>
         )}
