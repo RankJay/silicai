@@ -18,7 +18,7 @@ const publicPages = [
   "/sign-in/[[...index]]",
   "/sign-up/[[...index]]",
   "/",
-  "/gallery",
+  "/mpl",
   "/about",
 ];
 

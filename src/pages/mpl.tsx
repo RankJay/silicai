@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import Image from "next/image";
 import styles from "@/styles/gallery.module.css";
 import store, { supabaseStore } from "@/store";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Loader from "@/pages/components/common/Loader";
@@ -38,33 +38,31 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
 
   const loadImage = (imageId: string) => {
     store.imageURI = imageData[imageId];
-  }
+  };
+
+  const fetchImageData = useCallback(async (imageId: string) => {
+    const response = await supabaseStore.storage
+      .from("silicai-bucket")
+      .download(`production/${imageId}.png`);
+    console.log(imageId, response);
+    const blob = response.data as Blob;
+    const dataUrl = await new Promise<string>((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.readAsDataURL(blob);
+    });
+
+    setImageData((prevState) => ({ ...prevState, [imageId]: dataUrl }));
+  }, []);
 
   useEffect(() => {
-    const fetchImageData = async (imageId: string) => {
-      const response = await supabaseStore.storage
-        .from("silicai-bucket")
-        .download(`production/${imageId}.png`);
-      console.log(imageId, response);
-      const blob = response.data as Blob;
-      const dataUrl = await new Promise<string>((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result as string);
-        reader.readAsDataURL(blob);
-      });
-
-      setImageData((prevState) => ({ ...prevState, [imageId]: dataUrl }));
-    };
-
     const fetchAllImageData = async () => {
-      for (const image of data) {
-        fetchImageData(image.image_id);
-      }
+      await Promise.all(data.map((image) => fetchImageData(image.image_id)));
       setIsLoading(false);
     };
 
     fetchAllImageData();
-  }, [data]);
+  }, [data, fetchImageData]);
 
   return (
     <>
@@ -155,23 +153,43 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
               <div className={styles.buyButton}>Buy Now</div>
             </div>
             <div className={styles.gridCarousel}>
-            {data?.map((image) => (
-                <div key={image.image_id} className={styles.card} onClick={() => {loadImage(image.image_id)}}>
-                  {/* <Link href={`/design/${image.image_id}`}> */}
-                    {imageData[image.image_id] ? (
-                      <Image
-                        src={imageData[image.image_id]}
-                        width={50}
-                        height={50}
-                        alt={image.image_id}
-                      />
-                    ) : (
-                      <div className={styles.card} style={{backgroundColor: "#aaa", width: "50px", padding: "0.5rem", height:"50px"}}></div>
-                    )}
-                  {/* </Link> */}
-                  {/* <h3>{image.title}</h3> */}
-                </div>
-              ))}
+              {isLoading ? (
+                <Loader />
+              ) : (
+                <>
+                  {data?.map((image) => (
+                    <div
+                      key={image.image_id}
+                      className={styles.card}
+                      onClick={() => {
+                        loadImage(image.image_id);
+                      }}
+                    >
+                      {/* <Link href={`/design/${image.image_id}`}> */}
+                      {imageData[image.image_id] ? (
+                        <Image
+                          src={imageData[image.image_id]}
+                          width={50}
+                          height={50}
+                          alt={image.image_id}
+                        />
+                      ) : (
+                        <div
+                          className={styles.card}
+                          style={{
+                            backgroundColor: "#aaa",
+                            width: "50px",
+                            padding: "0.5rem",
+                            height: "50px",
+                          }}
+                        ></div>
+                      )}
+                      {/* </Link> */}
+                      {/* <h3>{image.title}</h3> */}
+                    </div>
+                  ))}
+                </>
+              )}
             </div>
           </div>
         )}
