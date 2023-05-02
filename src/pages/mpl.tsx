@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Loader from "@/pages/components/common/Loader";
+import BetterShirtModel from "./components/model/BetterShirtModel";
 
 interface InventoryObjects {
   image_id: string;
@@ -26,9 +27,14 @@ export const getServerSideProps: GetServerSideProps = async () => {
   };
 };
 
-export default function Gallery({ data }: { data: InventoryObjects[] }) {
+export default function Marketplace({ data }: { data: InventoryObjects[] }) {
   const [isLoading, setIsLoading] = useState(true);
   const [imageData, setImageData] = useState<{ [key: string]: string }>({});
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prevState) => !prevState);
+  };
 
   useEffect(() => {
     const fetchImageData = async (imageId: string) => {
@@ -67,7 +73,7 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
           content="AI fashion, fashion trends, fashion technology, AI algorithms, innovative designs"
         />
 
-        <title>Silic AI : Gallery</title>
+        <title>Silic AI : Marketplace</title>
         <meta
           name="description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"
@@ -75,7 +81,10 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         <meta name="author" content="Jay Rank" />
 
         {/* Google / Search Engine Tags */}
-        <meta itemProp="name" content="Silic.AI: Generative Fashion For Real Clothing : Gallery" />
+        <meta
+          itemProp="name"
+          content="Silic.AI: Generative Fashion For Real Clothing : Marketplace"
+        />
         <meta
           itemProp="description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"
@@ -86,7 +95,10 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         />
 
         {/* Facebook Meta Tags */}
-        <meta property="og:title" content="Silic.AI: Generative Fashion For Real Clothing : Gallery" />
+        <meta
+          property="og:title"
+          content="Silic.AI: Generative Fashion For Real Clothing : Marketplace"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://silic.ai/" />
         <meta
@@ -101,7 +113,10 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="" />
-        <meta name="twitter:title" content="Silic.AI: Generative Fashion For Real Clothing : Gallery" />
+        <meta
+          name="twitter:title"
+          content="Silic.AI: Generative Fashion For Real Clothing : Marketplace"
+        />
         <meta
           name="twitter:description"
           content="Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite Creativity and Unique Patterns for Stunning Prints"
@@ -121,17 +136,22 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
         <link rel="apple-touch-icon" href="" />
       </Head>
       <div className={styles.container}>
-        <div className={styles.galleryPageHeading}>Image Gallery</div>
-        <div className={styles.galleryPageSubHeading}>
-          Revolutionize Your Fabric Designs with Generative AI: Unlock Infinite
-          Creativity and Unique Patterns for Stunning Prints
+        <div className={styles.ModalSpace}>
+          <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
         </div>
-        <div className={styles.grid}>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            <>
-              {data?.map((image) => (
+        {!isModalOpen && (
+          <div className={styles.shopButton} onClick={toggleModal}>
+            Shop Designs
+          </div>
+        )}
+        {isModalOpen && (
+          <div className={styles.grid}>
+            <div className={styles.gridHeader}>
+              <div className={styles.backButton} onClick={toggleModal}></div>
+              <div className={styles.buyButton}>Buy Now</div>
+            </div>
+            <div className={styles.gridCarousel}>
+            {data?.map((image) => (
                 <div key={image.image_id} className={styles.card}>
                   <Link href={`/design/${image.image_id}`}>
                     {imageData[image.image_id] ? (
@@ -148,9 +168,9 @@ export default function Gallery({ data }: { data: InventoryObjects[] }) {
                   {/* <h3>{image.title}</h3> */}
                 </div>
               ))}
-            </>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

@@ -4,36 +4,55 @@
   align-items: center;
 }
 
-.galleryPageHeading {
-  margin-top: 10rem;
-  text-align: center;
-  font-family: HelveticcaBold;
-  font-size: 75px;
-  letter-spacing: -2px;
-}
-
-.galleryPageSubHeading {
-  max-width: 600px;
-  text-align: center;
-  margin-top: 1rem;
-  color: rgb(161, 161, 161);
-  font-family: HelveticcaRegular;
-  font-size: 20px;
+.ModalSpace {
+  width: 100vw;
+  height: 85vh;
 }
 
 .grid {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
+  position: fixed;
   gap: 0.1rem;
-  margin-top: 2rem;
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  bottom: 0rem;
+  padding: 1rem;
+  background-color: #1c1c1c8c;
+  backdrop-filter: blur(5px);
+  border-radius: 1rem;
+}
+
+.gridHeader {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.gridCarousel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+  overflow-y: scroll;
+  background-color: rgba(0,0,0,.764);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .card {
-  max-width: 300px;
+  max-width: 6rem;
   /* border: 1px solid #eaeaea; */
-  border-radius: 10px;
-  padding: 0.5rem;
+  border-radius: 1rem;
   height: min-content;
   text-align: center;
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
@@ -44,10 +63,44 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 1rem;
   /* margin-bottom: 1rem; */
 }
 
 .card:hover {
   box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.backButton {
+  background-color: rgb(0, 0, 0);
+  width: 50px;
+  height: 50px;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.buyButton {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  /* font-family: "HelveticcaBold"; */
+  padding: 1rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.shopButton {
+  /* display: flex; */
+  position: fixed;
+  bottom: 5%;
+  font-family: "HelveticcaRegular";
+  font-size: larger;
+  padding: 1.5rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  color: white;
+  background-color: rgb(37, 37, 37);
+  border-radius: 0.75rem;
+  cursor: pointer;
 }
