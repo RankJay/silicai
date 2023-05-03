@@ -59,17 +59,17 @@ export default function Generated({ user }: { user: UserObjects }) {
 
   useEffect(() => {
     const fetchImageData = async (imageId: string) => {
-      const response = await supabaseStore.storage
+      const response = supabaseStore.storage
         .from("silicai-bucket")
-        .download(`production/${imageId}.png`);
-      const blob = response.data as Blob;
-      const dataUrl = await new Promise<string>((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result as string);
-        reader.readAsDataURL(blob);
-      });
+        .getPublicUrl(`production/${imageId}.png`);
+      // const blob = response.data as Blob;
+      // const dataUrl = await new Promise<string>((resolve) => {
+      //   const reader = new FileReader();
+      //   reader.onloadend = () => resolve(reader.result as string);
+      //   reader.readAsDataURL(blob);
+      // });
 
-      setImageData((prevState) => ({ ...prevState, [imageId]: dataUrl }));
+      setImageData((prevState) => ({ ...prevState, [imageId]: response.data.publicUrl }));
     };
 
     const fetchAllImageData = async () => {
@@ -159,8 +159,8 @@ export default function Generated({ user }: { user: UserObjects }) {
                     {imageData[image.image_id] ? (
                       <Image
                         src={imageData[image.image_id]}
-                        width={50}
-                        height={50}
+                        width={250}
+                        height={250}
                         alt={""}
                       />
                     ) : (
