@@ -36,9 +36,9 @@ const Header: NextPage = () => {
       </div>
       <div
         className={styles.dropdownItem}
-        onClick={() => handleDropdownItemClick(`/marketplace`)}
+        onClick={() => handleDropdownItemClick(`/mpl`)}
       >
-        Marketplace <div className={styles.bubble}>Coming Soon</div>
+        Marketplace { /* <div className={styles.bubble}>Coming Soon</div> */ }
       </div>
       <div
         className={styles.dropdownItem}
