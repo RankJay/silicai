@@ -75,8 +75,8 @@ function Shirt(props: ShirtProps): JSX.Element {
   const snap = useSnapshot(store);
   const isLoading = snap.isGenerating;
   const texture = useTexture(snap.imageURI);
-  texture.wrapS = THREE.MirroredRepeatWrapping;
-  texture.wrapT = THREE.MirroredRepeatWrapping;
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
   texture.magFilter = THREE.NearestFilter;
   // texture.repeat.set(2, 2);
   texture.flipY = false;
