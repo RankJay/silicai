@@ -57,8 +57,9 @@ const BetterShirtModel = ({
             autoRotate={true}
             autoRotateSpeed={snap.loadingSpeed}
             enablePan={false}
-            minDistance={0}
-            maxDistance={5}
+            // minDistance={0}
+            // maxDistance={5}
+            enableZoom={false}
           />
           <Shirt />
         </Center>
