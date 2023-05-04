@@ -3,13 +3,24 @@ import Link from "next/link";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import styles from "@/styles/header.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header: NextPage = () => {
   const { isSignedIn, userId } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
   const userClosetURL = `/closet/${userId}`;
+
+  useEffect(() => {
+    const handleRouteChange = (
+      url: string,
+      { shallow }: { shallow: boolean }
+    ) => {
+      setIsDropdownOpen(false);
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+  }, [router]);
 
   const handleImagineClick = () => {
     if (router) {
@@ -30,15 +41,15 @@ const Header: NextPage = () => {
     <div className={styles.dropdownContent}>
       <div
         className={styles.dropdownItem}
-        onClick={() => handleDropdownItemClick(`/closet/${userId}`)}
+        onClick={() => handleDropdownItemClick(`/mpl`)}
       >
-        Digital Closet / My Store { /*<div className={styles.bubble}>Coming Soon</div>*/}
+        Marketplace {/* <div className={styles.bubble}>Coming Soon</div> */}
       </div>
       <div
         className={styles.dropdownItem}
-        onClick={() => handleDropdownItemClick(`/mpl`)}
+        onClick={() => handleDropdownItemClick(`/closet/${userId}`)}
       >
-        Marketplace { /* <div className={styles.bubble}>Coming Soon</div> */ }
+        My Closet {/*<div className={styles.bubble}>Coming Soon</div>*/}
       </div>
       <div
         className={styles.dropdownItem}
