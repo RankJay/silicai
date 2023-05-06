@@ -65,7 +65,7 @@
   min-width: 300px;
   width: 85vw;
   max-width: 500px;
-  height: 20vh;
+  height: 25vh;
   top: 3.5rem;
   left: 2rem;
   position: fixed;
@@ -84,7 +84,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  height: 33%;
+  height: 25%;
 }
 
 .bubble {

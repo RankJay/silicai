@@ -319,15 +319,15 @@ const PromptTab = () => {
                           marginTop: "1rem",
                         }}
                       >
-                        Upload your MidJourney creations or any {" "}
-                        {/* <Image
+                        Upload your <span style={{ fontFamily: "HelveticcaBold", color: "white" }}>MidJourney</span> creations or any {" "}
+                        <Image
                           src={
                             "https://global-uploads.webflow.com/5fcf07e52d378eac98367eaf/60cb864c5f189bdbd96815b8_5fcecb678cc42bfa2337dc6e_WOMBO.png"
                           }
                           width={50}
                           height={14}
                           alt={"wombo"}
-                        />{" "} */}
+                        />{" "}
                         image of your choice
                       </div>
                     </div>

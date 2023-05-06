@@ -58,8 +58,15 @@ const Header: NextPage = () => {
       </div>
       <div
         className={styles.dropdownItem}
+        id={`/new`}
+        onClick={() => handleDropdownItemClick(`/new`)}
+      >
+        Generate Designs {/*<div className={styles.bubble}>Coming Soon</div>*/}
+      </div>
+      <div
+        className={styles.dropdownItem}
         id={`/payment/${userId}`}
-        onClick={() => handleDropdownItemClick(`/payment/${userId}`)}
+        // onClick={() => handleDropdownItemClick(`/payment/${userId}`)}
       >
         Payments <div className={styles.bubble}>Coming Soon</div>
       </div>

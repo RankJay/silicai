@@ -1,15 +1,39 @@
 import store from "@/store";
 import styles from "@/styles/likebutton.module.css";
+import { useAuth } from "@clerk/nextjs";
 import { useSnapshot } from "valtio";
 
 const LikeButton = () => {
   const snap = useSnapshot(store);
+  const { userId } = useAuth();
+
+  const hasLiked = () => {
+    store.isLiked = snap.isLiked ? false : true;
+    store.isDisliked = false;
+    fetch("/api/feel", {
+      method: "POST",
+      body: JSON.stringify({
+        clerk_id: userId as string,
+        image_id: snap.imageId || snap.checkoutURL,
+        isLike: true,
+      }),
+    });
+  };
+  const hasDisLiked = () => {
+    store.isDisliked = snap.isDisliked ? false : true;
+    store.isLiked = false;
+    fetch("/api/feel", {
+      method: "POST",
+      body: JSON.stringify({
+        clerk_id: userId as string,
+        image_id: snap.imageId || snap.checkoutURL,
+        isLike: false,
+      }),
+    });
+  };
   return (
     <div className={styles.container}>
-      <button
-        className={styles.likeButton}
-        onClick={() => {store.isLiked = snap.isLiked ? false : true; store.isDisliked = false}}
-      >
+      <button className={styles.likeButton} onClick={hasLiked}>
         <svg
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +44,7 @@ const LikeButton = () => {
         >
           <g
             transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
-            fill={snap.isLiked? "#0276fa": "#ffffff"}
+            fill={snap.isLiked ? "#0276fa" : "#ffffff"}
             stroke="none"
           >
             <path
@@ -41,7 +65,7 @@ const LikeButton = () => {
       <button
         style={{ transform: "rotate(180deg)" }}
         className={styles.likeButton}
-        onClick={() => {store.isDisliked = snap.isDisliked ? false : true; store.isLiked = false}}
+        onClick={hasDisLiked}
       >
         <svg
           version="1.0"
@@ -53,7 +77,7 @@ const LikeButton = () => {
         >
           <g
             transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
-            fill={snap.isDisliked? "#0276fa": "#ffffff"}
+            fill={snap.isDisliked ? "#0276fa" : "#ffffff"}
             stroke="none"
           >
             <path
