@@ -59,7 +59,7 @@ const BetterShirtModel = ({
             enablePan={false}
             // minDistance={0}
             // maxDistance={5}
-            enableZoom={false}
+            // enableZoom={false}
           />
           <Shirt />
         </Center>

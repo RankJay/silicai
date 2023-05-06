@@ -26,9 +26,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   );
   const data: InventoryObjects[] = await res.json();
 
+  const filteredObjects = data.filter(
+    (obj: InventoryObjects) => obj.image_id.startsWith("08ec7af1-a391-4595-8b9f-b29d4482be")
+  );
+
   return {
     props: {
-      data: data,
+      data: filteredObjects,
     },
   };
 };

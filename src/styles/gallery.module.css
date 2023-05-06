@@ -2,11 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .ModalSpace {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
 }
 
 .grid {

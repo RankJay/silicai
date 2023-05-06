@@ -19,7 +19,7 @@ const Header: NextPage = () => {
       setIsDropdownOpen(false);
     };
 
-    router.events.on("routeChangeStart", handleRouteChange);
+    router.events.on("routeChangeComplete", handleRouteChange);
   }, [router]);
 
   const handleImagineClick = () => {
@@ -33,7 +33,10 @@ const Header: NextPage = () => {
   };
 
   const handleDropdownItemClick = (path: string) => {
-    setIsDropdownOpen(false);
+    // setIsDropdownOpen(false);
+    const ele = document.getElementById(path) as HTMLElement;
+    ele.style.color = "#aaa"
+    ele.innerText = "Loading..."
     router.push(path);
   };
 
@@ -41,18 +44,21 @@ const Header: NextPage = () => {
     <div className={styles.dropdownContent}>
       <div
         className={styles.dropdownItem}
+        id={`/mpl`}
         onClick={() => handleDropdownItemClick(`/mpl`)}
       >
         Marketplace {/* <div className={styles.bubble}>Coming Soon</div> */}
       </div>
       <div
         className={styles.dropdownItem}
+        id={`/closet/${userId}`}
         onClick={() => handleDropdownItemClick(`/closet/${userId}`)}
       >
         My Closet {/*<div className={styles.bubble}>Coming Soon</div>*/}
       </div>
       <div
         className={styles.dropdownItem}
+        id={`/payment/${userId}`}
         onClick={() => handleDropdownItemClick(`/payment/${userId}`)}
       >
         Payments <div className={styles.bubble}>Coming Soon</div>

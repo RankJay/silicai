@@ -104,8 +104,8 @@ export default function PromptBar() {
         window.alert(err.response.data.error);
       });
     store.isGenerating = false;
-    questionInput.value = "";
-    questionInput.style.height = "initial";
+    // questionInput.value = "";
+    // questionInput.style.height = "initial";
   };
   return (
     <div className={styles.signUp} id="signup1">

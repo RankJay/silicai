@@ -14,6 +14,11 @@ const nextConfig = {
         hostname: '**.supabase.co',
         port: ''
       },
+      {
+        protocol: "https",
+        hostname: 'global-uploads.webflow.com',
+        port: ''
+      },
     ],
   },
 }
