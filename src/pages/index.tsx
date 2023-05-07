@@ -47,31 +47,28 @@ export default function Home() {
         />
 
         <title>Silic AI</title>
-        <meta
-          name="description"
-          content="Generative AI Fashion Agent"
-        />
+        <meta name="description" content="Generative AI Fashion Agent" />
         <meta name="author" content="Jay Rank" />
 
         {/* Google / Search Engine Tags */}
-        <meta itemProp="name" content="Silic.AI: Generative Fashion For Real Clothing" />
         <meta
-          itemProp="description"
-          content="Generative AI Fashion Agent"
+          itemProp="name"
+          content="Silic.AI: Generative Fashion For Real Clothing"
         />
+        <meta itemProp="description" content="Generative AI Fashion Agent" />
         <meta
           itemProp="image"
           content="https://user-images.githubusercontent.com/53647573/235449155-661c2a93-9486-46ce-ad27-e2498aae68a0.png"
         />
 
         {/* Facebook Meta Tags */}
-        <meta property="og:title" content="Silic.AI: Generative Fashion For Real Clothing" />
+        <meta
+          property="og:title"
+          content="Silic.AI: Generative Fashion For Real Clothing"
+        />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://silic.ai/" />
-        <meta
-          property="og:description"
-          content="Generative AI Fashion Agent"
-        />
+        <meta property="og:description" content="Generative AI Fashion Agent" />
         <meta
           property="og:image"
           content="https://user-images.githubusercontent.com/53647573/235449155-661c2a93-9486-46ce-ad27-e2498aae68a0.png"
@@ -80,7 +77,10 @@ export default function Home() {
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="" />
-        <meta name="twitter:title" content="Silic.AI: Generative Fashion For Real Clothing" />
+        <meta
+          name="twitter:title"
+          content="Silic.AI: Generative Fashion For Real Clothing"
+        />
         <meta
           name="twitter:description"
           content="Generative AI Fashion Agent"
@@ -145,18 +145,25 @@ export default function Home() {
             >
               Design & Order
             </button>
+            <Link
+              href="/mpl"
+              style={{
+                padding: "1rem",
+                fontSize: "1rem",
+                fontFamily: "HelveticcaRegular",
+              }}
+            >
+              Shop Designs
+            </Link>
           </div>
-          {/* <Link href="/gallery" style={{
-            padding: "1rem",
-            fontSize: "1rem",
-            fontFamily: "HelveticcaRegular"
-          }}>Visit Gallery</Link> */}
         </div>
         <div
           className={styles.indexPageSection}
           style={{ backgroundColor: "hsla(230, 3%, 38%, 0.25)" }}
         >
-          <div id={styles.softest} className={styles.SectionHeading}>Get Paid To Prompt Design.</div>
+          <div id={styles.softest} className={styles.SectionHeading}>
+            Get Paid To Prompt Design.
+          </div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
               Earn $.001 per design you generate. Our suggestions will guide you
@@ -189,7 +196,9 @@ export default function Home() {
           </div>
         </div> */}
         <div className={styles.indexPageSection}>
-          <div id={styles.softest} className={styles.SectionHeading}>Earn Royalties $</div>
+          <div id={styles.softest} className={styles.SectionHeading}>
+            Earn Royalties $
+          </div>
           <div
             className={styles.Section}
             style={{ flexDirection: "row-reverse" }}
