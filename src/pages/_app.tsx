@@ -20,6 +20,7 @@ const publicPages = [
   "/",
   "/mpl",
   "/about",
+  "/design/[id]"
 ];
 
 export default function App({ Component, pageProps }: AppProps) {
