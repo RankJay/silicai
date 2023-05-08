@@ -183,6 +183,7 @@ export default function Home() {
                 className={styles.SectionAttachment}
                 style={{
                   width: "100%",
+                  backgroundColor: "transparent",
                   height: "100%",
                 }}
               >

@@ -63,7 +63,7 @@
 
 #pp2 {
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   /* background-color: transparent; */
   background-image: url(../../public/assets/royalties1.png);
@@ -201,7 +201,7 @@
   justify-content: center;
   min-width: 200px;
   width: 35%;
-  background-color: black;
+  background-color: transparent; /* black; */
   border-radius: 2rem;
   height: 65%;
 }
