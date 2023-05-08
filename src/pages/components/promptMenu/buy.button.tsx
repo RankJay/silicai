@@ -54,7 +54,7 @@ const BuyButton = () => {
         image: snap.checkoutURL,
         imageId: "TBA",
         quantity: 1,
-        price: 35,
+        price: 70,
         metadata: {
           size: event1.value,
           style: event2.value,

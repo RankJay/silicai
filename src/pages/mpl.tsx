@@ -113,7 +113,7 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
         image: snap.checkoutURL,
         imageId: snap.imageId,
         quantity: 1,
-        price: 35,
+        price: 70,
         metadata: {
           size: event1.value,
           style: event2.value,
