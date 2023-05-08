@@ -243,7 +243,7 @@ export default function Home() {
               This is NOT cheap merch. Silic garments are made from ultra soft
               Tencel™ and Modal™ fibers. Our textile blend is specially
               engineered to ensure an amazing fit, extreme comfort and
-              longevity. We use Direct to Garment digital printing methods to
+              longevity. We use Direct to Fabric digital printing methods to
               guarantee robust print quality and a harmonious feel. Experience
               designer quality clothing at an affordable price.
             </div>
