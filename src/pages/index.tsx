@@ -162,14 +162,16 @@ export default function Home() {
           style={{ backgroundColor: "hsla(230, 3%, 38%, 0.25)" }}
         >
           <div id={styles.softest} className={styles.SectionHeading}>
-            Get Paid To Prompt Design.
+            Prompt To Design.
           </div>
           <div className={styles.Section}>
             <div className={styles.SectionData}>
-              Earn $.001 per design you generate. Our suggestions will guide you
-              to produce beautiful textile designs. Each design is saved in your
-              closet for you to view later. Infinite design possibilities await,
-              unlock your creative potential.
+              Explore infinite style options with generative fashion. Create a
+              prompt of what you&rsquo;re imagining and press generate. Your
+              design will be created by our Ai model and available to purchase
+              in under 10 seconds. Try our suggested prompts to find
+              inspiration. You&rsquo;ll soon be able to launch an auto-design
+              agent with your OpenAi API key.
             </div>
             <div className={styles.SectionAttachment}>
               <video
@@ -197,18 +199,18 @@ export default function Home() {
         </div> */}
         <div className={styles.indexPageSection}>
           <div id={styles.softest} className={styles.SectionHeading}>
-            Earn Royalties $
+            Earn Royalties For Every Design Sold
           </div>
           <div
             className={styles.Section}
             style={{ flexDirection: "row-reverse" }}
           >
             <div className={styles.SectionData}>
-              When you create a design, it will be listed in our public
-              marketplace and your own store front. If another user buys your
-              design, you can earn up to 50% of the profit of the fulfilled
-              garment. Our royalty system is just in its infancy. Many paradigm
-              shifting updates await.
+              With Silic, you have the opportunity to eann up to 50% of the
+              profits of every design you create. Share a link with friends and
+              your creation will be hosted in our marketplace. When someone
+              purchases your design you&rsquo;ll get paid when the garment is
+              fulfilled.
             </div>
             <div id={styles.pp2} className={styles.SectionAttachment}></div>
           </div>
@@ -237,12 +239,12 @@ export default function Home() {
             style={{ flexDirection: "row-reverse" }}
           >
             <div className={styles.SectionData}>
-              This is not cheap merch. Unlike other on demand printing services,
-              we don&rsquo;t use low quality stock fabric or blank shirts to
-              print on. The SILIC garment will be the softest fabric
-              you&rsquo;ve ever owned. We mill our own textiles from highest
-              grade natural fibers and yarn with state of the art knitting
-              machines. Embrace designer fashion at affordable prices.
+              This is NOT cheap merch. Silic garments are made from ultra soft
+              Tencel™ and Modal™ fibers. Our textile blend is specially
+              engineered to ensure an amazing fit, extreme comfort and
+              longevity. We use Direct to Garment digital printing methods to
+              guarantee robust print quality and a harmonious feel. Experience
+              designer quality clothing at an affordable price.
             </div>
             <div id={styles.fabric} className={styles.SectionAttachment}></div>
           </div>
