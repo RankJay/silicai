@@ -216,7 +216,7 @@ export default function Home() {
             <div id={styles.pp2} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div
+        {/* <div
           className={styles.indexPageSection}
           style={{ backgroundColor: "hsla(230, 3%, 38%, 0.25)" }}
         >
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
             <div id={styles.printer} className={styles.SectionAttachment}></div>
           </div>
-        </div>
+        </div> */}
         <div className={styles.indexPageSection}>
           <div id={styles.softest} className={styles.SectionHeading}>
             The Softest Shirt You&rsquo;ll Ever Own.
@@ -265,7 +265,7 @@ export default function Home() {
             <div id={styles.pp3} className={styles.SectionAttachment}></div>
           </div>
         </div>
-        <div className={styles.indexPageSection}>
+        {/* <div className={styles.indexPageSection}>
           <div className={styles.SectionHeading}>A Global Marketplace.</div>
           <div
             className={styles.Section}
@@ -278,7 +278,7 @@ export default function Home() {
             </div>
             <div id={styles.pp4} className={styles.SectionAttachment}></div>
           </div>
-        </div>
+        </div> */}
         <div className={styles.indexPageFAQSection}>
           <div
             className={styles.OfferingHeading}

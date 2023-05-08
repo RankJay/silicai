@@ -54,7 +54,7 @@ const BetterShirtModel = ({
         <Environment preset="city" />
         <Center>
           <OrbitControls
-            autoRotate={true}
+            // autoRotate={true}
             autoRotateSpeed={snap.loadingSpeed}
             enablePan={false}
             // minDistance={0}
