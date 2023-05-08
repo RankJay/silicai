@@ -206,9 +206,9 @@ export default function Home() {
             style={{ flexDirection: "row-reverse" }}
           >
             <div className={styles.SectionData}>
-              With Silic, you have the opportunity to eann up to 50% of the
+              With Silic, you have the opportunity to earn up to 50% of the
               profits of every design you create. Share a link with friends and
-              your creation will be hosted in our marketplace. When someone
+              your creation will be hosted in our marketplace. If someone
               purchases your design you&rsquo;ll get paid when the garment is
               fulfilled.
             </div>
