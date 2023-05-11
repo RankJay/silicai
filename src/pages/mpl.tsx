@@ -109,11 +109,11 @@ export default function Marketplace({ data }: { data: InventoryObjects[] }) {
     const checkoutSession = await axios.post("/api/session", {
       item: {
         name: "Silic T-Shirts",
-        description: "AI-generated T-Shirt",
+        description: "AI-generated T-Shirt. Currently 50% OFF",
         image: snap.checkoutURL,
         imageId: snap.imageId,
         quantity: 1,
-        price: 70,
+        price: 35,
         metadata: {
           size: event1.value,
           style: event2.value,
