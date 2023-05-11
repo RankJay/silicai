@@ -5,6 +5,27 @@ import { useRouter } from "next/router";
 import styles from "@/styles/header.module.css";
 import { useEffect, useState } from "react";
 
+function Twitter() {
+  return (
+    <div style={{ width: "65px" }}>
+      <a href={'https://twitter.com/AiSilic'} target={"_blank"} rel="noreferrer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="24"
+          height="24"
+          viewBox="0 0 30 30"
+          fill="white"
+        >
+          {" "}
+          <path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z"></path>
+        </svg>
+      </a>
+    </div>
+  );
+}
+
 const Header: NextPage = () => {
   const { isSignedIn, userId } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -82,7 +103,7 @@ const Header: NextPage = () => {
   return (
     <div className={styles.headerContainer} id="headerContainer">
       <div className={styles.header}>
-        <div className={styles.headerChild} onClick={handleDropdownToggle}>
+        <div className={styles.headerChild} onClick={handleDropdownToggle} style={{ display: "flex", flexDirection: "row" }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24px"
@@ -97,6 +118,7 @@ const Header: NextPage = () => {
               <path d="M 1.195312 17.035156 C 0.710938 17.1875 0.320312 17.507812 0.113281 17.914062 C 0.015625 18.113281 0 18.195312 0 18.703125 C 0 19.191406 0.015625 19.296875 0.0976562 19.46875 C 0.328125 19.917969 0.632812 20.179688 1.109375 20.339844 L 1.402344 20.4375 L 11.996094 20.4375 C 22.273438 20.4375 22.59375 20.433594 22.871094 20.347656 C 23.320312 20.207031 23.65625 19.921875 23.882812 19.492188 C 23.992188 19.289062 24 19.214844 24 18.703125 C 24 18.214844 23.984375 18.109375 23.902344 17.9375 C 23.746094 17.644531 23.578125 17.453125 23.320312 17.277344 C 22.824219 16.945312 23.742188 16.96875 11.980469 16.972656 C 3.558594 16.972656 1.34375 16.988281 1.195312 17.035156 Z M 1.195312 17.035156 " />
             </g>
           </svg>
+          <Twitter />
         </div>
         {isDropdownOpen && dropdownContent}
         <div
