@@ -20,6 +20,7 @@ const publicPages = [
   "/",
   "/mpl",
   "/about",
+  "/new",
   "/design/[id]"
 ];
 
