@@ -9,6 +9,7 @@ export default async function handler(req: Request, res: Response) {
     {
       clerk_id,
       prompt,
+      wombo: true,
     }
   ).then((resp)=> {
     return res.status(200).json({ image: resp.data.image.image });
