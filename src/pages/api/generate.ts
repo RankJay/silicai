@@ -7,7 +7,7 @@ export default async function handler(req: Request, res: Response) {
   return axios.post(
     "https://silicai-server-0sdj.zeet-silicai.zeet.app/api/user/generate",
     {
-      clerk_id,
+      clerk_id: clerk_id || 'user_2OxFqAs8UjafLpgevDCdyP2boZL',
       prompt,
       wombo: true,
     }
