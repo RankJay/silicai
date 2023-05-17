@@ -84,7 +84,7 @@ export default function PromptBar() {
     // }
 
     await axios
-      .post(`/api/generate`, { prompt: promptValue, clerk_id: user?.id })
+      .post(`/api/generate`, { prompt: promptValue, clerk_id: user?.id, modelType: store.modelType })
       .then(async (render) => {
         const resp = (await render.data) as any;
         const imageURl = await resp.image;
