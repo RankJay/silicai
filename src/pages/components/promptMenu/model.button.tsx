@@ -35,7 +35,14 @@ const ModelDropdown = () => {
         className={styles.dropdownItem}
         onClick={() => handleChange(ModelType.WOMBO)}
       >
-        Wombo
+        <Image
+          src={
+            "https://global-uploads.webflow.com/5fcf07e52d378eac98367eaf/60cb864c5f189bdbd96815b8_5fcecb678cc42bfa2337dc6e_WOMBO.png"
+          }
+          width={50}
+          height={14}
+          alt={"wombo"}
+        />
       </div>
     </div>
   );

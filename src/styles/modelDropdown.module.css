@@ -63,10 +63,20 @@
   .container {
     top: 10%;
     left: 2%;
+    min-width: 150px;
+    font-size: 0.75rem;
+    height: 4rem;
     /* padding-right: 1rem; */
   }
 
+  .dropdown {
+    font-size: 0.5rem;
+    padding: 0.5rem;
+    /* height: 1rem; */
+  }
+
   .dropdownContent {
-    left: 1rem;
+    top: 20%;
+    left: 2%;
   }
 }
