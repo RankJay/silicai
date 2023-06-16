@@ -33,8 +33,8 @@ const ThreeModelButton = () => {
       </div>
       <div
         className={styles.dropdownItem}
-        onClick={() => handleChange(ThreeModelType.PANTS)}
-      >Pants</div>
+        // onClick={() => handleChange(ThreeModelType.PANTS)}
+      >Coming Soon...</div>
     </div>
   );
   return (

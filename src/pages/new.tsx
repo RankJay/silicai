@@ -94,7 +94,7 @@ export default function New() {
       <div className={styles.newPageLandingSection}>
         {/* <UserButton /> */}
         <ModelDropdown />
-        <ThreeModelButton />
+        {/* <ThreeModelButton /> */}
         <BuyButton />
         <LikeButton />
         <BetterShirtModel position={[0, 0, 2.5]} fov={25} />
