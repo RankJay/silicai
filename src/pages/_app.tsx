@@ -47,8 +47,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider {...pageProps}>
       <Header />
-      <Script async src="https://r.wdfl.co/rw.js" data-rewardful='e7e3e6' />
-      <Script id="rewardfull">{`function activate(w, r) {w._rwq=r; w[r]=w[r];} activate(window, 'rewardful')`}</Script>
+      {/* <Script async src="https://r.wdfl.co/rw.js" data-rewardful='e7e3e6' />
+      <Script id="rewardfull">{`function activate(w, r) {w._rwq=r; w[r]=w[r];} activate(window, 'rewardful')`}</Script> */}
       {isPublicPage ? (
         <Component {...pageProps} />
       ) : (

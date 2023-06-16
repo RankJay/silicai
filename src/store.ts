@@ -9,6 +9,12 @@ export enum ModelType {
   REPLICATE = "REPLICATE",
 }
 
+export enum ThreeModelType {
+  SHIRT = "SHIRT",
+  TSHIRT = "TSHIRT",
+  PANTS = "PANTS"
+}
+
 const store = proxy({
   imageURI: "/assets/default.jpg",
   isGenerating: false,
@@ -21,6 +27,7 @@ const store = proxy({
   isLiked: false,
   isDisliked: false,
   checkoutURL: 'https://silic.vercel.app/assets/default.jpg',
+  threeModel: '/assets/shirtnew.glb',
   imageId: '',
   modelType: 'REPLICATE',
 });
