@@ -27,7 +27,7 @@ const store = proxy({
   isLiked: false,
   isDisliked: false,
   checkoutURL: 'https://silic.vercel.app/assets/default.jpg',
-  threeModel: '/assets/shirtnew.glb',
+  threeModel: '/assets/shirt.glb',
   imageId: '',
   modelType: 'REPLICATE',
 });

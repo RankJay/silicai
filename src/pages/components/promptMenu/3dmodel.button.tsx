@@ -13,7 +13,7 @@ const ThreeModelButton = () => {
   const handleChange = (modelType: ThreeModelType) => {
     setSelectedOption(modelType);
     if (modelType === ThreeModelType.TSHIRT) {
-      store.threeModel = '/assets/shirtnew.glb'
+      store.threeModel = '/assets/shirt.glb'
     } else if (modelType === ThreeModelType.PANTS) {
       store.threeModel = '/assets/shirt.glb'
     }
