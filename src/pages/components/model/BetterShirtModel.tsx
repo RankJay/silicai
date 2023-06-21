@@ -51,7 +51,7 @@ const BetterShirtModel = ({
         // }}
       >
         <ambientLight intensity={0.5} />
-        <Environment preset="city" />
+        <Environment files="./assets/potsdamer_platz_1k.hdr" />
         <Center>
           <OrbitControls
             autoRotate={true}
@@ -82,7 +82,7 @@ function Shirt(props: ShirtProps): JSX.Element {
   // texture.repeat.set(2, 2);
   texture.flipY = false;
   // texture.offset.set(-0.5, -0.5);
-  const { nodes, materials } = useLoader(GLTFLoader, '/assets/shirt.glb');
+  const { nodes, materials } = useLoader(GLTFLoader, snap.threeModel);
   (materials.lambert1 as THREE.MeshStandardMaterial).map = texture;
   (materials.lambert1 as THREE.MeshStandardMaterial).aoMapIntensity = 0;
   // useFrame((store, delta) => {

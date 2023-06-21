@@ -8,6 +8,7 @@ import BuyButton from "./components/promptMenu/buy.button";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ModelDropdown from "./components/promptMenu/model.button";
+import ThreeModelButton from "./components/promptMenu/3dmodel.button";
 
 export default function New() {
   const router = useRouter();
@@ -92,6 +93,7 @@ export default function New() {
       </Head>
       <div className={styles.newPageLandingSection}>
         {/* <UserButton /> */}
+        <ThreeModelButton />
         <ModelDropdown />
         <BuyButton />
         <LikeButton />
